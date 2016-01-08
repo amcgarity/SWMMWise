@@ -1,0 +1,109 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.009)
+  --------------------------------------------------------------
+
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... NO
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Starting Date ............ NOV-08-2015 00:00:00
+  Ending Date .............. NOV-08-2015 06:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 01:00:00
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Initial LID Storage ......         0.029         0.001
+  Total Precipitation ......        24.210         0.978
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........        21.282         0.860
+  Surface Runoff ...........         4.817         0.195
+  Final Storage ............         0.685         0.028
+  Continuity Error (%) .....       -10.495
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         4.817         1.570
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         4.817         1.570
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  --------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in    10^6 gal      CFS
+  --------------------------------------------------------------------------------------------------------
+  S1                         0.98       1.49       0.00       1.24       1.24        1.57   119.42   0.505
+  S2                         0.98       0.00       0.00       0.56       1.80        0.90    87.90   1.844
+  S3                         0.98       0.50       0.00       0.88       0.59        0.97    68.83   0.401
+  S4                         0.98       0.91       0.00       0.84       1.00        0.82    87.49   0.531
+  S5                         0.98       0.00       0.00       0.81       0.16        0.32    36.25   0.166
+  S6                         0.98       0.00       0.00       0.56       0.37        0.26    27.88   0.383
+  S7                         0.98       0.23       0.00       0.83       0.37        0.42    41.45   0.307
+  
+
+  ***********************
+  LID Performance Summary
+  ***********************
+
+  --------------------------------------------------------------------------------------------------------------------
+                                         Total      Evap     Infil   Surface    Drain    Initial     Final  Continuity
+                                        Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
+  Subcatchment      LID Control             in        in        in        in        in        in        in           %
+  --------------------------------------------------------------------------------------------------------------------
+  S1                wakefield_RG        133.77      0.00      0.00    128.00      0.00      0.30     12.30       -4.65
+  S1                wister_RG            17.81      0.00      0.00     21.60      0.00      0.60      5.23      -45.73
+  S2                kemble_IT             2.96      0.00      2.95      0.00      0.00      0.00      0.05       -1.41
+  S2                Kemble_Swale          3.68      0.00      0.09      3.59      0.00      0.00      0.00       -0.02
+  S2                kemble_RG             2.78      0.00      0.00      0.00      0.00      0.40      3.18        0.00
+  S2                Harpers_hallow_Swale     11.21      0.00      0.17   1183.16      0.00      0.00      0.00   -10454.25
+  S2                simons_TT_deten      11.47      0.00      0.41      0.00      8.40      0.00      2.73       -0.61
+  S2                simons_TT_infil       7.03      0.00      7.03      0.00      0.00      0.00      0.00       -0.00
+  S4                cliveden_RG_deten     32.73      0.00      0.56     30.48      0.00      0.30      7.70      -17.31
+  S4                waterview_tree_infil     11.06      0.00      5.88      0.00      0.00      0.00      5.26       -0.75
+  S4                Cliveden_RG_infil     29.21      0.00      0.00      0.00      0.00      1.20     30.41        0.00
+  S4                Pleasant_TT_infil     34.85      0.00      8.85      1.73     14.01      0.00      8.80        4.18
+  S4                waterview_PP         18.62      0.00      2.36     12.27      0.00      1.20      5.21       -0.11
+  S4                waterview_SWP        19.88      0.00      2.24     13.04      0.00      0.80      5.44       -0.20
+  S6                Morris_TT_infil       3.66      0.00      3.66      0.00      0.00      0.00      0.00       -0.00
+  S6                Anna_TT_infil         4.12      0.00      4.12      0.00      0.00      0.00      0.00       -0.00
+  S6                stenton_RG           19.57      0.00      0.00      0.00      0.00      0.60     20.17        0.00
+  S6                Morris_TT_deten      27.84      0.00      0.41      0.00     16.57      0.00     11.06       -0.72
+
+  Analysis begun on:  Tue Dec  1 18:51:24 2015
+  Analysis ended on:  Tue Dec  1 18:51:24 2015
+  Total elapsed time: < 1 sec

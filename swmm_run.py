@@ -9,12 +9,14 @@ def runswmm():
 	# Create an instance of a swmm_model object using the data
 	model1 = swmm_model('Model1',section_names,sections)
     # Write out the model to a new file
-	f = open("Ex4_modified.inp",'w')
+	f = open("wingo_modified.inp",'w')
 	model1.output(f)
 	f.close()
 	# Run the new model file
-	call(["./swmm5","wingohocking_modified.inp", "wingohocking_modified.txt", "out.out"])
-	(peak,volume) = read_report("wingohocking_modified.txt")
+	###call(["swmm5","Example4_bare_fast_PHL.inp", "Example4_bare_fast_PHL.txt"])
+	###(peak,volume) = read_report("Example4_bare_fast_PHL.txt")
+	peak = 0.0
+	volume = 0.0
 	return (peak,volume)
 
 def main():

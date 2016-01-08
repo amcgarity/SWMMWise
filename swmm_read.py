@@ -1,6 +1,7 @@
 """
 swmmread.py
 Read SWMM input file and create objects for each input category
+Also read the resulting output file after SWMM is runcp
 2013 Arthur McGarity
 Swarthmore College
 AEM: Modified 11/2015 to include LID categories in input file
@@ -9,11 +10,16 @@ import sys
 #from swmm_objects import *
 
 def read_inp(fname):
+# read SWMM inp file fname into a large string
+# create a list "section_names" containing the names of the sections found in the file
+# create a dictionary "sections" containing the data lines found in each section keyed by section_name
+# finally, return "section_names" and "sections"
+# NOTE: the calling program is responsible for parsing the data lines in the sections
+
 #    fname = "Example4_bare_PHL.inp"
     infile = open(fname,'r')
     data = infile.readlines()
-    section_names = []
-#    selected_section_names = ["[TITLE]","[OPTIONS]","[EVAPORATION]"]
+    section_names = []   # we will build this list from section names found in the SWMM .inp file
 # remove comment lines and blank lines and identify all section names used in the file
     data1 = []
     for line in data:
@@ -24,8 +30,11 @@ def read_inp(fname):
            continue
         elif not line_ns:  # do not include blank lines
            continue
-        data1.append(line)
-    sections = {}
+        data1.append(line)  # data1 is a list containing the unstripped lines of the SWMM .inp file
+# now find all data lines in each section, store each data line as an entry in a section_list
+# then after reading all the data in a section, store the section_list in
+# dictionary sections keyed by the section name
+    sections = {}  # dictionary to hold all lines in a section, keyed by section_names
     end = False
     for i in range(len(data1)):
         line = data1[i]
@@ -36,25 +45,25 @@ def read_inp(fname):
            try:
                next_line = data1[i+1]  # look ahead at next line
            except IndexError:
-               end = True
+               end = True         # end of input file found
            next_line_ns = next_line.strip()  # remove whitespace
-           if (end or (next_line_ns in section_names)):
-              sections[name] = section_list
+           if (end or (next_line_ns in section_names)):  # we have read the entire section
+              sections[name] = section_list              # store the list in the dictionary
         else:
-           section_list.append(line)
+           section_list.append(line)    # store section data in section_list
            try:
                next_line = data1[i+1]  # look ahead at next line
            except IndexError:
                end = True
            next_line_ns = next_line.strip()  # remove whitespace
            if (end or (next_line_ns in section_names)):
-              sections[name] = section_list
+              sections[name] = section_list  #populate the sections dictionary
 #    for i in section_names:
 #        sys.stdout.write("%s\n" % i)
 #        for j in sections[i]:
 #            sys.stdout.write(j)    
 
-    return((section_names,sections))
+    return((section_names,sections))  # return the section_names LIST and the sections DICTIONARY (keyed by items in the section_names list)
 
 def read_report(fname):
   infile = open(fname,'r')

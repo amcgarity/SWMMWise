@@ -283,6 +283,6 @@
   No conduits were surcharged.
   
 
-  Analysis begun on:  Tue Jan  5 19:05:41 2016
-  Analysis ended on:  Tue Jan  5 19:05:52 2016
-  Total elapsed time: 00:00:11
+  Analysis begun on:  Tue Jan  5 21:08:07 2016
+  Analysis ended on:  Tue Jan  5 21:08:17 2016
+  Total elapsed time: 00:00:10
