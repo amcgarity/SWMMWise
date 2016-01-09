@@ -30,7 +30,7 @@ def read_inp(fname):
            continue
         elif not line_ns:  # do not include blank lines
            continue
-        data1.append(line)  # data1 is a list containing the unstripped lines of the SWMM .inp file
+        data1.append(line)  # data1 is a list containing the unstripped lines of the SWMM .inp file 
 # now find all data lines in each section, store each data line as an entry in a section_list
 # then after reading all the data in a section, store the section_list in
 # dictionary sections keyed by the section name
@@ -40,14 +40,14 @@ def read_inp(fname):
         line = data1[i]
         line_ns = line.strip()  # remove whitespace
         if line_ns in section_names:
-           name = line_ns
-           section_list = []
-           try:
+            name = line_ns
+            section_list = []
+            try:
                next_line = data1[i+1]  # look ahead at next line
-           except IndexError:
+            except IndexError:
                end = True         # end of input file found
-           next_line_ns = next_line.strip()  # remove whitespace
-           if (end or (next_line_ns in section_names)):  # we have read the entire section
+            next_line_ns = next_line.strip()  # remove whitespace
+            if (end or (next_line_ns in section_names)):  # we have read the entire section
               sections[name] = section_list              # store the list in the dictionary
         else:
            section_list.append(line)    # store section data in section_list
@@ -62,7 +62,6 @@ def read_inp(fname):
 #        sys.stdout.write("%s\n" % i)
 #        for j in sections[i]:
 #            sys.stdout.write(j)    
-
     return((section_names,sections))  # return the section_names LIST and the sections DICTIONARY (keyed by items in the section_names list)
 
 def read_report(fname):

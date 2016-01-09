@@ -1,4 +1,5 @@
 [TITLE]
+Wingohocking
 ;;Project Title/Notes
 
 [OPTIONS]
@@ -52,20 +53,20 @@ RG               INTENSITY 0:05     1.0      TIMESERIES 2-yr
 [SUBCATCHMENTS]
 ;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
 ;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
-S1               RG               outfall          46.46    20       3750     8        0                        
+S1               RG               outfall          46.46    20       3750     8        0                 
 S2               RG               S1               18.39    45       5000     1.45     0                        
 S3               RG               S1               60.51    35       4375     2        0                        
 S4               RG               S3               30.26    40       11250    2.66     0                        
-S5               RG               S4               73.34    17       3750     3.2      0                        
+S5               RG               S4               73.34    17       3750     3.2      0                    
 S6               RG               S7               25.92    45       3750     1.14     0                        
 S7               RG               S4               42.08    30       3750     1.73     0                        
 
 [SUBAREAS]
 ;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
 ;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
-S1               0.01       0.1        0.05       0.05       25         OUTLET    
+S1               0.01       0.1        0.05       0.05       25         OUTLET      
 S2               0.01       0.1        0.05       0.05       25         OUTLET    
-S3               0.01       0.1        0.05       0.05       25         OUTLET    
+S3               0.01       0.1        0.05       0.05       25         OUTLET     
 S4               0.01       0.1        0.05       0.05       25         OUTLET    
 S5               0.01       0.1        0.05       0.05       25         OUTLET    
 S6               0.01       0.1        0.05       0.05       25         OUTLET    
@@ -173,7 +174,7 @@ cliveden_RG_deten DRAIN      0          0.5        6          6
 [LID_USAGE]
 ;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
 ;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
-S1               wister_RG        4       2923       40         0          20         0         
+S1               wister_RG        4       2923       40         0          20         0       
 S1               wakefield_RG     2       741        15         0          20         0         
 S2               simons_TT_infil  3       365        7          0          2          0         
 S2               simons_TT_deten  2       316        5          0          2          1         
