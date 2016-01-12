@@ -3,46 +3,7 @@
 __metaclass__ = type	# new style classes
 import sys
 
-# NOTE: each SWMM .inp file major category section will have one or more swmmobjects created for it:
-class swmmobject:
-	# NOTE: the portion of the SWMM .inp file associated with a swmmobject depends on the SWMM section.
-	# pnames = swmm parameter layer names assigned in each object subclass below
-	# pvals = swmm defined parameter values for this layer (one or more for parameter values for each parameter layer name)
-
-	# NOTE: this is the default parse which works for swmm categories for which an object is associated with a single line
-	def parse(self,str):  
-		strlist = str.split()  # return a list of the words in "str"
-		numlist = len(strlist) # the total number of words found in "str"
-		numnames = len(self.pnames)  # the number of defined values (numeric or string) for parameters in this category section
-		parlist = []
-		if numlist <= numnames:   # one or more optional parameters are NOT used
-			for i in range(numlist):
-				parlist.append(strlist[i])   # capture the parameter values actually used for this parameter layer for the model
-			for i in range(numlist, numnames):  
-				parlist.append(' ')   # give value of ' ' for optional values not used for this parameter layer in the swmm file
-		else:   # the number of parameter values found in the swmm file for this layer is greater than the number of parameter names
-			for i in range(numnames-1):   
-				parlist.append(strlist[i]) # for all but the last name, assign found values one-to-one with names
-			remaining_text = ''
-			for i in range(numnames-1,numlist):
-				# join all of the remaining values separated by ' ' and assign to the last name:
-				remaining_text += ' ' + strlist[i] 
-			parlist.append(remaining_text)  # treat the remaining text as a single value for the last name
-		return parlist
-	def __init__(self,pvals):
-		self.pdict = {}   # the parameter dictionary for this swmm object
-		# NOTE: swmm parameter layers have at least one parameter value and frequently several parameter values
-		for i in range(len(pvals)):
-			self.pdict[self.pnames[i]] = pvals[i]  # parameter values (in the required order) keyed by the parameter name
-	def output(self):
-		outstr = ''
-		for i in self.pnames:
-			f.write("%s\t" % self.pdict[i])
-		f.write("\n")
-	def change(self,pname,pvalue):
-		self.pdict[pname]=pvalue
-
-class title(swmmobject):
+class title():
 # in the title section, each line contains a line of the title
 	heading = '[TITLE]'
 	def __init__(self,linelist):
@@ -50,64 +11,76 @@ class title(swmmobject):
 	def output(self):
 		outstr = ''
 		for line in self.linelist:
-			outstr = outstr + line + "\n"
+			outstr = outstr + line
 		return outstr
-class options(swmmobject):
+
+class category1d:
+	def parse(self,linelist):
+		self.namelist = []   # list to hold parameter names in their original order
+		self.pardict = {}
+		for line in linelist:
+			wordlist = line.split()  # split the line into words
+			parname = wordlist[0]
+			self.namelist.append(parname)
+			nwords = len(wordlist)
+			parstring = ''
+			for i in range(1,nwords):
+				parstring = parstring + wordlist[i] + ' '  # make one string out of all remaining words
+			self.pardict[parname] = parstring	
+	def __init__(self,linelist):
+		self.parse(linelist)
+	def output(self):
+		outstr = ''
+		for parname in self.namelist:
+			parstring = self.pardict[parname]
+			outstr = outstr + parname + '\t' + parstring + '\n'
+		return outstr
+	def change(self,objname,pname,pvalue):
+		self.pardict[pname] = pvalue
+
+class options(category1d):
 # in an option section, each line identifies a single parameter name and its value
 	heading = '[OPTIONS]'
 	#pnames = ['Name', 'Value']
-	def parse(self,linelist):
-		self.numpar = 0
-		self.namelist = []   # list to hold parameter names in their original order
-		self.pardict = {}
-		for line in linelist:
-			self.numpar = self.numpar + 1
-			wordlist = line.split()  # split the line into words
-			parname = wordlist[0]
-			self.namelist.append(parname)
-			parval = wordlist[1]
-			self.pardict[parname] = parval
 	def __init__(self,linelist):
-		self.parse(linelist)
-	def output(self):
-		outstr = ''
-		for parname in self.namelist:
-			parval = self.pardict[parname]
-			outstr = outstr + parname + '\t' + parval + '\n'
-		return outstr		
-class evaporation(swmmobject):
+		category1d.__init__(self,linelist)
+		#self.parse(linelist)
+
+class evaporation(category1d):
 # this section will be treated as a parameter name followed by a string representing the rest of the line
 	heading = '[EVAPORATION]'
-	def parse(self,linelist):
-		self.numpar = 0
-		self.namelist = []   # list to hold parameter names in their original order
-		self.pardict = {}
-		for line in linelist:
-			self.numpar = self.numpar + 1
-			wordlist = line.split()  # split the line into words
-			parname = wordlist[0]
-			self.namelist.append(parname)
-			n = len(wordlist)
-			parval = ''
-			for i in range(1,n):
-				parval = parval + ' ' + wordlist[i]
-			self.pardict[parname] = parval
 	def __init__(self,linelist):
-		self.parse(linelist)
-	def output(self):
-		outstr = ''
-		for parname in self.namelist:
-			parval = self.pardict[parname]
-			outstr = outstr + parname + '\t' + parval + '\n'
-		return outstr
+		category1d.__init__(self,linelist)
+		#self.parse(linelist)
 
+class raingages(category1d):
+# this section will be treated as a parameter name followed by a string representing the rest of the line
+	heading = '[RAINGAGES]'
+	def __init__(self,linelist):
+		category1d.__init__(self,linelist)
+		#self.parse(linelist)
+
+class xsections(category1d):
+	heading = '[XSECTIONS]'
+	def __init__(self,linelist):
+		category1d.__init__(self,linelist)
+
+class timeseries(category1d):
+	heading = '[TIMESERIES]'
+	def __init__(self,linelist):
+		category1d.__init__(self,linelist)
+
+class report(category1d):
+	heading = '[REPORT]'
+	def __init__(self,linelist):
+		category1d.__init__(self,linelist)
+
+# NOTE: 2d category objects must have their own change functions and these are NOT YET IMPLEMENTED !!!
 class category2d:
 	def parse(self,linelist):
-		self.numpar = 0
 		self.namelist = []   # list to hold parameter names in their original order
 		self.pardict = {}
 		for line in linelist:
-			self.numpar = self.numpar + 1
 			wordlist = line.split()  # split the line into words
 			parname = wordlist[0]
 			self.namelist.append(parname)
@@ -136,6 +109,41 @@ class category2d:
 			outstr = outstr + '\n'
 		return outstr
 
+class subcatchments(category2d):
+	heading = '[SUBCATCHMENTS]'
+	def __init__(self,linelist):
+		pnames = ['Name', 'Rgage', 'OutID', 'Area', 'PctImperv', 'Width', 'Slope', 'Clength', 'Spack']
+		category2d.__init__(self,linelist,pnames)
+
+class subareas(category2d):
+	heading = '[SUBAREAS]'
+	def __init__(self,linelist):
+		pnames = ['Subcat', 'Nimp', 'Nperv', 'Simp', 'Sperv', 'PctZero', 'RouteTo', 'PctRted']
+		category2d.__init__(self,linelist,pnames)
+
+class infiltration(category2d):
+	heading = '[INFILTRATION]'
+	def __init__(self,linelist):
+		pnames = ['Subcat', 'Parameters']
+		category2d.__init__(self,linelist,pnames)
+
+class junctions(category2d):
+	heading = '[JUNCTIONS]'
+	def __init__(self,linelist):
+		pnames = ['Name', 'Elev', 'Ymax', 'Y0', 'Ysur', 'Apond']
+		category2d.__init__(self,linelist,pnames)
+
+class outfalls(category2d):
+	heading = '[OUTFALLS]'
+	def __init__(self,linelist):
+		pnames = ['Name', 'Elev', 'Type', 'Parameters']
+		category2d.__init__(self,linelist,pnames)
+
+class conduits(category2d):
+	heading = '[CONDUITS]'
+	def __init__(self,linelist):
+		pnames = ['Name', 'Node1', 'Node2', 'Length', 'N', 'Z1', 'Z2', 'Q0', 'Qmax']
+		category2d.__init__(self,linelist,pnames)
 
 class category3d:
 	def parse3d(self,linelist):
@@ -279,120 +287,19 @@ class lid_usage(category3d):   # multiline category
 		valdict[pname] = newval   # change the specified value
 		self.liddict[name] = valdict  # replace the current value with the new value
 
-class raingages():
-# this section will be treated as a parameter name followed by a string representing the rest of the line
-	heading = '[RAINGAGES]'
-	def parse(self,linelist):
-		self.numpar = 0
-		self.namelist = []   # list to hold parameter names in their original order
-		self.pardict = {}
-		for line in linelist:
-			self.numpar = self.numpar + 1
-			wordlist = line.split()  # split the line into words
-			parname = wordlist[0]
-			self.namelist.append(parname)
-			n = len(wordlist)
-			parval = ''
-			for i in range(1,n):
-				parval = parval + ' ' + wordlist[i]
-			self.pardict[parname] = parval
-	def __init__(self,linelist):
-		self.parse(linelist)
-	def output(self):
-		outstr = ''
-		for parname in self.namelist:
-			parval = self.pardict[parname]
-			outstr = outstr + parname + '\t' + parval + '\n'
-		return outstr
-
-class subcatchments(category2d):
-	heading = '[SUBCATCHMENTS]'
-	def __init__(self,linelist):
-		pnames = ['Name', 'Rgage', 'OutID', 'Area', 'PctImperv', 'Width', 'Slope', 'Clength', 'Spack']
-		category2d.__init__(self,linelist,pnames)
-
-class subareas(category2d):
-	heading = '[SUBAREAS]'
-	def __init__(self,linelist):
-		pnames = ['Subcat', 'Nimp', 'Nperv', 'Simp', 'Sperv', 'PctZero', 'RouteTo', 'PctRted']
-		category2d.__init__(self,linelist,pnames)
-
-class infiltration(category2d):
-	heading = '[INFILTRATION]'
-	def __init__(self,linelist):
-		pnames = ['Subcat', 'Parameters']
-		category2d.__init__(self,linelist,pnames)
-
-class junction(swmmobject):
-	heading = '[JUNCTIONS]'
-	def __init__(self,str):
-		self.pnames = ['Name', 'Elev', 'Ymax', 'Y0', 'Ysur', 'Apond']
-		pvals = self.parse(str)
-		self.name = pvals[0]
-		swmmobject.__init__(self,pvals)
-class outfall(swmmobject):
-	heading = '[OUTFALLS]'
-	def __init__(self,str):
-		self.pnames = ['Name', 'Elev', 'Type', 'Parameters']
-		pvals = self.parse(str)
-		self.name = pvals[0]
-		swmmobject.__init__(self,pvals)
-class conduit(swmmobject):
-	heading = '[CONDUITS]'
-	def __init__(self,str):
-		self.pnames = ['Name', 'Node1', 'Node2', 'Length', 'N', 'Z1', 'Z2', 'Q0', 'Qmax']
-		pvals = self.parse(str)
-		self.name = pvals[0]
-		swmmobject.__init__(self,pvals)
-class xsection(swmmobject):
-	heading = '[XSECTIONS]'
-	def __init__(self,str):
-		self.pnames = ['Link', 'Parameters']
-		pvals = self.parse(str)
-		self.name = pvals[0]
-		swmmobject.__init__(self,pvals)
-class timeser(swmmobject):
-	heading = '[TIMESERIES]'
-	def __init__(self,str):
-		self.pnames = ['Name', 'Parameters']
-		pvals = self.parse(str)
-		self.name = pvals[0]
-		swmmobject.__init__(self,pvals)
-class report(swmmobject):
-	heading = '[REPORT]'
-	def parse(self,str):
-		return(str.split())
-	def __init__(self,str):
-		self.pnames = ['Name', 'Value']
-		plist = self.parse(str)
-		self.name = plist[0]
-		swmmobject.__init__(self,plist)
-'''
-class swmmcategory:
-	def __init__(self,objclass,linelist):
-		self.heading = objclass.heading
-		self.odict = {}
-
-	def add(self,obj):
-		oname = obj.name
-		self.odict[oname] = obj
-	def setactive(self,actlist):
-		self.active_list = actlist
-	def putitems(self,f):
-		f.write(self.heading+'\n')
-		for item in self.active_list:
-			self.odict[item].put(f)
-	def change(self,oname,pname,pvalue):
-		self.odict[oname].change(pname,pvalue)
-'''
 class swmm_model:
 	def __init__(self,name,section_names,sections):
 		self.name = name  # name of the model
+		self.section_names = section_names
+		self.sections = sections
 		# identify the SWMM section categories we currently support in this program:
-		self.catclasses = [lid_usage]#[title,options,evaporation,raingages,subcatchments,subareas,infiltration,
+		self.catclasses = [title,options,evaporation,raingages,subcatchments,subareas,infiltration,
+							lid_controls,lid_usage,
+							junctions,outfalls,conduits,xsections,timeseries,report]
 		self.catdict = {}
 		for swmmcat in self.catclasses:		# populate the "catdict" dictionary with swmm section object names keyed by the section header
-			self.catdict[swmmcat.heading]=swmmcat  # pull the heading text string from each swmmobject class for key and use the object for the value
+			# pull the heading text string from each swmmobject class for key and use the object for the value
+			self.catdict[swmmcat.heading]=swmmcat  
 		self.moddict = {}  # dictionary to hold swmm section objects
 		for heading in section_names:
 			if heading in self.catdict:  # compares headings read in file with headings defined in swmmobject category classes
@@ -401,12 +308,14 @@ class swmm_model:
 				self.moddict[objclass] = cat  # add this swmmcategory object to the swmm_model's dictionary
 	def output(self,f):
 		for obj in self.catclasses:
-			cat = self.moddict[obj]
-			outstr = cat.output()
-			f.write(cat.heading+'\n')
-			f.write(outstr)
-			print cat.heading + '\n',
-			print outstr,
+			heading = self.catdict.keys()[self.catdict.values().index(obj)]  # return key associated with dict value
+			if heading in self.section_names:      # only work with the sections found in input file
+				cat = self.moddict[obj]
+				outstr = cat.output()
+				f.write(cat.heading+'\n')
+				f.write(outstr)
+				print cat.heading + '\n',
+				print outstr,
 	def change(self,catheading,objname,pname,pvalue):
 		catclass = self.catdict[catheading]
 		self.moddict[catclass].change(objname,pname,pvalue)

@@ -1,6 +1,6 @@
 [TITLE]
-Example 4
-LID Controls
+Example 4 in Applications Guide
+LID Controls using subcatchments only
 
 [OPTIONS]
 FLOW_UNITS           CFS
@@ -133,7 +133,7 @@ S_IT_4           0.2        0.2        6.5        7          0
 ;;Name           Elev.      Depth      Depth      Depth      Area      
 ;;-------------- ---------- ---------- ---------- ---------- ----------
 J1               4973       0          0          0          0         
-J2               4969       0          0          0          0         
+J2               4969       0          0          0          0
 J3               4973       0          0          0          0         
 J4               4971       0          0          0          0         
 J5               4969.8     0          0          0          0         

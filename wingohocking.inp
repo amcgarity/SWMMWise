@@ -1,638 +1,234 @@
 [TITLE]
 Wingohocking
-;;Project Title/Notes
-
 [OPTIONS]
-;;Option             Value
-FLOW_UNITS           CFS
-INFILTRATION         HORTON
-FLOW_ROUTING         KINWAVE
-LINK_OFFSETS         DEPTH
-MIN_SLOPE            0
-ALLOW_PONDING        NO
-SKIP_STEADY_STATE    NO
-
-START_DATE           11/08/2015
-START_TIME           00:00:00
-REPORT_START_DATE    11/08/2015
-REPORT_START_TIME    00:00:00
-END_DATE             11/08/2015
-END_TIME             06:00:00
-SWEEP_START          1/1
-SWEEP_END            12/31
-DRY_DAYS             0
-REPORT_STEP          00:15:00
-WET_STEP             00:05:00
-DRY_STEP             01:00:00
-ROUTING_STEP         0:00:30 
-
-INERTIAL_DAMPING     PARTIAL
-NORMAL_FLOW_LIMITED  BOTH
-FORCE_MAIN_EQUATION  H-W
-VARIABLE_STEP        0.75
-LENGTHENING_STEP     0
-MIN_SURFAREA         0
-MAX_TRIALS           0
-HEAD_TOLERANCE       0
-SYS_FLOW_TOL         5
-LAT_FLOW_TOL         5
-MINIMUM_STEP         0.5
-THREADS              1
-
+FLOW_UNITS	CFS 
+INFILTRATION	ABC
+FLOW_ROUTING	KINWAVE 
+LINK_OFFSETS	DEPTH 
+MIN_SLOPE	0 
+ALLOW_PONDING	NO 
+SKIP_STEADY_STATE	NO 
+START_DATE	11/08/2015 
+START_TIME	00:00:00 
+REPORT_START_DATE	11/08/2015 
+REPORT_START_TIME	00:00:00 
+END_DATE	11/08/2015 
+END_TIME	06:00:00 
+SWEEP_START	1/1 
+SWEEP_END	12/31 
+DRY_DAYS	0 
+REPORT_STEP	00:15:00 
+WET_STEP	00:05:00 
+DRY_STEP	01:00:00 
+ROUTING_STEP	0:00:30 
+INERTIAL_DAMPING	PARTIAL 
+NORMAL_FLOW_LIMITED	BOTH 
+FORCE_MAIN_EQUATION	H-W 
+VARIABLE_STEP	0.75 
+LENGTHENING_STEP	0 
+MIN_SURFAREA	0 
+MAX_TRIALS	0 
+HEAD_TOLERANCE	0 
+SYS_FLOW_TOL	5 
+LAT_FLOW_TOL	5 
+MINIMUM_STEP	0.5 
+THREADS	1 
 [EVAPORATION]
-;;Data Source    Parameters
-;;-------------- ----------------
-CONSTANT         0.0
-DRY_ONLY         NO
-
+CONSTANT	0.0 
+DRY_ONLY	NO 
 [RAINGAGES]
-;;Name           Format    Interval SCF      Source    
-;;-------------- --------- ------ ------ ----------
-RG               INTENSITY 0:05     1.0      TIMESERIES 2-yr            
-
+RG	INTENSITY 0:05 1.0 TIMESERIES 2-yr 
 [SUBCATCHMENTS]
-;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
-;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
-S1               RG               outfall          46.46    20       3750     8        0                 
-S2               RG               S1               18.39    45       5000     1.45     0                        
-S3               RG               S1               60.51    35       4375     2        0                        
-S4               RG               S3               30.26    40       11250    2.66     0                        
-S5               RG               S4               73.34    17       3750     3.2      0                    
-S6               RG               S7               25.92    45       3750     1.14     0                        
-S7               RG               S4               42.08    30       3750     1.73     0                        
-
+S1	RG outfall 46.46 20 3750 8 0 
+S2	RG S1 18.39 45 5000 1.45 0 
+S3	RG S1 60.51 35 4375 2 0 
+S4	RG S3 30.26 40 11250 2.66 0 
+S5	RG S4 73.34 17 3750 3.2 0 
+S6	RG S7 25.92 45 3750 1.14 0 
+S7	RG S4 42.08 30 3750 1.73 0 
 [SUBAREAS]
-;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
-;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
-S1               0.01       0.1        0.05       0.05       25         OUTLET      
-S2               0.01       0.1        0.05       0.05       25         OUTLET    
-S3               0.01       0.1        0.05       0.05       25         OUTLET     
-S4               0.01       0.1        0.05       0.05       25         OUTLET    
-S5               0.01       0.1        0.05       0.05       25         OUTLET    
-S6               0.01       0.1        0.05       0.05       25         OUTLET    
-S7               0.01       0.1        0.05       0.05       25         OUTLET    
-
+S1	0.01 0.1 0.05 0.05 25 OUTLET 
+S2	0.01 0.1 0.05 0.05 25 OUTLET 
+S3	0.01 0.1 0.05 0.05 25 OUTLET 
+S4	0.01 0.1 0.05 0.05 25 OUTLET 
+S5	0.01 0.1 0.05 0.05 25 OUTLET 
+S6	0.01 0.1 0.05 0.05 25 OUTLET 
+S7	0.01 0.1 0.05 0.05 25 OUTLET 
 [INFILTRATION]
-;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
-;;-------------- ---------- ---------- ---------- ---------- ----------
-S1               3.0        0.5        4          7          0         
-S2               3.0        0.5        4          7          0         
-S3               3.0        0.5        4          7          0         
-S4               3.0        0.5        4          7          0         
-S5               3.0        0.5        4          7          0         
-S6               3.0        0.5        4          7          0         
-S7               3.0        0.5        4          7          0         
-
+S1	3.0 0.5 4 7 0 
+S2	3.0 0.5 4 7 0 
+S3	3.0 0.5 4 7 0 
+S4	3.0 0.5 4 7 0 
+S5	3.0 0.5 4 7 0 
+S6	3.0 0.5 4 7 0 
+S7	3.0 0.5 4 7 0 
 [LID_CONTROLS]
-;;Name           Type/Layer Parameters
-;;-------------- ---------- ----------
-simons_TT_infil  IT
-simons_TT_infil  SURFACE    3          0.5        0.05       1.0        5         
-simons_TT_infil  STORAGE    48         0.75       1.5        0         
-simons_TT_infil  DRAIN      0.05       0.5        12         6         
-
-simons_TT_deten  IT
-simons_TT_deten  SURFACE    3          0.5        0.05       1.0        5         
-simons_TT_deten  STORAGE    48         0.75       .07        0         
-simons_TT_deten  DRAIN      .5         0.5        4          6         
-
-wister_RG        RG
-wister_RG        SURFACE    36         0.9        0.03       20         5         
-wister_RG        SOIL       6          0.5        0.2        0.1        0.5        10.0       3.5       
-
-wakefield_RG     RG
-wakefield_RG     SURFACE    36         0.7        0.1        1.0        5         
-wakefield_RG     SOIL       3          0.5        0.2        0.1        0.5        10.0       3.5       
-
-waterview_SWP    BC
-waterview_SWP    SURFACE    8          0.6        0.03       1.0        5         
-waterview_SWP    SOIL       8          0.5        0.2        0.1        0.5        10.0       3.5       
-waterview_SWP    STORAGE    4          0.75       0.5        0         
-waterview_SWP    DRAIN      0          0.5        1          6         
-
-waterview_PP     PP
-waterview_PP     SURFACE    0          0.0        0.1        1.0        5         
-waterview_PP     PAVEMENT   3          0.15       0          100        0         
-waterview_PP     SOIL       12         0.5        0.2        0.1        0.5        10.0       3.5       
-waterview_PP     STORAGE    6          0.75       0.5        0         
-waterview_PP     DRAIN      0          0.5        0          6         
-
-Morris_TT_infil  IT
-Morris_TT_infil  SURFACE    3          0.5        0.05       1.0        5         
-Morris_TT_infil  STORAGE    48         0.75       1.5        0         
-Morris_TT_infil  DRAIN      0.05       0.5        12         6         
-
-Pleasant_TT_infil IT
-Pleasant_TT_infil SURFACE    3          .5         0.05       1.0        5         
-Pleasant_TT_infil STORAGE    48         0.75       1.5        0         
-Pleasant_TT_infil DRAIN      .4         0.5        0          6         
-
-Harpers_hallow_Swale VS
-Harpers_hallow_Swale SURFACE    36         0.6        0.025      1.0        5         
-
-Kemble_Swale     VS
-Kemble_Swale     SURFACE    36         .6         0.025      1.0        5         
-
-kemble_RG        RG
-kemble_RG        SURFACE    36         0.8        0.035      20         5         
-kemble_RG        SOIL       4          0.5        0.2        0.1        0.5        10.0       3.5       
-
-kemble_IT        IT
-kemble_IT        SURFACE    4          0.5        0.1        1.0        5         
-kemble_IT        STORAGE    36         0.75       0.5        0         
-kemble_IT        DRAIN      1          0.5        6          6         
-
-stenton_RG       RG
-stenton_RG       SURFACE    24         0.0        0.1        30         5         
-stenton_RG       SOIL       6          0.5        0.2        0.1        0.5        10.0       3.5       
-
-Cliveden_RG_infil RG
-Cliveden_RG_infil SURFACE    1012       0.75       0.025      10         5         
-Cliveden_RG_infil SOIL       12         0.5        0.2        0.1        0.5        10.0       3.5       
-
-Anna_TT_infil    IT
-Anna_TT_infil    SURFACE    3          0          0.05       1.0        5         
-Anna_TT_infil    STORAGE    48         0.75       1.5        0         
-Anna_TT_infil    DRAIN      0          0.5        6          6         
-
-waterview_tree_infil IT
-waterview_tree_infil SURFACE    3          0.0        0.05       1.0        5         
-waterview_tree_infil STORAGE    48         0.75       1          0         
-waterview_tree_infil DRAIN      0          0.5        6          6         
-
-Morris_TT_deten  IT
-Morris_TT_deten  SURFACE    3          0.5        0.05       1.0        5         
-Morris_TT_deten  STORAGE    48         0.75       0.07       0         
-Morris_TT_deten  DRAIN      0.5        0.5        4          6         
-
-cliveden_RG_deten BC
-cliveden_RG_deten SURFACE    24         0.75       0.3        1.0        5         
-cliveden_RG_deten SOIL       3          0.5        0.2        0.1        0.5        10.0       3.5       
-cliveden_RG_deten STORAGE    12         0.75       0.1        0         
-cliveden_RG_deten DRAIN      0          0.5        6          6         
-
+simons_TT_infil	IT
+simons_TT_infil	SURFACE 3 0.5 0.05 1.0 5 
+simons_TT_infil	STORAGE 48 0.75 1.5 0 
+simons_TT_infil	DRAIN 0.05 0.5 12 6 
+simons_TT_deten	IT
+simons_TT_deten	SURFACE 3 0.5 0.05 1.0 5 
+simons_TT_deten	STORAGE 48 0.75 .07 0 
+simons_TT_deten	DRAIN .5 0.5 4 6 
+wister_RG	RG
+wister_RG	SURFACE 36 0.9 0.03 20 5 
+wister_RG	SOIL 6 0.5 0.2 0.1 0.5 10.0 3.5 
+wakefield_RG	RG
+wakefield_RG	SURFACE 36 0.7 0.1 1.0 5 
+wakefield_RG	SOIL 3 0.5 0.2 0.1 0.5 10.0 3.5 
+waterview_SWP	BC
+waterview_SWP	SURFACE 8 0.6 0.03 1.0 5 
+waterview_SWP	SOIL 8 0.5 0.2 0.1 0.5 10.0 3.5 
+waterview_SWP	STORAGE 4 0.75 0.5 0 
+waterview_SWP	DRAIN 0 0.5 1 6 
+waterview_PP	PP
+waterview_PP	SURFACE 0 0.0 0.1 1.0 5 
+waterview_PP	PAVEMENT 3 0.15 0 100 0 
+waterview_PP	SOIL 12 0.5 0.2 0.1 0.5 10.0 3.5 
+waterview_PP	STORAGE 6 0.75 0.5 0 
+waterview_PP	DRAIN 0 0.5 0 6 
+Morris_TT_infil	IT
+Morris_TT_infil	SURFACE 3 0.5 0.05 1.0 5 
+Morris_TT_infil	STORAGE 48 0.75 1.5 0 
+Morris_TT_infil	DRAIN 0.05 0.5 12 6 
+Pleasant_TT_infil	IT
+Pleasant_TT_infil	SURFACE 3 .5 0.05 1.0 5 
+Pleasant_TT_infil	STORAGE 48 0.75 1.5 0 
+Pleasant_TT_infil	DRAIN .4 0.5 0 6 
+Harpers_hallow_Swale	VS
+Harpers_hallow_Swale	SURFACE 36 0.6 0.025 1.0 5 
+Kemble_Swale	VS
+Kemble_Swale	SURFACE 36 .6 0.025 1.0 5 
+kemble_RG	RG
+kemble_RG	SURFACE 36 0.8 0.035 20 5 
+kemble_RG	SOIL 4 0.5 0.2 0.1 0.5 10.0 3.5 
+kemble_IT	IT
+kemble_IT	SURFACE 4 0.5 0.1 1.0 5 
+kemble_IT	STORAGE 36 0.75 0.5 0 
+kemble_IT	DRAIN 1 0.5 6 6 
+stenton_RG	RG
+stenton_RG	SURFACE 24 0.0 0.1 30 5 
+stenton_RG	SOIL 6 0.5 0.2 0.1 0.5 10.0 3.5 
+Cliveden_RG_infil	RG
+Cliveden_RG_infil	SURFACE 1012 0.75 0.025 10 5 
+Cliveden_RG_infil	SOIL 12 0.5 0.2 0.1 0.5 10.0 3.5 
+Anna_TT_infil	IT
+Anna_TT_infil	SURFACE 3 0 0.05 1.0 5 
+Anna_TT_infil	STORAGE 48 0.75 1.5 0 
+Anna_TT_infil	DRAIN 0 0.5 6 6 
+waterview_tree_infil	IT
+waterview_tree_infil	SURFACE 3 0.0 0.05 1.0 5 
+waterview_tree_infil	STORAGE 48 0.75 1 0 
+waterview_tree_infil	DRAIN 0 0.5 6 6 
+Morris_TT_deten	IT
+Morris_TT_deten	SURFACE 3 0.5 0.05 1.0 5 
+Morris_TT_deten	STORAGE 48 0.75 0.07 0 
+Morris_TT_deten	DRAIN 0.5 0.5 4 6 
+cliveden_RG_deten	BC
+cliveden_RG_deten	SURFACE 24 0.75 0.3 1.0 5 
+cliveden_RG_deten	SOIL 3 0.5 0.2 0.1 0.5 10.0 3.5 
+cliveden_RG_deten	STORAGE 12 0.75 0.1 0 
+cliveden_RG_deten	DRAIN 0 0.5 6 6 
 [LID_USAGE]
-;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
-;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
-S1               wister_RG        4       2923       40         0          20         0       
-S1               wakefield_RG     2       741        15         0          20         0         
-S2               simons_TT_infil  3       365        7          0          2          0         
-S2               simons_TT_deten  2       316        5          0          2          1         
-S2               Harpers_hallow_Swale 1       972        30         0          3          0         
-S2               kemble_RG        2       3686       45         0          4          0         
-S2               Kemble_Swale     1       7373       20         0          6          0         
-S2               kemble_IT        3       1673       5          0          3          0         
-S4               waterview_SWP    3       344        7          0          2          0         
-S4               waterview_PP     1       1106       5          0          2          0         
-S4               Pleasant_TT_infil 2       288        5          0          2          0         
-S4               Cliveden_RG_infil 2       691        20         0          4          0         
-S4               waterview_tree_infil 2       484        5          0          1          0         
-S4               cliveden_RG_deten 1       1229       30         0          4          0         
-S6               Morris_TT_deten  2       444        5          0          5          0         
-S6               stenton_RG       1       1283       30         0          5          0         
-S6               Anna_TT_infil    4       760        5          0          2          0         
-S6               Morris_TT_infil  12      445        5          0          3          0         
-
+S1	wister_RG	4 2923 40 0 20 0     
+S1	wakefield_RG	2 741 15 0 20 0     
+S2	simons_TT_infil	3 365 7 0 2 0     
+S2	simons_TT_deten	2 316 5 0 2 1     
+S2	Harpers_hallow_Swale	1 972 30 0 3 0     
+S2	kemble_RG	2 3686 45 0 4 0     
+S2	Kemble_Swale	1 7373 20 0 6 0     
+S2	kemble_IT	3 1673 5 0 3 0     
+S4	waterview_SWP	3 344 7 0 2 0     
+S4	waterview_PP	1 1106 5 0 2 0     
+S4	Pleasant_TT_infil	2 288 5 0 2 0     
+S4	Cliveden_RG_infil	2 691 20 0 4 0     
+S4	waterview_tree_infil	2 484 5 0 1 0     
+S4	cliveden_RG_deten	1 1229 30 0 4 0     
+S6	Morris_TT_deten	2 444 5 0 5 0     
+S6	stenton_RG	1 1283 30 0 5 0     
+S6	Anna_TT_infil	4 760 5 0 2 0     
+S6	Morris_TT_infil	12 445 5 0 3 0     
 [OUTFALLS]
-;;Name           Elevation  Type       Stage Data       Gated    Route To        
-;;-------------- ---------- ---------- ---------------- -------- ----------------
-outfall          0          FREE                        NO                       
-
+outfall	0 FREE NO 
 [TIMESERIES]
-;;Name           Date       Time       Value     
-;;-------------- ---------- ---------- ----------
-2-yr                        0:00       0.29      
-2-yr                        0:05       0.33      
-2-yr                        0:10       0.38      
-2-yr                        0:15       0.64      
-2-yr                        0:20       0.81      
-2-yr                        0:25       1.57      
-2-yr                        0:30       2.85      
-2-yr                        0:35       1.18      
-2-yr                        0:40       0.71      
-2-yr                        0:45       0.42      
-2-yr                        0:50       0.35      
-2-yr                        0:55       0.3       
-2-yr                        1:00       0.2       
-2-yr                        1:05       0.19      
-2-yr                        1:10       0.18      
-2-yr                        1:15       0.17      
-2-yr                        1:20       0.17      
-2-yr                        1:25       0.16      
-2-yr                        1:30       0.15      
-2-yr                        1:35       0.15      
-2-yr                        1:40       0.14      
-2-yr                        1:45       0.14      
-2-yr                        1:50       0.13      
-2-yr                        1:55       0.13      
-;
-10-yr                       0:00       0.49      
-10-yr                       0:05       0.56      
-10-yr                       0:10       0.65      
-10-yr                       0:15       1.09      
-10-yr                       0:20       1.39      
-10-yr                       0:25       2.69      
-10-yr                       0:30       4.87      
-10-yr                       0:35       2.02      
-10-yr                       0:40       1.21      
-10-yr                       0:45       0.71      
-10-yr                       0:50       0.6       
-10-yr                       0:55       0.52      
-10-yr                       1:00       0.39      
-10-yr                       1:05       0.37      
-10-yr                       1:10       0.35      
-10-yr                       1:15       0.34      
-10-yr                       1:20       0.32      
-10-yr                       1:25       0.31      
-10-yr                       1:30       0.3       
-10-yr                       1:35       0.29      
-10-yr                       1:40       0.28      
-10-yr                       1:45       0.27      
-10-yr                       1:50       0.26      
-10-yr                       1:55       0.25      
-;
-100-yr                      0:00       1         
-100-yr                      0:05       1.14      
-100-yr                      0:10       1.33      
-100-yr                      0:15       2.23      
-100-yr                      0:20       2.84      
-100-yr                      0:25       5.49      
-100-yr                      0:30       9.95      
-100-yr                      0:35       4.12      
-100-yr                      0:40       2.48      
-100-yr                      0:45       1.46      
-100-yr                      0:50       1.22      
-100-yr                      0:55       1.06      
-100-yr                      1:00       1         
-100-yr                      1:05       0.95      
-100-yr                      1:10       0.91      
-100-yr                      1:15       0.87      
-100-yr                      1:20       0.84      
-100-yr                      1:25       0.81      
-100-yr                      1:30       0.78      
-100-yr                      1:35       0.75      
-100-yr                      1:40       0.73      
-100-yr                      1:45       0.71      
-100-yr                      1:50       0.69      
-100-yr                      1:55       0.67      
-
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+2-yr	1:55 0.13 
+;	
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+10-yr	1:55 0.25 
+;	
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
+100-yr	1:55 0.67 
 [REPORT]
-;;Reporting Options
-INPUT      NO
-CONTROLS   NO
-SUBCATCHMENTS ALL
-NODES ALL
-LINKS ALL
-
-[TAGS]
-
-[MAP]
-DIMENSIONS 0.000 0.000 10000.000 10000.000
-Units      None
-
-[COORDINATES]
-;;Node           X-Coord            Y-Coord           
-;;-------------- ------------------ ------------------
-outfall          7229.299           2667.197          
-
-[VERTICES]
-;;Link           X-Coord            Y-Coord           
-;;-------------- ------------------ ------------------
-
-[Polygons]
-;;Subcatchment   X-Coord            Y-Coord           
-;;-------------- ------------------ ------------------
-S1               8539.756           3151.784          
-S1               8539.756           3151.784          
-S1               8539.756           3151.784          
-S1               8539.756           3151.784          
-S1               8565.640           3169.040          
-S1               8582.896           3143.156          
-S1               8565.640           3091.387          
-S1               8574.268           2953.338          
-S1               8565.640           2823.917          
-S1               8513.872           2823.917          
-S1               8505.244           2720.380          
-S1               8444.847           2720.380          
-S1               8453.475           2703.123          
-S1               8272.285           2685.867          
-S1               8255.029           2565.074          
-S1               8237.773           2504.677          
-S1               8160.120           2487.421          
-S1               8186.004           2427.024          
-S1               8047.955           2383.884          
-S1               8004.814           2297.603          
-S1               7953.046           2297.603          
-S1               7901.277           2263.091          
-S1               7849.509           2211.322          
-S1               7780.484           2159.554          
-S1               7797.740           2133.669          
-S1               7884.021           2081.901          
-S1               7884.021           2038.760          
-S1               7978.930           2021.504          
-S1               7150.634           1909.339          
-S1               6167.031           2573.702          
-S1               6684.717           3307.090          
-S1               7547.526           2944.710          
-S1               8539.756           3169.040          
-S2               8511.791           3172.648          
-S2               8511.791           3233.045          
-S2               8615.328           3233.045          
-S2               8649.841           3250.301          
-S2               8667.097           3319.326          
-S2               8692.981           3388.351          
-S2               8701.609           3526.400          
-S2               8736.122           3638.565          
-S2               8753.378           3742.102          
-S2               8701.609           3767.986          
-S2               8701.609           3906.036          
-S2               8649.841           3992.317          
-S2               8563.560           4000.945          
-S2               8554.932           4095.854          
-S2               8460.023           4121.738          
-S2               8390.998           4121.738          
-S2               8313.345           4173.507          
-S2               8252.949           4190.763          
-S2               8261.577           4328.812          
-S2               8175.296           4363.325          
-S2               8123.527           4363.325          
-S2               8054.503           4397.837          
-S2               8045.875           4475.490          
-S2               7925.081           4484.118          
-S2               7856.057           4518.630          
-S2               7769.776           4587.655          
-S2               7769.776           4682.564          
-S2               7787.032           4820.613          
-S2               7804.288           4846.498          
-S2               7804.288           4941.407          
-S2               7692.123           4958.663          
-S2               7709.379           5148.481          
-S2               7597.214           5148.481          
-S2               7597.214           5191.621          
-S2               7476.421           5234.762          
-S2               7467.793           5269.274          
-S2               7433.280           5269.274          
-S2               7416.024           5346.927          
-S2               7416.024           5424.579          
-S2               7372.884           5433.208          
-S2               7355.627           5623.026          
-S2               7303.859           5640.282          
-S2               7303.859           5700.678          
-S2               7364.256           5726.563          
-S2               7381.512           5795.587          
-S2               7416.024           5890.496          
-S2               7433.280           5994.033          
-S2               7467.793           6080.314          
-S2               7277.975           6157.967          
-S2               7286.603           6235.620          
-S2               7217.578           6235.620          
-S2               7088.157           6408.182          
-S2               7053.644           6408.182          
-S2               6872.454           6667.024          
-S2               6898.339           6701.537          
-S2               6863.826           6701.537          
-S2               6794.802           6770.561          
-S2               6708.521           6848.214          
-S2               6656.752           6848.214          
-S2               6656.752           6899.983          
-S2               6622.240           6917.239          
-S2               6544.587           6882.727          
-S2               6544.587           6960.379          
-S2               6458.306           6994.892          
-S2               6415.166           7072.544          
-S2               5776.687           6554.859          
-S2               6432.422           5484.976          
-S2               5517.844           4458.234          
-S2               6682.636           3293.442          
-S2               7554.073           2948.318          
-S2               8520.419           3172.648          
-S3               5517.844           4475.490          
-S3               4801.713           3526.400          
-S3               5051.928           2266.699          
-S3               5077.812           2266.699          
-S3               5086.440           2370.236          
-S3               5120.952           2378.864          
-S3               5146.837           2309.839          
-S3               5198.605           2283.955          
-S3               5293.514           2223.559          
-S3               5345.283           2258.071          
-S3               5397.051           2283.955          
-S3               5552.357           2283.955          
-S3               5638.638           2275.327          
-S3               5707.662           2275.327          
-S3               5707.662           2214.930          
-S3               5733.547           2214.930          
-S3               5768.059           2258.071          
-S3               5793.943           2240.815          
-S3               5914.737           2240.815          
-S3               5957.877           2240.815          
-S3               5880.224           2163.162          
-S3               5888.852           2076.881          
-S3               5940.621           2076.881          
-S3               5940.621           2025.112          
-S3               5906.108           2016.484          
-S3               5906.108           1947.460          
-S3               5966.505           1947.460          
-S3               6070.042           1843.923          
-S3               6216.720           1818.038          
-S3               6225.348           1852.551          
-S3               6277.116           1843.923          
-S3               6380.653           1869.807          
-S3               6397.910           1792.154          
-S3               6484.190           1723.129          
-S3               6639.496           1628.220          
-S3               6665.380           1697.245          
-S3               6768.917           1662.733          
-S3               6820.686           1472.915          
-S3               6967.363           1464.287          
-S3               7036.388           1507.427          
-S3               7079.529           1498.799          
-S3               7329.743           1490.171          
-S3               7355.627           1429.774          
-S3               7433.280           1429.774          
-S3               7476.421           1369.378          
-S3               7588.586           1352.122          
-S3               7588.586           1326.237          
-S3               7657.611           1326.237          
-S3               7692.123           1360.750          
-S3               7709.379           1360.750          
-S3               7830.172           1300.353          
-S3               7821.544           1386.634          
-S3               7787.032           1395.262          
-S3               7787.032           1481.543          
-S3               7873.313           1516.055          
-S3               7873.313           1585.080          
-S3               7812.916           1610.964          
-S3               7812.916           1628.220          
-S3               7890.569           1654.105          
-S3               7985.478           1714.501          
-S3               8080.387           1757.642          
-S3               8114.899           1774.898          
-S3               8183.924           1843.923          
-S3               8123.527           1912.947          
-S3               8097.643           1938.832          
-S3               8045.875           1981.972          
-S3               8019.990           1981.972          
-S3               8019.990           1999.228          
-S3               7950.966           1999.228          
-S3               7165.809           1878.435          
-S3               6182.207           2577.310          
-S3               6665.380           3310.698          
-S3               5517.844           4458.234          
-S4               5069.184           2301.211          
-S4               4801.713           3569.540          
-S4               5526.473           4484.118          
-S4               4784.457           4415.093          
-S4               4327.168           5277.902          
-S4               3895.764           5260.646          
-S4               3498.872           6459.950          
-S4               2299.567           5873.240          
-S4               2256.427           5666.166          
-S4               2359.964           5562.629          
-S4               2411.732           5571.257          
-S4               2532.526           5545.373          
-S4               2679.203           5588.513          
-S4               2480.757           5372.811          
-S4               2472.129           5295.158          
-S4               2567.038           5200.249          
-S4               2506.641           5157.109          
-S4               2506.641           5027.687          
-S4               2636.063           4975.919          
-S4               2636.063           4837.869          
-S4               2920.790           4717.076          
-S4               2756.856           4622.167          
-S4               2825.881           4432.349          
-S4               2869.021           4294.300          
-S4               2886.277           4277.044          
-S4               2713.716           4035.457          
-S4               2843.137           3923.292          
-S4               2610.179           3690.334          
-S4               2627.435           3629.937          
-S4               2687.831           3560.912          
-S4               2670.575           3379.722          
-S4               2558.410           3319.326          
-S4               2558.410           3258.929          
-S4               2722.344           3198.533          
-S4               2748.228           3025.971          
-S4               2627.435           2922.434          
-S4               2670.575           2818.897          
-S4               2860.393           2706.731          
-S4               2955.302           2723.988          
-S4               3214.145           2706.731          
-S4               3403.963           2741.244          
-S4               3516.128           2594.566          
-S4               3498.872           2499.657          
-S4               3498.872           2301.211          
-S4               3602.409           2214.930          
-S4               3611.037           2076.881          
-S4               3705.946           2016.484          
-S4               3766.342           2050.997          
-S4               3964.788           1912.947          
-S4               4128.722           2007.856          
-S4               4275.400           1956.088          
-S4               4715.432           1912.947          
-S4               4844.854           1973.344          
-S4               5008.787           2085.509          
-S4               5069.184           2163.162          
-S4               5069.184           2266.699          
-S5               3800.855           5510.860          
-S5               3895.764           5260.646          
-S5               4335.796           5277.902          
-S5               4775.829           4423.721          
-S5               5509.216           4466.862          
-S5               6415.166           5502.232          
-S5               5845.712           6442.694          
-S5               5017.415           5752.447          
-S5               4646.408           5994.033          
-S5               3818.111           5510.860          
-S6               2765.484           7892.213          
-S6               4447.961           7141.569          
-S6               4620.523           6011.290          
-S6               5008.787           5752.447          
-S6               5862.968           6416.810          
-S6               5768.059           6572.115          
-S6               6458.306           7107.057          
-S6               6104.555           7357.271          
-S6               6147.695           7409.040          
-S6               5699.034           7650.626          
-S6               5655.894           7814.560          
-S6               5742.175           7874.957          
-S6               5621.382           7926.725          
-S6               5586.869           8013.006          
-S6               5440.192           8090.659          
-S6               5509.216           8133.799          
-S6               5509.216           8185.568          
-S6               5414.307           8168.312          
-S6               5397.051           8082.031          
-S6               5215.861           8168.312          
-S6               5172.721           8133.799          
-S6               5034.672           8202.824          
-S6               4957.019           8185.568          
-S6               4887.994           8263.221          
-S6               4568.755           8323.617          
-S6               4266.772           8461.667          
-S6               4223.631           8461.667          
-S6               4137.350           8504.807          
-S6               3895.764           8530.692          
-S6               3861.251           8496.179          
-S6               3714.574           8496.179          
-S6               3688.690           8582.460          
-S6               3516.128           8616.972          
-S6               3291.798           8668.741          
-S6               3032.955           8634.229          
-S6               3024.327           8599.716          
-S6               2877.649           8496.179          
-S6               2834.509           8496.179          
-S6               2601.550           8384.014          
-S6               2627.435           8289.105          
-S6               2584.294           8142.428          
-S6               2687.831           8056.147          
-S6               2601.550           7995.750          
-S6               2592.922           7918.097          
-S6               2722.344           7926.725          
-S7               3490.244           6425.438          
-S7               3818.111           5536.745          
-S7               4232.259           5748.133          
-S7               4629.151           5976.777          
-S7               4456.590           7132.941          
-S7               2756.856           7892.213          
-S7               2756.856           7849.072          
-S7               2618.807           7771.420          
-S7               2618.807           7650.626          
-S7               2506.641           7547.089          
-S7               2342.708           7581.602          
-S7               2239.171           7538.461          
-S7               2101.121           7452.180          
-S7               1816.394           7409.040          
-S7               1652.461           7365.900          
-S7               1643.833           7288.247          
-S7               1531.667           7288.247          
-S7               1514.411           7253.734          
-S7               1583.436           7167.453          
-S7               1695.601           7115.685          
-S7               1695.601           6986.264          
-S7               1781.882           6977.636          
-S7               1781.882           6969.007          
-S7               1635.204           6822.330          
-S7               1712.857           6753.305          
-S7               1505.783           6753.305          
-S7               1497.155           6710.165          
-S7               1264.197           6563.487          
-S7               1445.387           6321.901          
-S7               1402.246           6235.620          
-S7               1643.833           6192.479          
-S7               1937.188           6209.736          
-S7               2032.097           6123.455          
-S7               2196.030           6106.199          
-S7               2170.146           6002.661          
-S7               2282.311           5881.868          
-
-[SYMBOLS]
-;;Gage           X-Coord            Y-Coord           
-;;-------------- ------------------ ------------------
-RG               -469.716           8652.658          
-
-
-[BACKDROP]
-FILE       "C:\Users\Jonathan\My Documents\EPA SWMM Projects\wingohocking1.jpg"
-DIMENSIONS 871.261 0.000 9128.739 10000.000
+INPUT	NO 
+CONTROLS	NO 
+SUBCATCHMENTS	ALL 
+NODES	ALL 
+LINKS	ALL 
