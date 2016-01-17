@@ -1,0 +1,243 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.010)
+  --------------------------------------------------------------
+
+  Example 2 
+  Surface Drainage System 
+  
+  *********************
+  Rainfall File Summary
+  *********************
+  Station    First        Last         Recording   Periods    Periods    Periods
+  ID         Date         Date         Frequency  w/Precip    Missing    Malfunc.
+  -------------------------------------------------------------------------------
+  *          JAN-01-2008  MAY-01-2009     60 min       784          0          0
+
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Flow Routing Method ...... KINWAVE
+  Starting Date ............ JAN-01-2008 00:00:00
+  Ending Date .............. JAN-01-2009 00:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:01:00
+  Wet Time Step ............ 00:01:00
+  Dry Time Step ............ 01:00:00
+  Routing Time Step ........ 15.00 sec
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Initial LID Storage ......         0.006         0.003
+  Total Precipitation ......        97.195        40.330
+  Evaporation Loss .........         8.132         3.374
+  Infiltration Loss ........        42.508        17.638
+  Surface Runoff ...........        46.562        19.320
+  Final Storage ............         0.010         0.004
+  Continuity Error (%) .....        -0.011
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......        46.562        15.173
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........        46.646        15.200
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.045         0.015
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....        -0.278
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :    15.00 sec
+  Average Time Step           :    15.00 sec
+  Maximum Time Step           :    15.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     1.00
+  Percent Not Converging      :     0.00
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  --------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in    10^6 gal      CFS
+  --------------------------------------------------------------------------------------------------------
+  S1                        40.33       0.00       3.60      22.77      13.95        1.72     4.34   0.346
+  S2                        40.33       0.00       3.65      14.40      22.28        2.87     5.65   0.552
+  S3                        40.33       0.00       2.32      23.56      14.45        1.47     4.16   0.358
+  S4                        40.33       0.00       2.91      19.51      17.92        3.30     7.80   0.444
+  S5                        40.33       0.00       5.06       4.77      30.51        3.97     6.07   0.756
+  S6                        40.33       0.00       5.48       1.94      32.92        1.77     2.54   0.816
+  S7                        40.33       0.00       0.17      39.04       1.12        0.07     2.04   0.028
+  
+
+  ***********************
+  LID Performance Summary
+  ***********************
+
+  --------------------------------------------------------------------------------------------------------------------
+                                         Total      Evap     Infil   Surface    Drain    Initial     Final  Continuity
+                                        Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
+  Subcatchment      LID Control             in        in        in        in        in        in        in           %
+  --------------------------------------------------------------------------------------------------------------------
+  S1                wakefield_Br_RG     100.06     13.91     85.98      0.00      0.00      0.30      0.48       -0.02
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  J1                   JUNCTION     0.00     0.37  4973.37   222  19:00        0.00
+  J2                   JUNCTION     0.01     0.46  4969.46   222  19:00        0.00
+  J3                   JUNCTION     0.00     0.53  4973.53   222  19:00        0.00
+  J4                   JUNCTION     0.00     0.53  4971.53   222  19:00        0.00
+  J5                   JUNCTION     0.01     0.79  4970.59   222  19:00        0.00
+  J6                   JUNCTION     0.01     0.83  4969.83   222  19:00        0.00
+  J7                   JUNCTION     0.00     0.50  4972.00   222  19:00        0.00
+  J8                   JUNCTION     0.01     0.84  4967.34   222  19:00        0.00
+  J9                   JUNCTION     0.01     1.13  4965.93   222  19:01        0.00
+  J10                  JUNCTION     0.01     1.18  4964.98   222  19:00        0.00
+  J11                  JUNCTION     4.01     4.48  4967.48   222  19:01        0.00
+  O1                   OUTFALL      0.01     1.30  4963.30   222  19:00        0.00
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  J1                   JUNCTION      4.34     4.34   222  19:00        1.72        1.72       0.000
+  J2                   JUNCTION      5.65     5.65   222  19:00        2.87        2.87       0.000
+  J3                   JUNCTION      4.16     4.16   222  19:00        1.47        1.47       0.000
+  J4                   JUNCTION      0.00     4.16   222  19:00           0        1.47       0.000
+  J5                   JUNCTION      0.00     8.70   222  19:00           0        3.19       0.000
+  J6                   JUNCTION      0.00    16.19   222  19:00           0         6.5       0.000
+  J7                   JUNCTION      7.80     7.80   222  19:00         3.3         3.3       0.000
+  J8                   JUNCTION      0.00    16.15   222  19:00           0         6.5       0.000
+  J9                   JUNCTION      0.00    16.17   222  19:01           0        6.51       0.000
+  J10                  JUNCTION      8.12    23.61   222  19:00        4.04        10.6       0.000
+  J11                  JUNCTION      2.54    31.80   222  19:00        1.77        15.2       0.000
+  O1                   OUTFALL       0.00    31.80   222  19:00           0        15.2       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  Surcharging occurs when water rises above the top of the highest conduit.
+  ---------------------------------------------------------------------
+                                               Max. Height   Min. Depth
+                                   Hours       Above Crown    Below Rim
+  Node                 Type      Surcharged           Feet         Feet
+  ---------------------------------------------------------------------
+  J1                   JUNCTION     8784.00          0.370        2.630
+  J2                   JUNCTION     8784.00          0.464        0.536
+  J3                   JUNCTION     8784.00          0.531        1.719
+  J4                   JUNCTION     8784.00          0.531        2.469
+  J5                   JUNCTION     8784.00          0.791        2.209
+  J6                   JUNCTION     8784.00          0.826        2.674
+  J7                   JUNCTION     8784.00          0.504        2.496
+  J8                   JUNCTION     8784.00          0.845        2.655
+  J9                   JUNCTION     8784.00          1.130        1.870
+  J10                  JUNCTION     8784.00          1.182        1.818
+  J11                  JUNCTION     8784.00          4.479        0.521
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  O1                    12.81      0.50     31.80      15.199
+  -----------------------------------------------------------
+  System                12.81      0.50     31.80      15.199
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  C1                   CONDUIT      4.45   222  19:00      1.89    0.01    0.12
+  C2                   CONDUIT      6.16   222  19:01      2.65    0.14    0.46
+  C3                   CONDUIT      4.16   222  19:00      5.90    0.12    0.24
+  C4                   CONDUIT      4.25   222  19:00      1.48    0.02    0.14
+  C5                   CONDUIT      8.80   222  19:01      1.37    0.06    0.26
+  C6                   CONDUIT      7.96   222  19:00      2.21    0.02    0.17
+  C7                   CONDUIT     16.15   222  19:00      9.35    0.12    0.24
+  C8                   CONDUIT     16.17   222  19:01      2.13    0.06    0.28
+  C9                   CONDUIT     16.30   222  19:03      1.50    0.12    0.37
+  C10                  CONDUIT     23.63   222  19:00      1.87    0.13    0.39
+  C11                  CONDUIT     31.80   222  19:00      8.12    0.16    0.27
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+
+  Analysis begun on:  Thu Jan 14 19:07:26 2016
+  Analysis ended on:  Thu Jan 14 19:07:41 2016
+  Total elapsed time: 00:00:15

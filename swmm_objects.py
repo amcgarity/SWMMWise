@@ -53,12 +53,16 @@ class evaporation(category1d):
 		category1d.__init__(self,linelist)
 		#self.parse(linelist)
 
+class temperature(category1d):
+	heading = '[TEMPERATURE]'
+	def __init__(self,linelist):
+		category1d.__init__(self,linelist)
+
 class raingages(category1d):
 # this section will be treated as a parameter name followed by a string representing the rest of the line
 	heading = '[RAINGAGES]'
 	def __init__(self,linelist):
 		category1d.__init__(self,linelist)
-		#self.parse(linelist)
 
 class xsections(category1d):
 	heading = '[XSECTIONS]'
@@ -75,74 +79,86 @@ class report(category1d):
 	def __init__(self,linelist):
 		category1d.__init__(self,linelist)
 
-# NOTE: 2d category objects must have their own change functions and these are NOT YET IMPLEMENTED !!!
 class category2d:
 	def parse(self,linelist):
 		self.namelist = []   # list to hold parameter names in their original order
 		self.pardict = {}
 		for line in linelist:
 			wordlist = line.split()  # split the line into words
-			parname = wordlist[0]
-			self.namelist.append(parname)
+			objname = wordlist[0]
+			self.namelist.append(objname)  # object names found in swmm input file
 			n = len(wordlist)
-			m = self.npnames
-			valnamelist = []
-			valdict = {}
-			for i in range(1,n):   # assign only those values that exist in the swmm .inp file
-				if i <= m-1:
+			m = self.npnames   # number of parameter names defined in SWMM users guide
+			valnamelist = []   # will contain entries from the self.pnames list
+			valdict = {}      # for each line parsed, will contain values found indexed by a name from pnames
+			for i in range(0,m):   # assign ALL values defined in the SWMM manual
+				if i <= n-2:   # input file has provided a value for this pname
 					valnamelist.append(self.pnames[i])
-					valdict[self.pnames[i]] = wordlist[i]
-				else:
-					valdict[self.pnames[m-1]] = valdict[self.pnames[m-1]] + ' ' + wordlist[i]
-			self.pardict[parname] = (valnamelist,valdict)  # dictionary contains tuples	
+					valdict[self.pnames[i]] = wordlist[i+1]
+				else:     # input file has no value for this optional pname so assign empty string
+					valdict[self.pnames[i]] = ''	
+			if (n-1) > m:   # there must be a multiword parameter at the end of the line
+				# tack on the extra words found in the dat file to the last named parameter:
+				extraWords = valdict[self.pnames[m-1]]
+				for i in range(m,n):  # iterate over the extra words found at the end of the line
+					extraWords += (' '+wordlist[i])  # tack on a space followed by the next extra word
+				valdict[self.pnames[m-1]] = extraWords
+			self.pardict[objname] = (valnamelist,valdict)  # dictionary contains tuples	
 	def __init__(self,linelist,pnames):
 		self.pnames = pnames
 		self.npnames = len(self.pnames)
 		self.parse(linelist)
 	def output(self):
 		outstr = ''
-		for parname in self.namelist:
-			outstr = outstr + parname + '\t'
-			(valnamelist,valdict) = self.pardict[parname]
+		for objname in self.namelist:
+			outstr = outstr + objname + '\t'
+			(valnamelist,valdict) = self.pardict[objname]
 			for val in valnamelist:
 				outstr = outstr + valdict[val] + ' '
 			outstr = outstr + '\n'
 		return outstr
+	def change(self,objname,pname,newval):
+		(valnamelist,valdict) = self.pardict[objname]
+		valdict[pname] = newval
+		self.pardict[objname] = (valnamelist,valdict)
+	def get(self,objname,pname):
+		(valnamelist,valdict) = self.pardict[objname]
+		return valdict[pname]
 
 class subcatchments(category2d):
 	heading = '[SUBCATCHMENTS]'
 	def __init__(self,linelist):
-		pnames = ['Name', 'Rgage', 'OutID', 'Area', 'PctImperv', 'Width', 'Slope', 'Clength', 'Spack']
+		pnames = ['Rgage', 'OutID', 'Area', 'PctImperv', 'Width', 'Slope', 'Clength', 'Spack']
 		category2d.__init__(self,linelist,pnames)
 
 class subareas(category2d):
 	heading = '[SUBAREAS]'
 	def __init__(self,linelist):
-		pnames = ['Subcat', 'Nimp', 'Nperv', 'Simp', 'Sperv', 'PctZero', 'RouteTo', 'PctRted']
+		pnames = ['Nimp', 'Nperv', 'Simp', 'Sperv', 'PctZero', 'RouteTo', 'PctRted']
 		category2d.__init__(self,linelist,pnames)
 
 class infiltration(category2d):
 	heading = '[INFILTRATION]'
 	def __init__(self,linelist):
-		pnames = ['Subcat', 'Parameters']
+		pnames = ['Parameters']
 		category2d.__init__(self,linelist,pnames)
 
 class junctions(category2d):
 	heading = '[JUNCTIONS]'
 	def __init__(self,linelist):
-		pnames = ['Name', 'Elev', 'Ymax', 'Y0', 'Ysur', 'Apond']
+		pnames = ['Elev', 'Ymax', 'Y0', 'Ysur', 'Apond']
 		category2d.__init__(self,linelist,pnames)
 
 class outfalls(category2d):
 	heading = '[OUTFALLS]'
 	def __init__(self,linelist):
-		pnames = ['Name', 'Elev', 'Type', 'Parameters']
+		pnames = ['Elev', 'Type', 'Parameters']
 		category2d.__init__(self,linelist,pnames)
 
 class conduits(category2d):
 	heading = '[CONDUITS]'
 	def __init__(self,linelist):
-		pnames = ['Name', 'Node1', 'Node2', 'Length', 'N', 'Z1', 'Z2', 'Q0', 'Qmax']
+		pnames = ['Node1', 'Node2', 'Length', 'N', 'Z1', 'Z2', 'Q0', 'Qmax']
 		category2d.__init__(self,linelist,pnames)
 
 class category3d:
@@ -169,9 +185,9 @@ class category3d:
 
 	def output(self):  # This is the default output function that can be used with subclasses that do not have a change function
 		outstr = ''
-		for parname in self.namelist:
-			outstr = outstr + parname[0] + '\t' + parname[1] + '\t'
-			vallist = self.pardict[parname]
+		for objname in self.namelist:
+			outstr = outstr + objname[0] + '\t' + objname[1] + '\t'
+			vallist = self.pardict[objname]
 			for val in vallist:
 				outstr = outstr + val + ' '
 			outstr = outstr + '\n'
@@ -213,6 +229,9 @@ class lid:
 	def change(self,layer,param,newval):
 		parname = (layer,param)   # a tuple
 		self.valdict[parname] = newval
+	def get(self,layer,param):
+		parname = (layer,param)
+		return self.valdict[parname]
 		
 class lid_controls(category3d):
 	heading = '[LID_CONTROLS]'
@@ -249,6 +268,9 @@ class lid_controls(category3d):
 		ld.change(layer,param,newval)
 	def change(self,name,pname,pvalue):
 		self.change3d(name,pname[0],pname[1],pvalue)
+	def get(self,name,layer,pname):
+		ld = self.liddict[name]
+		return ld.get(layer,pname)
 
 class lid_usage(category3d):   # multiline category
 	heading = '[LID_USAGE]'
@@ -256,22 +278,28 @@ class lid_usage(category3d):   # multiline category
 		for name in self.namelist:
 			vallist = self.pardict[name]
 			n = len(vallist)
-			m = len(self.pnames)
+			m = len(self.pnames)  # number of parameter names defined in SWMM manual
 			self.valnamelist = []
 			valdict = {}
-			for i in range(0,m):   # assign only those values that exist in the swmm .inp file
-				if i <= n-1:
+			for i in range(0,m):   # assign ALL values defined in the SWMM manual
+				if i <= n-1:   # input file has provided a value for this pname
 					self.valnamelist.append(self.pnames[i])
 					valdict[self.pnames[i]] = vallist[i]
-				else:
-					valdict[self.pnames[i]] = ' '	
+				else:     # input file has no value for this optional pname so assign empty string
+					valdict[self.pnames[i]] = ''	
+			if (n-1) > m:   # there must be a multiword parameter at the end of the line
+				# tack on the extra words found in the dat file to the last named parameter:
+				extraWords = valdict[self.pnames[m-1]]
+				for i in range(m,n):  # iterate over the extra words found at the end of the line
+					extraWords += (' '+vallist[i])  # tack on a space followed by the next extra word
+				valdict[self.pnames[m-1]] = extraWords
 			self.liddict[name] = valdict
 	def __init__(self,linelist):
 		self.liddict = {}
 		self.pnames =  ['Number','Area','Width','InitSat','FromImp','ToPerv','RptFile','DrainTo']
 		category3d.__init__(self,linelist)
 		self.parse()
-		self.output()
+		#self.output()
 	def output(self):
 		outstr = ''
 		for name in self.namelist:
@@ -286,6 +314,9 @@ class lid_usage(category3d):   # multiline category
 		valdict = self.liddict[name]  # retrieve the current valdict for name
 		valdict[pname] = newval   # change the specified value
 		self.liddict[name] = valdict  # replace the current value with the new value
+	def get(self,name,pname):
+		valdict = self.liddict[name]
+		return valdict[pname]
 
 class swmm_model:
 	def __init__(self,name,section_names,sections):
@@ -293,7 +324,7 @@ class swmm_model:
 		self.section_names = section_names
 		self.sections = sections
 		# identify the SWMM section categories we currently support in this program:
-		self.catclasses = [title,options,evaporation,raingages,subcatchments,subareas,infiltration,
+		self.catclasses = [title,options,evaporation,temperature,raingages,subcatchments,subareas,infiltration,
 							lid_controls,lid_usage,
 							junctions,outfalls,conduits,xsections,timeseries,report]
 		self.catdict = {}
@@ -320,5 +351,72 @@ class swmm_model:
 		catclass = self.catdict[catheading]
 		self.moddict[catclass].change(objname,pname,pvalue)
 
-				
+	def lidChangeArea(self,subcatchment,lidname,newarea_str):
+		# This is a change in the category [LID_USAGE]
+		# AND to the PctImperv parameter of the subcatchment where the lids are placed
+		# But the new PctImperv parameter must be CALCULATED first!!
+		acre = 43560.0
+		lid_usage_class = self.moddict[lid_usage]
+
+		old_lid_area_str = lid_usage_class.get((subcatchment,lidname),'Area')  # LID area in SQUARE FEET
+		old_lid_area = float(old_lid_area_str)
+		old_lid_acre = old_lid_area/acre
+		lid_number_str = lid_usage_class.get((subcatchment,lidname),'Number')
+		lid_number = int(lid_number_str)
+		# now we must adjust the % Impervious parameter in the subcatchment:
+		subcatchments_class = self.moddict[subcatchments]
+		subcat_area_str = subcatchments_class.get(subcatchment,'Area')
+		subcat_area = float(subcat_area_str)  # Subcatchment area in acre
+		subcat_PctImperv_old_str = subcatchments_class.get(subcatchment,'PctImperv')
+		subcat_PctImperv_old = float(subcat_PctImperv_old_str)
+		imperv_area_old = (subcat_PctImperv_old/100.0)*subcat_area   # old impervious area in acre
+		imperv_area_original = imperv_area_old + lid_number*old_lid_acre  # original imperv area before any LID deployment
+		new_lid_acre = float(newarea_str)/acre
+		imperv_area_new = imperv_area_original - lid_number*new_lid_acre  # new imperv area after "newnumber" of LID
+		subcat_PctImperv_new = 100*imperv_area_new/subcat_area
+		subcat_PctImperv_new_str = "%.3f" % subcat_PctImperv_new
+		#print subcat_PctImperv_old_str
+		#print subcat_PctImperv_new_str
+		# NOW: make the changes:
+		lid_usage_class.change((subcatchment,lidname),'Area',newarea_str)  # change the number
+		subcatchments_class.change(subcatchment,'PctImperv',subcat_PctImperv_new_str)
+
+
+	def lidChangeNumber(self,subcatchment,lidname,newnumber_str):
+		# This requires changes to both [LID_USAGE] (straightforward)
+		# AND to the PctImperv parameter of the subcatchment where the lids are placed
+		# But the new PctImperv parameter must be CALCULATED first!!
+		acre = 43560.0
+		lid_usage_class = self.moddict[lid_usage]
+
+		lid_area_str = lid_usage_class.get((subcatchment,lidname),'Area')  # LID area in SQUARE FEET
+		lid_area = float(lid_area_str)
+		#print "lid_area = %s" % lid_area
+		lid_acre = lid_area/acre
+		lid_number_old_str = lid_usage_class.get((subcatchment,lidname),'Number')
+		lid_number_old = int(lid_number_old_str)
+		#print "lid_number_old = %s" % lid_number_old
+		
+		# now we must adjust the % Impervious parameter in the subcatchment:
+		subcatchments_class = self.moddict[subcatchments]
+		subcat_area_str = subcatchments_class.get(subcatchment,'Area')
+		subcat_area = float(subcat_area_str)  # Subcatchment area in acre
+		subcat_PctImperv_old_str = subcatchments_class.get(subcatchment,'PctImperv')
+		subcat_PctImperv_old = float(subcat_PctImperv_old_str)
+		#print "subcat_PctImperv_old = %s" % subcat_PctImperv_old
+		imperv_area_old = (subcat_PctImperv_old/100.0)*subcat_area   # old impervious area in acre
+		#print "imperv_area_old = %s" % imperv_area_old
+		lid_number_new = int(newnumber_str)
+		#print "lid_number_new = %s" % lid_number_new
+		imperv_area_original = imperv_area_old + lid_number_old*lid_acre  # original imperv area before any LID deployment
+		#print "imperv_area_original = %s" % imperv_area_original
+		imperv_area_new = imperv_area_original - lid_number_new*lid_acre  # new imperv area after "newnumber" of LID
+		#print "imperv_area_new = %s" % imperv_area_new
+		subcat_PctImperv_new = 100*imperv_area_new/subcat_area
+		#print "subcat_PctImperv_new = %s" % subcat_PctImperv_new
+		subcat_PctImperv_new_str = "%.3f" % subcat_PctImperv_new
+		#print subcat_PctImperv_new_str
+		# NOW make the changes to both the number of LIDs AND the subcatchment's percent impervious:
+		lid_usage_class.change((subcatchment,lidname),'Number',newnumber_str)  # change the number
+		subcatchments_class.change(subcatchment,'PctImperv',subcat_PctImperv_new_str)  # change the pct. imperv
 

@@ -39,29 +39,29 @@ DRY_ONLY	NO
 [RAINGAGES]
 RG	INTENSITY 0:05 1.0 TIMESERIES 2-yr 
 [SUBCATCHMENTS]
-S1	RG outfall 46.46 20 3750 8 0 
-S2	RG S1 18.39 45 5000 1.45 0 
-S3	RG S1 60.51 35 4375 2 0 
-S4	RG S3 30.26 40 11250 2.66 0 
-S5	RG S4 73.34 17 3750 3.2 0 
-S6	RG S7 25.92 45 3750 1.14 0 
-S7	RG S4 42.08 30 3750 1.73 0 
+S1	S1 S1 RG outfall 46.46 20 3750 8 0 
+S2	S2 S2 RG S1 18.39 45 5000 1.45 0 
+S3	S3 S3 RG S1 60.51 35 4375 2 0 
+S4	S4 S4 RG S3 30.26 40 11250 2.66 0 
+S5	S5 S5 RG S4 73.34 17 3750 3.2 0 
+S6	S6 S6 RG S7 25.92 45 3750 1.14 0 
+S7	S7 S7 RG S4 42.08 30 3750 1.73 0 
 [SUBAREAS]
-S1	0.01 0.1 0.05 0.05 25 OUTLET 
-S2	0.01 0.1 0.05 0.05 25 OUTLET 
-S3	0.01 0.1 0.05 0.05 25 OUTLET 
-S4	0.01 0.1 0.05 0.05 25 OUTLET 
-S5	0.01 0.1 0.05 0.05 25 OUTLET 
-S6	0.01 0.1 0.05 0.05 25 OUTLET 
-S7	0.01 0.1 0.05 0.05 25 OUTLET 
+S1	S1 S1 0.01 0.1 0.05 0.05 25 OUTLET 
+S2	S2 S2 0.01 0.1 0.05 0.05 25 OUTLET 
+S3	S3 S3 0.01 0.1 0.05 0.05 25 OUTLET 
+S4	S4 S4 0.01 0.1 0.05 0.05 25 OUTLET 
+S5	S5 S5 0.01 0.1 0.05 0.05 25 OUTLET 
+S6	S6 S6 0.01 0.1 0.05 0.05 25 OUTLET 
+S7	S7 S7 0.01 0.1 0.05 0.05 25 OUTLET 
 [INFILTRATION]
-S1	3.0 0.5 4 7 0 
-S2	3.0 0.5 4 7 0 
-S3	3.0 0.5 4 7 0 
-S4	3.0 0.5 4 7 0 
-S5	3.0 0.5 4 7 0 
-S6	3.0 0.5 4 7 0 
-S7	3.0 0.5 4 7 0 
+S1	S1 S1 3.0 0.5 4 7 0 
+S2	S2 S2 3.0 0.5 4 7 0 
+S3	S3 S3 3.0 0.5 4 7 0 
+S4	S4 S4 3.0 0.5 4 7 0 
+S5	S5 S5 3.0 0.5 4 7 0 
+S6	S6 S6 3.0 0.5 4 7 0 
+S7	S7 S7 3.0 0.5 4 7 0 
 [LID_CONTROLS]
 simons_TT_infil	IT
 simons_TT_infil	SURFACE 3 0.5 0.05 1.0 5 
@@ -131,26 +131,26 @@ cliveden_RG_deten	SOIL 3 0.5 0.2 0.1 0.5 10.0 3.5
 cliveden_RG_deten	STORAGE 12 0.75 0.1 0 
 cliveden_RG_deten	DRAIN 0 0.5 6 6 
 [LID_USAGE]
-S1	wister_RG	4 2923 40 0 20 0     
-S1	wakefield_RG	2 741 15 0 20 0     
-S2	simons_TT_infil	3 365 7 0 2 0     
-S2	simons_TT_deten	2 316 5 0 2 1     
-S2	Harpers_hallow_Swale	1 972 30 0 3 0     
-S2	kemble_RG	2 3686 45 0 4 0     
-S2	Kemble_Swale	1 7373 20 0 6 0     
-S2	kemble_IT	3 1673 5 0 3 0     
-S4	waterview_SWP	3 344 7 0 2 0     
-S4	waterview_PP	1 1106 5 0 2 0     
-S4	Pleasant_TT_infil	2 288 5 0 2 0     
-S4	Cliveden_RG_infil	2 691 20 0 4 0     
-S4	waterview_tree_infil	2 484 5 0 1 0     
-S4	cliveden_RG_deten	1 1229 30 0 4 0     
-S6	Morris_TT_deten	2 444 5 0 5 0     
-S6	stenton_RG	1 1283 30 0 5 0     
-S6	Anna_TT_infil	4 760 5 0 2 0     
-S6	Morris_TT_infil	12 445 5 0 3 0     
+S1	wister_RG	4 2923 40 0 20 0   
+S1	wakefield_RG	2 741 15 0 20 0   
+S2	simons_TT_infil	3 365 7 0 2 0   
+S2	simons_TT_deten	2 316 5 0 2 1   
+S2	Harpers_hallow_Swale	1 972 30 0 3 0   
+S2	kemble_RG	2 3686 45 0 4 0   
+S2	Kemble_Swale	1 7373 20 0 6 0   
+S2	kemble_IT	3 1673 5 0 3 0   
+S4	waterview_SWP	3 344 7 0 2 0   
+S4	waterview_PP	1 1106 5 0 2 0   
+S4	Pleasant_TT_infil	2 288 5 0 2 0   
+S4	Cliveden_RG_infil	2 691 20 0 4 0   
+S4	waterview_tree_infil	2 484 5 0 1 0   
+S4	cliveden_RG_deten	1 1229 30 0 4 0   
+S6	Morris_TT_deten	2 444 5 0 5 0   
+S6	stenton_RG	1 1283 30 0 5 0   
+S6	Anna_TT_infil	4 760 5 0 2 0   
+S6	Morris_TT_infil	12 445 5 0 3 0   
 [OUTFALLS]
-outfall	0 FREE NO 
+outfall	outfall outfall 0 FREE 
 [TIMESERIES]
 2-yr	1:55 0.13 
 2-yr	1:55 0.13 

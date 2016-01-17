@@ -7,6 +7,9 @@ Swarthmore College
 AEM: Modified 11/2015 to include LID categories in input file
 """
 import sys
+import numpy as np 
+import pandas as pd 
+
 #from swmm_objects import *
 
 def read_inp(fname):
@@ -67,15 +70,39 @@ def read_inp(fname):
 def read_report(fname):
   infile = open(fname,'r')
   data = infile.read()
+  # find and parse the LID Performance Summary
+  lid_start_index = data.find('LID Performance Summary')
+  if lid_start_index >= 0:   # The LID Performance Summary section is in the output file
+    lid_subcatchment_heading_index = data.find('Subcatchment',lid_start_index)
+    remaining_lines = data[lid_subcatchment_heading_index:].split('\n') 
+    line_after_section = '  '
+    i = 2
+    lid_performance = []
+    while True:
+      if remaining_lines[i] == line_after_section:
+        break
+      lid_performance.append(remaining_lines[i])
+      i = i + 1
+    lid_dict = {}
+    for line in lid_performance:
+      wordlist = line.split()   
+      idx = (wordlist[0],wordlist[1])   # tuple containing subcatchment name and lid name
+      values = wordlist[2:]
+      labels = ['Total Inflow', 'Evap Loss', 'Infil Loss', 'Surface Outflow', 'Drain Outflow', 
+                'Initial Storage', 'Final Storage', 'Continuity Error']
+      lid_dict[idx] = pd.Series(values, index = labels)
+    lid_report = pd.DataFrame(lid_dict)
+  else:
+    lid_report = None
+  # find and parse the Outfall Loading Summary    
   outfall_start_index = data.find('Outfall Loading Summary')
   output_start_index = data.find('System',outfall_start_index)
   split = data[output_start_index:].split('\n',1)
   output_line = split[0]
-#  print output_line
   output_list = output_line.split()
   peak = output_list[3]
   volume = output_list[4]
-#  print (peak,volume)
-  return (peak,volume)
+  return (peak,volume,lid_report)
+  # peak and volume are strings.  lid_report is a pandas DataFrame object
 
 
