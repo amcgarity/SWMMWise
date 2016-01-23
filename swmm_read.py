@@ -84,15 +84,24 @@ def read_report(fname):
       lid_performance.append(remaining_lines[i])
       i = i + 1
     lid_dict = {}
+    series_dict = {}
     for line in lid_performance:
-      wordlist = line.split()   
-      idx = (wordlist[0],wordlist[1])   # tuple containing subcatchment name and lid name
-      values = wordlist[2:]
+      this_lid_dict = {}
       labels = ['Total Inflow', 'Evap Loss', 'Infil Loss', 'Surface Outflow', 'Drain Outflow', 
                 'Initial Storage', 'Final Storage', 'Continuity Error']
-      lid_dict[idx] = pd.Series(values, index = labels)
-    lid_report = pd.DataFrame(lid_dict)
+      wordlist = line.split()   
+      idx = wordlist[0] + ' ' + wordlist[1]   # string containing subcatchment name and lid name
+      values = wordlist[2:]
+      i = 0;
+      for label in labels:
+        this_lid_dict[label] = float(values[i])
+        i += 1
+      lid_dict[idx] = this_lid_dict  # to be stored in mongo database
+      # construct a Pandas dataframe:
+      #series_dict[idx] = pd.Series(values, index = labels) 
+    #lid_report = pd.DataFrame(series_dict)
   else:
+    lid_dict = None
     lid_report = None
   # find and parse the Outfall Loading Summary    
   outfall_start_index = data.find('Outfall Loading Summary')
@@ -100,9 +109,9 @@ def read_report(fname):
   split = data[output_start_index:].split('\n',1)
   output_line = split[0]
   output_list = output_line.split()
-  peak = output_list[3]
-  volume = output_list[4]
-  return (peak,volume,lid_report)
-  # peak and volume are strings.  lid_report is a pandas DataFrame object
+  peak = float(output_list[3])
+  volume = float(output_list[4])
+  return (peak,volume,lid_dict)
+  # peak and volume are strings.  lid_dict is a dictionary of dicts
 
 

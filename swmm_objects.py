@@ -345,17 +345,18 @@ class swmm_model:
 				outstr = cat.output()
 				f.write(cat.heading+'\n')
 				f.write(outstr)
-				print cat.heading + '\n',
-				print outstr,
+				#print cat.heading + '\n',
+				#print outstr,
 	def change(self,catheading,objname,pname,pvalue):
 		catclass = self.catdict[catheading]
 		self.moddict[catclass].change(objname,pname,pvalue)
 
-	def lidChangeArea(self,subcatchment,lidname,newarea_str):
+	def lidChangeArea(self,subcatchment,lidname,newarea):
 		# This is a change in the category [LID_USAGE]
 		# AND to the PctImperv parameter of the subcatchment where the lids are placed
 		# But the new PctImperv parameter must be CALCULATED first!!
 		acre = 43560.0
+		newarea_str = str(newarea)
 		lid_usage_class = self.moddict[lid_usage]
 
 		old_lid_area_str = lid_usage_class.get((subcatchment,lidname),'Area')  # LID area in SQUARE FEET
@@ -382,11 +383,12 @@ class swmm_model:
 		subcatchments_class.change(subcatchment,'PctImperv',subcat_PctImperv_new_str)
 
 
-	def lidChangeNumber(self,subcatchment,lidname,newnumber_str):
+	def lidChangeNumber(self,subcatchment,lidname,newnumber):
 		# This requires changes to both [LID_USAGE] (straightforward)
 		# AND to the PctImperv parameter of the subcatchment where the lids are placed
 		# But the new PctImperv parameter must be CALCULATED first!!
 		acre = 43560.0
+		newnumber_str = str(newnumber)
 		lid_usage_class = self.moddict[lid_usage]
 
 		lid_area_str = lid_usage_class.get((subcatchment,lidname),'Area')  # LID area in SQUARE FEET
@@ -420,3 +422,16 @@ class swmm_model:
 		lid_usage_class.change((subcatchment,lidname),'Number',newnumber_str)  # change the number
 		subcatchments_class.change(subcatchment,'PctImperv',subcat_PctImperv_new_str)  # change the pct. imperv
 
+	def lidChangeFromImp(self,subcatchment,lidname,newnumber):
+		# Note: there appear to be no interlinked calculations required
+		# So just change the number:
+		newnumber_str = str(newnumber)
+		lid_usage_class = self.moddict[lid_usage]
+		lid_usage_class.change((subcatchment,lidname),'FromImp',newnumber_str)  # change the number
+
+	def lidChangeWidth(self,subcatchment,lidname,newnumber):
+		# Note: there appear to be no interlinked calculations required
+		# So just change the number:
+		newnumber_str = str(newnumber)
+		lid_usage_class = self.moddict[lid_usage]
+		lid_usage_class.change((subcatchment,lidname),'Width',newnumber_str)  # change the number
