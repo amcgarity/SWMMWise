@@ -12,7 +12,7 @@ import pandas as pd
 
 #from swmm_objects import *
 
-def read_inp(fname):
+def read_inp(swmmInpStr):
 # read SWMM inp file fname into a large string
 # create a list "section_names" containing the names of the sections found in the file
 # create a dictionary "sections" containing the data lines found in each section keyed by section_name
@@ -20,8 +20,7 @@ def read_inp(fname):
 # NOTE: the calling program is responsible for parsing the data lines in the sections
 
 #    fname = "Example4_bare_PHL.inp"
-    infile = open(fname,'r')
-    data = infile.readlines()
+    data = swmmInpStr
     section_names = []   # we will build this list from section names found in the SWMM .inp file
 # remove comment lines and blank lines and identify all section names used in the file
     data1 = []
