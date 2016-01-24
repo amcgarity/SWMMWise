@@ -46,7 +46,7 @@ ADC	PERVIOUS 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
 [RAINGAGES]
 RainGage	VOLUME 0:05 1.0 FILE "8591312066066.dat" * IN 
 [SUBCATCHMENTS]
-S1	RainGage J1 4.55 53.061 1587 2 0 
+S1	RainGage J1 4.55 56.8 1587 2 0 
 S2	RainGage J2 4.74 63.0 1653 2 0 
 S3	RainGage J3 3.74 39.5 1456 3.1 0 
 S4	RainGage J7 6.79 49.9 2331 3.1 0 
@@ -62,13 +62,13 @@ S5	0.015 0.24 0.06 0.3 25 OUTLET
 S6	0.015 0.24 0.06 0.3 25 OUTLET 
 S7	0.015 0.24 0.06 0.3 25 OUTLET 
 [INFILTRATION]
-S1	4.5 4.5 0.2 6.5 7 0 
-S2	4.5 4.5 0.2 6.5 7 0 
-S3	4.5 4.5 0.2 6.5 7 0 
-S4	4.5 4.5 0.2 6.5 7 0 
-S5	4.5 4.5 0.2 6.5 7 0 
-S6	4.5 4.5 0.2 6.5 7 0 
-S7	4.5 4.5 0.2 6.5 7 0 
+S1	4.5 0.2 6.5 7 0 
+S2	4.5 0.2 6.5 7 0 
+S3	4.5 0.2 6.5 7 0 
+S4	4.5 0.2 6.5 7 0 
+S5	4.5 0.2 6.5 7 0 
+S6	4.5 0.2 6.5 7 0 
+S7	4.5 0.2 6.5 7 0 
 [LID_CONTROLS]
 wakefield_BR_RG	BC
 wakefield_BR_RG	SURFACE 36 0.7 0.1 1.0 5.0 
@@ -76,7 +76,13 @@ wakefield_BR_RG	SOIL 3 0.5 0.2 0.1 1.0 10.0 3.5
 wakefield_BR_RG	STORAGE 0.1 0.75 0.5 0 
 wakefield_BR_RG	DRAIN 0 0.5 0 6 
 [LID_USAGE]
-S1	wakefield_BR_RG	10 741 0 0 100 0   
+S1	wakefield_BR_RG	10 741 0.000 0 13.164 0   
+S2	wakefield_BR_RG	10 741 0.000 0 11.393 0   
+S3	wakefield_BR_RG	10 741 0.000 0 23.030 0   
+S4	wakefield_BR_RG	10 741 0.000 0 10.041 0   
+S5	wakefield_BR_RG	10 741 0.000 0 8.099 0   
+S6	wakefield_BR_RG	10 741 0.000 0 18.087 0   
+S7	wakefield_BR_RG	0 741 0 0 0 0   
 [JUNCTIONS]
 J1	4973 0 0 0 0 
 J2	4969 0 0 0 0 

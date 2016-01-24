@@ -100,11 +100,16 @@ wakefield_BR_RG  SURFACE    36         0.7        0.1        1.0        5.0
 wakefield_BR_RG  SOIL       3          0.5        0.2        0.1        1.0        10.0       3.5       
 wakefield_BR_RG  STORAGE    0.1        0.75       0.5        0         
 wakefield_BR_RG  DRAIN      0          0.5        0          6         
-
 [LID_USAGE]
 ;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
 ;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
-S1               wakefield_BR_RG    0       741        0          0          100         0         
+S1               wakefield_BR_RG    0       741        0          0          0         0         
+S2               wakefield_BR_RG    0       741        0          0          0         0         
+S3               wakefield_BR_RG    0       741        0          0          0         0         
+S4               wakefield_BR_RG    0       741        0          0          0         0         
+S5               wakefield_BR_RG    0       741        0          0          0         0         
+S6               wakefield_BR_RG    0       741        0          0          0         0         
+S7               wakefield_BR_RG    0       741        0          0          0         0         
 
 [JUNCTIONS]
 ;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   

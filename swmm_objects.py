@@ -44,14 +44,12 @@ class options(category1d):
 	#pnames = ['Name', 'Value']
 	def __init__(self,linelist):
 		category1d.__init__(self,linelist)
-		#self.parse(linelist)
 
 class evaporation(category1d):
 # this section will be treated as a parameter name followed by a string representing the rest of the line
 	heading = '[EVAPORATION]'
 	def __init__(self,linelist):
 		category1d.__init__(self,linelist)
-		#self.parse(linelist)
 
 class temperature(category1d):
 	heading = '[TEMPERATURE]'
@@ -61,6 +59,11 @@ class temperature(category1d):
 class raingages(category1d):
 # this section will be treated as a parameter name followed by a string representing the rest of the line
 	heading = '[RAINGAGES]'
+	def __init__(self,linelist):
+		category1d.__init__(self,linelist)
+
+class infiltration(category1d):
+	heading = '[INFILTRATION]'
 	def __init__(self,linelist):
 		category1d.__init__(self,linelist)
 
@@ -116,6 +119,7 @@ class category2d:
 			for val in valnamelist:
 				outstr = outstr + valdict[val] + ' '
 			outstr = outstr + '\n'
+		#print outstr
 		return outstr
 	def change(self,objname,pname,newval):
 		(valnamelist,valdict) = self.pardict[objname]
@@ -135,12 +139,6 @@ class subareas(category2d):
 	heading = '[SUBAREAS]'
 	def __init__(self,linelist):
 		pnames = ['Nimp', 'Nperv', 'Simp', 'Sperv', 'PctZero', 'RouteTo', 'PctRted']
-		category2d.__init__(self,linelist,pnames)
-
-class infiltration(category2d):
-	heading = '[INFILTRATION]'
-	def __init__(self,linelist):
-		pnames = ['Parameters']
 		category2d.__init__(self,linelist,pnames)
 
 class junctions(category2d):
@@ -245,6 +243,8 @@ class lid_controls(category3d):
 				if lidtype in lid.types:
 					newlid = lid(lidname,lidtype)
 					self.liddict[lidname] = newlid
+				else:
+					print "ERROR: SWMM Input File uses unknown LID Type"
 			else:  # this parname contains parameters
 				lidname = parname[0]
 				parlayer = parname[1]
@@ -335,53 +335,81 @@ class swmm_model:
 		for heading in section_names:
 			if heading in self.catdict:  # compares headings read in file with headings defined in swmmobject category classes
 				objclass = self.catdict[heading]  # retrieve the swmm category class for each section heading found in file
-				cat = objclass(sections[heading])
+				cat = objclass(sections[heading])  # instantiate the category object
 				self.moddict[objclass] = cat  # add this swmmcategory object to the swmm_model's dictionary
-	def output(self,f):
+	def output(self):  #,f):
+		swmmInputFileStr = ''
 		for obj in self.catclasses:
 			heading = self.catdict.keys()[self.catdict.values().index(obj)]  # return key associated with dict value
 			if heading in self.section_names:      # only work with the sections found in input file
 				cat = self.moddict[obj]
 				outstr = cat.output()
-				f.write(cat.heading+'\n')
-				f.write(outstr)
-				#print cat.heading + '\n',
-				#print outstr,
+				swmmInputFileStr += cat.heading+'\n'
+				swmmInputFileStr += outstr
+				#print cat.heading+'\n'
+				#print outstr
+		return swmmInputFileStr
+				
 	def change(self,catheading,objname,pname,pvalue):
 		catclass = self.catdict[catheading]
 		self.moddict[catclass].change(objname,pname,pvalue)
 
-	def lidChangeArea(self,subcatchment,lidname,newarea):
+	def lidChangeArea(self,subcatchment,lidname,newarea,capRatioPct):
 		# This is a change in the category [LID_USAGE]
 		# AND to the PctImperv parameter of the subcatchment where the lids are placed
 		# But the new PctImperv parameter must be CALCULATED first!!
 		acre = 43560.0
+		new_lid_acre = newarea/acre
 		newarea_str = str(newarea)
 		lid_usage_class = self.moddict[lid_usage]
-
+		# Find out what LID type we are changing the area of:
+		lid_controls_class = self.moddict[lid_controls]
+		lid = lid_controls_class.liddict[lidname]
+		lid_type = lid.type
 		old_lid_area_str = lid_usage_class.get((subcatchment,lidname),'Area')  # LID area in SQUARE FEET
 		old_lid_area = float(old_lid_area_str)
 		old_lid_acre = old_lid_area/acre
 		lid_number_str = lid_usage_class.get((subcatchment,lidname),'Number')
 		lid_number = int(lid_number_str)
-		# now we must adjust the % Impervious parameter in the subcatchment:
+		
 		subcatchments_class = self.moddict[subcatchments]
 		subcat_area_str = subcatchments_class.get(subcatchment,'Area')
 		subcat_area = float(subcat_area_str)  # Subcatchment area in acre
 		subcat_PctImperv_old_str = subcatchments_class.get(subcatchment,'PctImperv')
 		subcat_PctImperv_old = float(subcat_PctImperv_old_str)
-		imperv_area_old = (subcat_PctImperv_old/100.0)*subcat_area   # old impervious area in acre
-		imperv_area_original = imperv_area_old + lid_number*old_lid_acre  # original imperv area before any LID deployment
-		new_lid_acre = float(newarea_str)/acre
-		imperv_area_new = imperv_area_original - lid_number*new_lid_acre  # new imperv area after "newnumber" of LID
-		subcat_PctImperv_new = 100*imperv_area_new/subcat_area
-		subcat_PctImperv_new_str = "%.3f" % subcat_PctImperv_new
-		#print subcat_PctImperv_old_str
-		#print subcat_PctImperv_new_str
+		# old impervious area in acre:
+		imperv_area_old = (subcat_PctImperv_old/100.0)*subcat_area   
+		# original imperv area before any LID deployment:
+		  
+		lidOnPervList = ['GR','IT','PP','RB','RD']
+		if lid_type in lidOnPervList:  # LID displaces some of the subcatchment's imperv. area
+			# so we must adjust the % Impervious parameter in the subcatchment:
+			imperv_area_original = imperv_area_old + lid_number*old_lid_acre			
+			# new imperv area after "newnumber" of LID:
+			imperv_area_new = imperv_area_original - lid_number*new_lid_acre 
+			if imperv_area_new < 0.0: 
+				imperv_area_new = 0.0
+			subcat_PctImperv_new = 100*imperv_area_new/subcat_area
+			subcat_PctImperv_new_str = "%.3f" % subcat_PctImperv_new
+			subcatchments_class.change(subcatchment,'PctImperv',subcat_PctImperv_new_str)
+			imperv_area = imperv_area_new
+		else:
+			# OTHERWISE, the impervious area & percentage remains the same as before:
+			imperv_area = imperv_area_old
+				
 		# NOW: make the changes:
 		lid_usage_class.change((subcatchment,lidname),'Area',newarea_str)  # change the number
-		subcatchments_class.change(subcatchment,'PctImperv',subcat_PctImperv_new_str)
-
+		# adjust the FromImp parameter - the % of subcat area treated by each LID:
+		#print "imperv_area = %s" % imperv_area
+		capRatio = capRatioPct/100.0
+		imperv_area_treated = new_lid_acre/capRatio
+		if imperv_area <= 0.0:
+			lidFromImp = 0.0;
+		else:
+			lidFromImp_new = 100.0*imperv_area_treated/imperv_area
+			if lidFromImp_new > 100.0:
+				lidFromImp_new = 100.0    # don't let the impervious area served be more than 100%
+		self.lidChangeFromImp(subcatchment,lidname,lidFromImp_new)
 
 	def lidChangeNumber(self,subcatchment,lidname,newnumber):
 		# This requires changes to both [LID_USAGE] (straightforward)
@@ -390,48 +418,49 @@ class swmm_model:
 		acre = 43560.0
 		newnumber_str = str(newnumber)
 		lid_usage_class = self.moddict[lid_usage]
-
 		lid_area_str = lid_usage_class.get((subcatchment,lidname),'Area')  # LID area in SQUARE FEET
 		lid_area = float(lid_area_str)
-		#print "lid_area = %s" % lid_area
 		lid_acre = lid_area/acre
 		lid_number_old_str = lid_usage_class.get((subcatchment,lidname),'Number')
 		lid_number_old = int(lid_number_old_str)
-		#print "lid_number_old = %s" % lid_number_old
-		
-		# now we must adjust the % Impervious parameter in the subcatchment:
-		subcatchments_class = self.moddict[subcatchments]
-		subcat_area_str = subcatchments_class.get(subcatchment,'Area')
-		subcat_area = float(subcat_area_str)  # Subcatchment area in acre
-		subcat_PctImperv_old_str = subcatchments_class.get(subcatchment,'PctImperv')
-		subcat_PctImperv_old = float(subcat_PctImperv_old_str)
-		#print "subcat_PctImperv_old = %s" % subcat_PctImperv_old
-		imperv_area_old = (subcat_PctImperv_old/100.0)*subcat_area   # old impervious area in acre
-		#print "imperv_area_old = %s" % imperv_area_old
-		lid_number_new = int(newnumber_str)
-		#print "lid_number_new = %s" % lid_number_new
-		imperv_area_original = imperv_area_old + lid_number_old*lid_acre  # original imperv area before any LID deployment
-		#print "imperv_area_original = %s" % imperv_area_original
-		imperv_area_new = imperv_area_original - lid_number_new*lid_acre  # new imperv area after "newnumber" of LID
-		#print "imperv_area_new = %s" % imperv_area_new
-		subcat_PctImperv_new = 100*imperv_area_new/subcat_area
-		#print "subcat_PctImperv_new = %s" % subcat_PctImperv_new
-		subcat_PctImperv_new_str = "%.3f" % subcat_PctImperv_new
-		#print subcat_PctImperv_new_str
-		# NOW make the changes to both the number of LIDs AND the subcatchment's percent impervious:
+		# Find out what LID type we are changing the area of:
+		lid_controls_class = self.moddict[lid_controls]
+		lid = lid_controls_class.liddict[lidname]
+		lid_type = lid.type		
+		lidOnPervList = ['GR','IT','PP','RB','RD']
+		if lid_type in lidOnPervList:  # LID displaces some of the subcatchment's imperv. area
+			# so we must adjust the % Impervious parameter in the subcatchment:
+			subcatchments_class = self.moddict[subcatchments]
+			subcat_area_str = subcatchments_class.get(subcatchment,'Area')
+			subcat_area = float(subcat_area_str)  # Subcatchment area in acre
+			subcat_PctImperv_old_str = subcatchments_class.get(subcatchment,'PctImperv')
+			subcat_PctImperv_old = float(subcat_PctImperv_old_str)
+			imperv_area_old = (subcat_PctImperv_old/100.0)*subcat_area   # old impervious area in acre
+			lid_number_new = int(newnumber_str)
+			# original imperv area before any LID deployment
+			imperv_area_original = imperv_area_old + lid_number_old*lid_acre  
+			# new imperv area after "newnumber" of LID
+			imperv_area_new = imperv_area_original - lid_number_new*lid_acre 
+			if imperv_area_new < 0.0:
+				imperv_area_new = 0.0
+			subcat_PctImperv_new = 100*imperv_area_new/subcat_area
+			subcat_PctImperv_new_str = "%.3f" % subcat_PctImperv_new
+			# change the pct. imperv
+			subcatchments_class.change(subcatchment,'PctImperv',subcat_PctImperv_new_str)  
+		# NOW make the changes to the number of LIDs:
 		lid_usage_class.change((subcatchment,lidname),'Number',newnumber_str)  # change the number
-		subcatchments_class.change(subcatchment,'PctImperv',subcat_PctImperv_new_str)  # change the pct. imperv
+		
 
 	def lidChangeFromImp(self,subcatchment,lidname,newnumber):
 		# Note: there appear to be no interlinked calculations required
 		# So just change the number:
-		newnumber_str = str(newnumber)
+		newnumber_str = "%0.3f" % newnumber
 		lid_usage_class = self.moddict[lid_usage]
 		lid_usage_class.change((subcatchment,lidname),'FromImp',newnumber_str)  # change the number
 
 	def lidChangeWidth(self,subcatchment,lidname,newnumber):
 		# Note: there appear to be no interlinked calculations required
 		# So just change the number:
-		newnumber_str = str(newnumber)
+		newnumber_str = "%0.3f" % newnumber
 		lid_usage_class = self.moddict[lid_usage]
 		lid_usage_class.change((subcatchment,lidname),'Width',newnumber_str)  # change the number
