@@ -51,14 +51,14 @@ def main():
 	#client = MongoClient('mongodb://server.mcgarity.info:27017/')
 	client = MongoClient()  # use local server by default
 	db = client['swmmwiseDebug']  # use or create the database
-	runsToday = db['y16m01d23']   # use or create the collection
+	runsToday = db['y16m01d26']   # use or create the collection
 	###outfile = 'swmm_run_output.txt'
 	###f = open(outfile,'w')
 	swmmInpFile = "Example2_LID_BR_for_RG_PHL.inp"
 	infile = open(swmmInpFile,'r')
 	swmmInitialInpFileStr = infile.readlines()
 	infile.close()
-	f = open('runlist_nolid.yaml','r')
+	f = open('lidlist_zero.yaml','r')
 	runParamList = yaml.load(f)
 	f.close()
 	dateTime = datetime.now()
@@ -75,4 +75,4 @@ def main():
 	print "Successfully stored %s" % doc_id
 
 
-#main()
+main()
