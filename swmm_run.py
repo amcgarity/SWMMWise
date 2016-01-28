@@ -21,7 +21,7 @@ def runswmm(runParamList,swmmInitialInpFileStr,runsCollection):
 		CapRatioPct = item['CapRatioPct']
 		model1.lidChangeNumber(subCat,lid,newNumber)
 		model1.lidChangeArea(subCat,lid,newArea,CapRatioPct)
-		model1.lidChangeWidth(subCat,lid,newWidth)
+		###model1.lidChangeWidth(subCat,lid,newWidth)
 		###model1.lidChangeFromImp(subCat,lid,newFromImp)
     # Write out the model to a new file because SWMM must have a file
 	f = open("SWMM_modified.inp",'w')
@@ -50,11 +50,11 @@ def main():
 	# open the mongodb database:
 	#client = MongoClient('mongodb://server.mcgarity.info:27017/')
 	client = MongoClient()  # use local server by default
-	db = client['swmmwiseDebug']  # use or create the database
-	runsToday = db['y16m01d26']   # use or create the collection
+	db = client['swmmwise_Ex2_Wakefield_Anna']  # use or create the database
+	runsToday = db['y16m01d27_testing']   # use or create the collection
 	###outfile = 'swmm_run_output.txt'
 	###f = open(outfile,'w')
-	swmmInpFile = "Example2_LID_BR_for_RG_PHL.inp"
+	swmmInpFile = "borg_swmm_initial.inp"
 	infile = open(swmmInpFile,'r')
 	swmmInitialInpFileStr = infile.readlines()
 	infile.close()
@@ -75,4 +75,4 @@ def main():
 	print "Successfully stored %s" % doc_id
 
 
-main()
+#main()
