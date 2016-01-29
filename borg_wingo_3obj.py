@@ -74,12 +74,12 @@ def swmm(*variables):  # v is a list of variables
     outstr += "numLidTotalWakefield = %s,numLidTotalAnna = %s,volReduction = %s\n" % (numLidTotalWakefield,numLidTotalAnna,volReduction)
     outstr += "Stored this run in Mogodb doc_id %s\n" % doc_id
     print(outstr, file=sys.stderr)
-    sys.exit()
+    #sys.exit()
     return obj
 
 client = MongoClient()  # On local client
 dbName = 'borg_wingo'
-dbCollection = 'y16m01d28_testing'
+dbCollection = 'y16m01d29_4000'
 captAreaPct_Wakefield = 5
 captAreaPct_Anna = 5
 db = client[dbName]
@@ -88,13 +88,13 @@ runCount = 0
 nvars = 14
 nobjs = 3
 borg = bg.Borg(nvars, nobjs, 0, swmm)
-borg.setBounds(*[[0,5]]*nvars)
+borg.setBounds(*[[0,10]]*nvars)
 #borg.setEpsilons(*[0.01]*nobjs) 
 epsilon1 = 1  # for total number of Wakefield LIDs
 epsilon2 = 1  # for total number of Anna LIDs
 epsilon3 = 0.1  # for annual volume reduction Mgal/year
 borg.setEpsilons(epsilon1,epsilon2,epsilon3) 
-result = borg.solve({"maxEvaluations":100})
+result = borg.solve({"maxEvaluations":4000})
 solutionDict = {}
 solutionNumber = 1
 for solution in result:

@@ -27,7 +27,7 @@ borg = Borg(2, 2, 0, efunct,
 #result.display()
 solutionNumber = 1
 solutionDict = {}
-result = borg.solve({"maxEvaluations":110})
+result = borg.solve({"maxEvaluations":142})
 for solution in result:
     #solution.display()
     #print solution.getVariables()
