@@ -402,7 +402,7 @@ class swmm_model:
 		# adjust the FromImp parameter - the % of subcat area treated by each LID:
 		#print "imperv_area = %s" % imperv_area
 		capRatio = capRatioPct/100.0
-		imperv_area_treated = new_lid_acre/capRatio
+		imperv_area_treated = lid_number*new_lid_acre/capRatio
 		if imperv_area <= 0.0:
 			lidFromImp = 0.0;
 		else:
@@ -449,6 +449,7 @@ class swmm_model:
 			subcatchments_class.change(subcatchment,'PctImperv',subcat_PctImperv_new_str)  
 		# NOW make the changes to the number of LIDs:
 		lid_usage_class.change((subcatchment,lidname),'Number',newnumber_str)  # change the number
+
 		
 
 	def lidChangeFromImp(self,subcatchment,lidname,newnumber):
@@ -464,3 +465,8 @@ class swmm_model:
 		newnumber_str = "%0.3f" % newnumber
 		lid_usage_class = self.moddict[lid_usage]
 		lid_usage_class.change((subcatchment,lidname),'Width',newnumber_str)  # change the number
+	def lidGetArea(self,subcatchment,lidname):
+		lid_usage_class = self.moddict[lid_usage]
+		lid_area_str = lid_usage_class.get((subcatchment,lidname),'Area')  # LID area in SQUARE FEET
+		lid_area = float(lid_area_str)	
+		return lid_area		

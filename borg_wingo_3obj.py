@@ -13,7 +13,9 @@ import sys
 def swmm(*variables):  # v is a list of variables
     global runsCollection
     global runCount
-    swmmInpFile = "borg_swmm_initial.inp"
+    global captAreaPct_Wakefield
+    global captAreaPct_Anna
+    swmmInpFile = "borg_wingo_initial.inp"
     infile = open(swmmInpFile,'r')
     swmmInitialInpFileStr = infile.readlines()
     infile.close()
@@ -23,7 +25,7 @@ def swmm(*variables):  # v is a list of variables
     for floatvar in variables:
         roundedFloat = round(floatvar)
         numlid.append(int(roundedFloat))
-    subcatnames = ['S1','S2','S3','S4','S5','S6'] # correspond to numlid list
+    subcatnames = ['S1','S2','S3','S4','S5','S6','S7'] # correspond to numlid list
     ncat = len(subcatnames)
     expected_vars = 2*ncat
     if expected_vars != nvars:
@@ -38,21 +40,20 @@ def swmm(*variables):  # v is a list of variables
     for subcat in subcatnames:
         model1.lidChangeNumber(subcat,lid,numlid[i])
         area = model1.lidGetArea(subcat,lid)
-        model1.lidChangeArea(subcat,lid,area)   # adjust FromImp for new number by resetting area
+        model1.lidChangeArea(subcat,lid,area,captAreaPct_Wakefield)   # adjust FromImp for new number by resetting area
         i += 1
     lid = 'Anna_TT_infil'
     for subcat in subcatnames:
         model1.lidChangeNumber(subcat,lid,numlid[i])
         area = model1.lidGetArea(subcat,lid)
-        model1.lidChangeArea(subcat,lid,area)   # adjust FromImp for new number by resetting area
-        i += 1
-    f = open("SWMM_modified.inp",'w')
+        model1.lidChangeArea(subcat,lid,area,captAreaPct_Anna)   # adjust FromImp for new number by resetting area        i += 1
+    f = open("borg_wingo_modified.inp",'w')
     swmmInputFileStr=model1.output()
     f.write(swmmInputFileStr)  # write out the swmmInputFileStr for modified problem
     f.close()
-    call(["swmm5","SWMM_modified.inp", "SWMM_modified.txt", "out.out"])
-    (peak,volume,lidDict) = read_report("SWMM_modified.txt")
-    startingVolume = 15.972  # MGAL/yr from single SWMM run of unmodified problem
+    call(["swmm5","borg_wingo_modified.inp", "borg_wingo_modified.txt", "out.out"])
+    (peak,volume,lidDict) = read_report("borg_wingo_modified.txt")
+    startingVolume = 51.463  # MGAL/yr from single SWMM run of unmodified problem
     volReduction = startingVolume - volume  # objective 3
     numLidWakefield = numlid[:6]   # the first 6 lid numbers in the list
     numLidAnna = numlid[-6:]       # the last 6 lid numbers in the list
@@ -73,16 +74,18 @@ def swmm(*variables):  # v is a list of variables
     outstr += "numLidTotalWakefield = %s,numLidTotalAnna = %s,volReduction = %s\n" % (numLidTotalWakefield,numLidTotalAnna,volReduction)
     outstr += "Stored this run in Mogodb doc_id %s\n" % doc_id
     print(outstr, file=sys.stderr)
-    #sys.exit()
+    sys.exit()
     return obj
 
 client = MongoClient()  # On local client
-dbName = 'borg_swmm'
-dbCollection = 'y16m01d28_2lid_run_Example2'
+dbName = 'borg_wingo'
+dbCollection = 'y16m01d28_testing'
+captAreaPct_Wakefield = 5
+captAreaPct_Anna = 5
 db = client[dbName]
 runsCollection = db[dbCollection]
 runCount = 0
-nvars = 12
+nvars = 14
 nobjs = 3
 borg = bg.Borg(nvars, nobjs, 0, swmm)
 borg.setBounds(*[[0,5]]*nvars)

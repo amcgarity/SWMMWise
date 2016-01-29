@@ -1,6 +1,16 @@
 
-  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.009)
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.010)
   --------------------------------------------------------------
+
+  Wingohocking 
+  
+  *********************
+  Rainfall File Summary
+  *********************
+  Station    First        Last         Recording   Periods    Periods    Periods
+  ID         Date         Date         Frequency  w/Precip    Missing    Malfunc.
+  -------------------------------------------------------------------------------
+  *          JAN-01-2008  MAY-01-2009     60 min       784          0          0
 
   
   *********************************************************
@@ -21,35 +31,35 @@
     Flow Routing ........... NO
     Water Quality .......... NO
   Infiltration Method ...... HORTON
-  Starting Date ............ NOV-08-2015 00:00:00
-  Ending Date .............. NOV-08-2015 06:00:00
+  Starting Date ............ JAN-01-2008 00:00:00
+  Ending Date .............. JAN-01-2009 00:00:00
   Antecedent Dry Days ...... 0.0
-  Report Time Step ......... 00:15:00
-  Wet Time Step ............ 00:05:00
+  Report Time Step ......... 00:01:00
+  Wet Time Step ............ 00:01:00
   Dry Time Step ............ 01:00:00
   
   
   **************************        Volume         Depth
   Runoff Quantity Continuity     acre-feet        inches
   **************************     ---------       -------
-  Initial LID Storage ......         0.029         0.001
-  Total Precipitation ......        24.210         0.978
-  Evaporation Loss .........         0.000         0.000
-  Infiltration Loss ........        21.282         0.860
-  Surface Runoff ...........         4.817         0.195
-  Final Storage ............         0.685         0.028
-  Continuity Error (%) .....       -10.495
+  Initial LID Storage ......         0.006         0.000
+  Total Precipitation ......       998.033        40.330
+  Evaporation Loss .........        79.424         3.210
+  Infiltration Loss ........       449.434        18.161
+  Surface Runoff ...........       469.274        18.963
+  Final Storage ............         0.010         0.000
+  Continuity Error (%) .....        -0.010
   
   
   **************************        Volume        Volume
   Flow Routing Continuity        acre-feet      10^6 gal
   **************************     ---------     ---------
   Dry Weather Inflow .......         0.000         0.000
-  Wet Weather Inflow .......         4.817         1.570
+  Wet Weather Inflow .......       469.274       152.920
   Groundwater Inflow .......         0.000         0.000
   RDII Inflow ..............         0.000         0.000
   External Inflow ..........         0.000         0.000
-  External Outflow .........         4.817         1.570
+  External Outflow .........       469.274       152.920
   Flooding Loss ............         0.000         0.000
   Evaporation Loss .........         0.000         0.000
   Exfiltration Loss ........         0.000         0.000
@@ -67,13 +77,13 @@
                            Precip      Runon       Evap      Infil     Runoff      Runoff   Runoff   Coeff
   Subcatchment                 in         in         in         in         in    10^6 gal      CFS
   --------------------------------------------------------------------------------------------------------
-  S1                         0.98       1.49       0.00       1.24       1.24        1.57   119.42   0.505
-  S2                         0.98       0.00       0.00       0.56       1.80        0.90    87.90   1.844
-  S3                         0.98       0.50       0.00       0.88       0.59        0.97    68.83   0.401
-  S4                         0.98       0.91       0.00       0.84       1.00        0.82    87.49   0.531
-  S5                         0.98       0.00       0.00       0.81       0.16        0.32    36.25   0.166
-  S6                         0.98       0.00       0.00       0.56       0.37        0.26    27.88   0.383
-  S7                         0.98       0.23       0.00       0.83       0.37        0.42    41.45   0.307
+  S1                        40.33       0.00       1.15      32.53       6.65        8.39    28.90   0.165
+  S2                        40.33       0.00       5.21       5.00      30.12       15.04    22.45   0.747
+  S3                        40.33       0.00       4.01      12.35      23.97       39.38    64.19   0.594
+  S4                        40.33       0.00       4.58       8.63      27.12       22.28    34.98   0.672
+  S5                        40.33       0.00       1.94      26.78      11.61       23.13    51.10   0.288
+  S6                        40.33       0.00       5.22       4.72      30.39       21.39    31.71   0.754
+  S7                        40.33       0.00       3.44      16.50      20.39       23.29    39.86   0.506
   
 
   ***********************
@@ -85,25 +95,21 @@
                                         Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
   Subcatchment      LID Control             in        in        in        in        in        in        in           %
   --------------------------------------------------------------------------------------------------------------------
-  S1                wakefield_RG        133.77      0.00      0.00    128.00      0.00      0.30     12.30       -4.65
-  S1                wister_RG            17.81      0.00      0.00     21.60      0.00      0.60      5.23      -45.73
-  S2                kemble_IT             2.96      0.00      2.95      0.00      0.00      0.00      0.05       -1.41
-  S2                Kemble_Swale          3.68      0.00      0.09      3.59      0.00      0.00      0.00       -0.02
-  S2                kemble_RG             2.78      0.00      0.00      0.00      0.00      0.40      3.18        0.00
-  S2                Harpers_hallow_Swale     11.21      0.00      0.17   1183.16      0.00      0.00      0.00   -10454.25
-  S2                simons_TT_deten      11.47      0.00      0.41      0.00      8.40      0.00      2.73       -0.61
-  S2                simons_TT_infil       7.03      0.00      7.03      0.00      0.00      0.00      0.00       -0.00
-  S4                cliveden_RG_deten     32.73      0.00      0.56     30.48      0.00      0.30      7.70      -17.31
-  S4                waterview_tree_infil     11.06      0.00      5.88      0.00      0.00      0.00      5.26       -0.75
-  S4                Cliveden_RG_infil     29.21      0.00      0.00      0.00      0.00      1.20     30.41        0.00
-  S4                Pleasant_TT_infil     34.85      0.00      8.85      1.73     14.01      0.00      8.80        4.18
-  S4                waterview_PP         18.62      0.00      2.36     12.27      0.00      1.20      5.21       -0.11
-  S4                waterview_SWP        19.88      0.00      2.24     13.04      0.00      0.80      5.44       -0.20
-  S6                Morris_TT_infil       3.66      0.00      3.66      0.00      0.00      0.00      0.00       -0.00
-  S6                Anna_TT_infil         4.12      0.00      4.12      0.00      0.00      0.00      0.00       -0.00
-  S6                stenton_RG           19.57      0.00      0.00      0.00      0.00      0.60     20.17        0.00
-  S6                Morris_TT_deten      27.84      0.00      0.41      0.00     16.57      0.00     11.06       -0.72
+  S1                Anna_TT_infil       387.86      0.34    387.52      0.00      0.00      0.00      0.00       -0.00
+  S1                wakefield_BR_RG     387.75     16.60    344.50     26.64      0.00      0.30      0.50       -0.05
+  S2                Anna_TT_infil       385.01      0.60    384.41      0.00      0.00      0.00      0.00       -0.00
+  S2                wakefield_BR_RG     385.12     16.30    342.81     25.96      0.00      0.30      0.50       -0.04
+  S3                Anna_TT_infil       384.71      0.52    384.19      0.00      0.00      0.00      0.00       -0.00
+  S3                wakefield_BR_RG     386.22     16.38    343.53     26.25      0.00      0.30      0.50       -0.04
+  S4                Anna_TT_infil       386.17      0.52    385.65      0.00      0.00      0.00      0.00       -0.00
+  S4                wakefield_BR_RG     385.94     16.39    343.34     26.18      0.00      0.30      0.50       -0.04
+  S5                Anna_TT_infil       387.48      0.41    387.07      0.00      0.00      0.00      0.00       -0.00
+  S5                wakefield_BR_RG     387.22     16.51    344.17     26.51      0.00      0.30      0.50       -0.04
+  S6                Anna_TT_infil       382.87      0.62    382.25      0.00      0.00      0.00      0.00       -0.00
+  S6                wakefield_BR_RG     385.04     16.27    342.76     25.94      0.00      0.30      0.50       -0.03
+  S7                Anna_TT_infil       386.27      0.51    385.76      0.00      0.00      0.00      0.00       -0.00
+  S7                wakefield_BR_RG     386.42     16.40    343.66     26.31      0.00      0.30      0.50       -0.04
 
-  Analysis begun on:  Tue Dec  1 18:51:24 2015
-  Analysis ended on:  Tue Dec  1 18:51:24 2015
-  Total elapsed time: < 1 sec
+  Analysis begun on:  Thu Jan 28 23:00:50 2016
+  Analysis ended on:  Thu Jan 28 23:00:56 2016
+  Total elapsed time: 00:00:06

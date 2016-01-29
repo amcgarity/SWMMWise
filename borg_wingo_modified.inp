@@ -45,13 +45,13 @@ ADC	PERVIOUS 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
 [RAINGAGES]
 RG	VOLUME 0:05 1.0 FILE "8591312066066.dat" * IN 
 [SUBCATCHMENTS]
-S1	RG outfall 46.46 19.624 16865 8 0 
-S2	RG S1 18.39 89.051 6676 1.45 0 
-S3	RG S1 60.51 69.712 21965 2 0 
-S4	RG S3 30.26 79.423 10984 2.66 0 
-S5	RG S4 73.34 33.762 26622 3.2 0 
-S6	RG S7 25.92 89.327 9409 1.14 0 
-S7	RG S4 42.08 59.585 15275 1.73 0 
+S1	RG outfall 46.46 19.925 16865 8 0 
+S2	RG S1 18.39 89.810 6676 1.45 0 
+S3	RG S1 60.51 69.942 21965 2 0 
+S4	RG S3 30.26 79.885 10984 2.66 0 
+S5	RG S4 73.34 33.952 26622 3.2 0 
+S6	RG S7 25.92 89.865 9409 1.14 0 
+S7	RG S4 42.08 59.917 15275 1.73 0 
 [SUBAREAS]
 S1	0.015 0.24 0.06 0.3 25 OUTLET 
 S2	0.015 0.24 0.06 0.3 25 OUTLET 
@@ -79,20 +79,20 @@ Anna_TT_infil	SURFACE 3 0.15 0.05 1.0 5
 Anna_TT_infil	STORAGE 48 0.75 1.5 0 
 Anna_TT_infil	DRAIN 0 0.5 6 6 
 [LID_USAGE]
-S1	wakefield_BR_RG	10 741 0 0 36.614 0   
-S1	Anna_TT_infil	10 760 5 0 19.136 0   
-S2	wakefield_BR_RG	10 741 0 0 20.556 0   
-S2	Anna_TT_infil	10 760 5 0 10.654 0   
-S3	wakefield_BR_RG	10 741 0 0 8.032 0   
-S3	Anna_TT_infil	10 760 5 0 4.136 0   
-S4	wakefield_BR_RG	10 741 0 0 14.054 0   
-S4	Anna_TT_infil	10 760 5 0 7.260 0   
-S5	wakefield_BR_RG	10 741 0 0 13.644 0   
-S5	Anna_TT_infil	10 760 5 0 7.046 0   
-S6	wakefield_BR_RG	10 741 0 0 14.584 0   
-S6	Anna_TT_infil	10 760 5 0 7.535 0   
-S7	wakefield_BR_RG	10 741 0 0 13.475 0   
-S7	Anna_TT_infil	10 760 5 0 6.958 0   
+S1	wakefield_BR_RG	0 741.0 0 0 0.000 0   
+S1	Anna_TT_infil	2 760.0 5 0 7.539 0   
+S2	wakefield_BR_RG	5 741.0 0 0 10.278 0   
+S2	Anna_TT_infil	2 760.0 5 0 4.226 0   
+S3	wakefield_BR_RG	1 741.0 0 0 0.803 0   
+S3	Anna_TT_infil	2 760.0 5 0 1.649 0   
+S4	wakefield_BR_RG	2 741.0 0 0 2.811 0   
+S4	Anna_TT_infil	2 760.0 5 0 2.887 0   
+S5	wakefield_BR_RG	2 741.0 0 0 2.729 0   
+S5	Anna_TT_infil	2 760.0 5 0 2.803 0   
+S6	wakefield_BR_RG	3 741.0 0 0 4.375 0   
+S6	Anna_TT_infil	2 760.0 5 0 2.996 0   
+S7	wakefield_BR_RG	2 741.0 0 0 2.695 0   
+S7	Anna_TT_infil	2 760.0 5 0 2.768 0   
 [OUTFALLS]
 outfall	0 FREE 
 [REPORT]

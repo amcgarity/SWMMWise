@@ -39,6 +39,8 @@ def swmm(*variables):  # v is a list of variables
     lid = 'wakefield_BR_RG'  # fix for now
     for subcat in subcatnames:
         model1.lidChangeNumber(subcat,lid,numlid[i])
+        area = model1.lidGetArea(subcat,lid)
+        model1.lidChangeArea(subcat,lid,area)   # adjust FromImp for new number by resetting area
         i += 1
     f = open("SWMM_modified.inp",'w')
     swmmInputFileStr=model1.output()
@@ -49,7 +51,7 @@ def swmm(*variables):  # v is a list of variables
     startingVolume = 15.972  # MGAL/yr from single SWMM run of unmodified problem
     volReduction = startingVolume - volume  # objective 2
     numLidTotal = sum(numlid)   # objective 1 
-    run = {"numLidTotal":numLidTotal, "volReduction":volReduction,"peak":peak,"volume":volume,"numlid":numlid,"lidDict":lidDict}
+    run = {"runCount":runCount,"numLidTotal":numLidTotal, "volReduction":volReduction,"peak":peak,"volume":volume,"numlid":numlid,"lidDict":lidDict}
     doc_id = runsCollection.insert_one(run).inserted_id
     runCount += 1
     obj = []
@@ -71,7 +73,7 @@ def swmm(*variables):  # v is a list of variables
 
 client = MongoClient()
 dbName = 'borg_swmm'
-dbCollection = 'y16m01d27_run4'
+dbCollection = 'y16m01d28_Example2_100runs'
 db = client[dbName]
 runsCollection = db[dbCollection]
 runCount = 0
@@ -83,15 +85,19 @@ borg.setBounds(*[[0,5]]*nvars)
 epsilon1 = 2  # for total number of LIDs
 epsilon2 = 1.0  # for annual volume reduction Mgal/year
 borg.setEpsilons(epsilon1,epsilon2) 
-result = borg.solve({"maxEvaluations":200})
+result = borg.solve({"maxEvaluations":100})
+solutionDict = {}
+solutionNumber = 1
 for solution in result:
     solution.display()  # keep this for now just in case
     solutionVariableList = solution.getVariables()
     solutionObjectiveList = solution.getObjectives()
     thisSolutionList = [solutionVariableList,solutionObjectiveList]
-    solutionDict[solutionNumber] = thisSolutionList
+    solutionNumberStr = str(solutionNumber)
+    solutionDict[solutionNumberStr] = thisSolutionList
     solutionNumber += 1
-print(solutionDict, file=sys.stder)
 doc_id = runsCollection.insert_one(solutionDict).inserted_id
-outstr = "Stored Pareto Solution as last record, ID:%s in mongoDB %s in collection %s\nRUN COMPLETE" % (doc_id,dbName,dbCollection)
+print(solutionDict, file=sys.stderr)
+outstr = "Stored Pareto Solution as last record, ID:%s in mongoDB %s in collection %s\nRUN COMPLETE\n" % (doc_id,dbName,dbCollection)
 print(outstr, file=sys.stderr)
+

@@ -57,13 +57,13 @@ RG               VOLUME    0:05     1.0      FILE       "8591312066066.dat" *   
 [SUBCATCHMENTS]
 ;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
 ;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
-S1	               RG                 O1           46.46      20     16865      8         0 
-S2	               RG                 O1           18.39      90     6676       1.45      0 
-S3	               RG                 O1           60.51      70     21965      2         0 
-S4	               RG                 O1           30.26      80     10984      2.66      0 
-S5	               RG                 O1           73.34      34     26622      3.2       0 
-S6	               RG                 O1           25.92      90     9409       1.14      0 
-S7	               RG                 O1           42.08      60     15275      1.73      0 
+S1	               RG              outfall         46.46      20     16865      8         0 
+S2	               RG                 S1           18.39      90     6676       1.45      0 
+S3	               RG                 S1           60.51      70     21965      2         0 
+S4	               RG                 S3           30.26      80     10984      2.66      0 
+S5	               RG                 S4           73.34      34     26622      3.2       0 
+S6	               RG                 S7           25.92      90     9409       1.14      0 
+S7	               RG                 S4           42.08      60     15275      1.73      0 
 [SUBAREAS]
 ;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
 ;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
@@ -99,24 +99,22 @@ Anna_TT_infil	DRAIN       0          0.5        6          6
 [LID_USAGE]
 ;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
 ;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
-S1               wakefield_BR_RG    2       741        0          0          3.661          0         
-S1	             Anna_TT_infil	    1       760        5          0          1.878          0
-S2               wakefield_BR_RG    2       741        0          0          2.056          0         
-S2	             Anna_TT_infil	    1       760        5          0          1.054          0
-S3               wakefield_BR_RG    2       741        0          0          0.803          0
-S3	             Anna_TT_infil	    1       760        5          0          0.410          0         
-S4               wakefield_BR_RG    2       741        0          0          1.405          0         
-S4	             Anna_TT_infil	    1       760        5          0          0.721          0
-S5               wakefield_BR_RG    2       741        0          0          1.364          0
-S5	             Anna_TT_infil	    1       760        5          0          0.700          0         
-S6               wakefield_BR_RG    2       741        0          0          1.458          0         
-S6	             Anna_TT_infil	    1       760        5          0          0.743          0
-S7               wakefield_BR_RG    2       741        0          0          1.348          0         
-S7	             Anna_TT_infil	    1       760        5          0          0.691          0
+S1               wakefield_BR_RG    0       741        0          0          0          0         
+S1	             Anna_TT_infil	    0       760        5          0          0          0
+S2               wakefield_BR_RG    0       741        0          0          0          0         
+S2	             Anna_TT_infil	    0       760        5          0          0          0
+S3               wakefield_BR_RG    0       741        0          0          0          0
+S3	             Anna_TT_infil	    0       760        5          0          0          0         
+S4               wakefield_BR_RG    0       741        0          0          0          0         
+S4	             Anna_TT_infil	    0       760        5          0          0          0
+S5               wakefield_BR_RG    0       741        0          0          0          0
+S5	             Anna_TT_infil	    0       760        5          0          0          0         
+S6               wakefield_BR_RG    0       741        0          0          0          0         
+S6	             Anna_TT_infil	    0       760        5          0          0          0
+S7               wakefield_BR_RG    0       741        0          0          0          0         
+S7	             Anna_TT_infil	    0       760        5          0          0          0
 [OUTFALLS]
-;;Name           Elevation  Type       Stage Data       Gated    Route To        
-;;-------------- ---------- ---------- ---------------- -------- ---------------- 
-O1               0          FREE                        NO                       
+outfall	 0 FREE 
 [REPORT]
 INPUT	NO 
 CONTROLS	NO 

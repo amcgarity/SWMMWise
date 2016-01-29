@@ -43,6 +43,7 @@ def runswmm(runParamList,swmmInitialInpFileStr,runsCollection):
 	run = { "peak": peak, "volume": volume, "lidDict": lidDict, "swmmInputFileStr":swmmInputFileStr, "runParamList": runParamList,
 		"swmmStartTime": startTimeStr, "swmmRunTime": elapsedTimeStr}
 	doc_id = runsCollection.insert_one(run).inserted_id
+	print "volume = %s" % volume
 	return (doc_id)
 
 
@@ -50,15 +51,15 @@ def main():
 	# open the mongodb database:
 	#client = MongoClient('mongodb://server.mcgarity.info:27017/')
 	client = MongoClient()  # use local server by default
-	db = client['swmmwise_Ex2_Wakefield_Anna']  # use or create the database
-	runsToday = db['y16m01d27_testing']   # use or create the collection
+	db = client['swmmwise_Wingo_Wakefield_Anna']  # use or create the database
+	runsToday = db['y16m01d28_testing']   # use or create the collection
 	###outfile = 'swmm_run_output.txt'
 	###f = open(outfile,'w')
-	swmmInpFile = "borg_swmm_initial.inp"
+	swmmInpFile = "wingohocking.inp"
 	infile = open(swmmInpFile,'r')
 	swmmInitialInpFileStr = infile.readlines()
 	infile.close()
-	f = open('lidlist_zero.yaml','r')
+	f = open('wingo_lidlist_zero.yaml','r')
 	runParamList = yaml.load(f)
 	f.close()
 	dateTime = datetime.now()

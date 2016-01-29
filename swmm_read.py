@@ -69,16 +69,24 @@ def read_inp(swmmInpStr):
 def read_report(fname):
   infile = open(fname,'r')
   data = infile.read()
+  # find and parse the External Outflow line
+  external_flow_index = data.find('External Outflow')
+  if external_flow_index >= 0:  # The External Outflow line is found
+    lineList = data[external_flow_index:].split('\n',1)
+    wordlist = lineList[0].split()
+    volume = float(wordlist[4])
+  else:
+   volume = None
   # find and parse the LID Performance Summary
   lid_start_index = data.find('LID Performance Summary')
   if lid_start_index >= 0:   # The LID Performance Summary section is in the output file
     lid_subcatchment_heading_index = data.find('Subcatchment',lid_start_index)
     remaining_lines = data[lid_subcatchment_heading_index:].split('\n') 
-    line_after_section = '  '
+    #line_after_section = '  '
     i = 2
     lid_performance = []
     while True:
-      if remaining_lines[i] == line_after_section:
+      if remaining_lines[i].strip() == '':   # Blank line found
         break
       lid_performance.append(remaining_lines[i])
       i = i + 1
@@ -103,13 +111,14 @@ def read_report(fname):
     lid_dict = None
     lid_report = None
   # find and parse the Outfall Loading Summary    
-  outfall_start_index = data.find('Outfall Loading Summary')
-  output_start_index = data.find('System',outfall_start_index)
-  split = data[output_start_index:].split('\n',1)
-  output_line = split[0]
-  output_list = output_line.split()
-  peak = float(output_list[3])
-  volume = float(output_list[4])
+  #outfall_start_index = data.find('Outfall Loading Summary')
+  #output_start_index = data.find('System',outfall_start_index)
+  #split = data[output_start_index:].split('\n',1)
+  #output_line = split[0]
+  #output_list = output_line.split()
+  #peak = float(output_list[3])
+  #volume = float(output_list[4])
+  peak = None
   return (peak,volume,lid_dict)
   # peak and volume are strings.  lid_dict is a dictionary of dicts
 
