@@ -45,12 +45,12 @@ ADC	PERVIOUS 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
 [RAINGAGES]
 RG	VOLUME 0:05 1.0 FILE "8591312066066.dat" * IN 
 [SUBCATCHMENTS]
-S1	RG outfall 46.46 20.000 16865 8 0 
-S2	RG S1 18.39 90.000 6676 1.45 0 
-S3	RG S1 60.51 70.000 21965 2 0 
-S4	RG S3 30.26 80.000 10984 2.66 0 
-S5	RG S4 73.34 34.000 26622 3.2 0 
-S6	RG S7 25.92 90.000 9409 1.14 0 
+S1	RG outfall 46.46 19.624 16865 8 0 
+S2	RG S1 18.39 89.051 6676 1.45 0 
+S3	RG S1 60.51 69.712 21965 2 0 
+S4	RG S3 30.26 79.423 10984 2.66 0 
+S5	RG S4 73.34 33.762 26622 3.2 0 
+S6	RG S7 25.92 89.327 9409 1.14 0 
 S7	RG S4 42.08 59.585 15275 1.73 0 
 [SUBAREAS]
 S1	0.015 0.24 0.06 0.3 25 OUTLET 
@@ -79,20 +79,20 @@ Anna_TT_infil	SURFACE 3 0.15 0.05 1.0 5
 Anna_TT_infil	STORAGE 48 0.75 1.5 0 
 Anna_TT_infil	DRAIN 0 0.5 6 6 
 [LID_USAGE]
-S1	wakefield_BR_RG	0 741 0 0 0 0   
-S1	Anna_TT_infil	0 760 5 0 0.000 0   
-S2	wakefield_BR_RG	0 741 0 0 0 0   
-S2	Anna_TT_infil	0 760 5 0 0.000 0   
-S3	wakefield_BR_RG	0 741 0 0 0 0   
-S3	Anna_TT_infil	0 760 5 0 0.000 0   
-S4	wakefield_BR_RG	0 741 0 0 0 0   
-S4	Anna_TT_infil	0 760 5 0 0.000 0   
-S5	wakefield_BR_RG	0 741 0 0 0 0   
-S5	Anna_TT_infil	0 760 5 0 0.000 0   
-S6	wakefield_BR_RG	0 741 0 0 0 0   
-S6	Anna_TT_infil	0 760 5 0 0.000 0   
-S7	wakefield_BR_RG	0 741 0 0 0 0   
-S7	Anna_TT_infil	10 760 5 0 6.958 0   
+S1	wakefield_BR_RG	10 741.0 0 0 36.614 0   
+S1	Anna_TT_infil	10 760.0 5 0 38.273 0   
+S2	wakefield_BR_RG	1 741.0 0 0 2.056 0   
+S2	Anna_TT_infil	10 760.0 5 0 21.308 0   
+S3	wakefield_BR_RG	0 741.0 0 0 0.000 0   
+S3	Anna_TT_infil	10 760.0 5 0 8.272 0   
+S4	wakefield_BR_RG	0 741.0 0 0 0.000 0   
+S4	Anna_TT_infil	10 760.0 5 0 14.519 0   
+S5	wakefield_BR_RG	0 741.0 0 0 0.000 0   
+S5	Anna_TT_infil	10 760.0 5 0 14.092 0   
+S6	wakefield_BR_RG	0 741.0 0 0 0.000 0   
+S6	Anna_TT_infil	10 760.0 5 0 15.071 0   
+S7	wakefield_BR_RG	10 741.0 0 0 13.475 0   
+S7	Anna_TT_infil	10 760.0 5 0 13.917 0   
 [OUTFALLS]
 outfall	0 FREE 
 [REPORT]

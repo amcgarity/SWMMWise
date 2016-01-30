@@ -47,12 +47,12 @@ def swmm(*variables):  # v is a list of variables
         model1.lidChangeNumber(subcat,lid,numlid[i])
         area = model1.lidGetArea(subcat,lid)
         model1.lidChangeArea(subcat,lid,area,captAreaPct_Anna)   # adjust FromImp for new number by resetting area        i += 1
-    f = open("borg_wingo_modified_4000.inp",'w')
+    f = open("borg_wingo_modified_300.inp",'w')
     swmmInputFileStr=model1.output()
     f.write(swmmInputFileStr)  # write out the swmmInputFileStr for modified problem
     f.close()
-    call(["swmm5","borg_wingo_modified_4000.inp", "borg_wingo_modified_4000.txt", "out.out"])
-    (peak,volume,lidDict) = read_report("borg_wingo_modified_4000.txt")
+    call(["swmm5","borg_wingo_modified_300.inp", "borg_wingo_modified_300.txt", "out.out"])
+    (peak,volume,lidDict) = read_report("borg_wingo_modified_300.txt")
     startingVolume = 51.463  # MGAL/yr from single SWMM run of unmodified problem
     volReduction = startingVolume - volume  # objective 3
     numLidWakefield = numlid[:6]   # the first 6 lid numbers in the list
@@ -79,7 +79,7 @@ def swmm(*variables):  # v is a list of variables
 
 client = MongoClient()  # On local client
 dbName = 'borg_wingo'
-dbCollection = 'y16m01d29_4000_1'
+dbCollection = 'y16m01d29_300_1'
 captAreaPct_Wakefield = 5
 captAreaPct_Anna = 5
 db = client[dbName]
@@ -94,7 +94,7 @@ epsilon1 = 1  # for total number of Wakefield LIDs
 epsilon2 = 1  # for total number of Anna LIDs
 epsilon3 = 0.1  # for annual volume reduction Mgal/year
 borg.setEpsilons(epsilon1,epsilon2,epsilon3) 
-result = borg.solve({"maxEvaluations":4000})
+result = borg.solve({"maxEvaluations":300})
 solutionDict = {}
 solutionNumber = 1
 for solution in result:

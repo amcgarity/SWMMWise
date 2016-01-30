@@ -52,14 +52,14 @@ def main():
 	#client = MongoClient('mongodb://server.mcgarity.info:27017/')
 	client = MongoClient()  # use local server by default
 	db = client['swmmwise_Wingo_Wakefield_Anna']  # use or create the database
-	runsToday = db['y16m01d28_testing']   # use or create the collection
+	runsToday = db['y16m01d29_testing']   # use or create the collection
 	###outfile = 'swmm_run_output.txt'
 	###f = open(outfile,'w')
-	swmmInpFile = "wingohocking.inp"
+	swmmInpFile = "wingohocking_borg_initial.inp"
 	infile = open(swmmInpFile,'r')
 	swmmInitialInpFileStr = infile.readlines()
 	infile.close()
-	f = open('wingo_lidlist_zero.yaml','r')
+	f = open('wingo_Anna_list.yaml','r')
 	runParamList = yaml.load(f)
 	f.close()
 	dateTime = datetime.now()
@@ -76,4 +76,4 @@ def main():
 	print "Successfully stored %s" % doc_id
 
 
-#main()
+main()
