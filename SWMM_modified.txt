@@ -42,23 +42,23 @@
   **************************        Volume         Depth
   Runoff Quantity Continuity     acre-feet        inches
   **************************     ---------       -------
-  Total Precipitation ......       998.033        40.330
-  Evaporation Loss .........        82.087         3.317
-  Infiltration Loss ........       761.553        30.774
-  Surface Runoff ...........       154.538         6.245
+  Total Precipitation ......      9980.331        40.330
+  Evaporation Loss .........      1199.946         4.849
+  Infiltration Loss ........      7801.825        31.527
+  Surface Runoff ...........       978.709         3.955
   Final Storage ............         0.000         0.000
-  Continuity Error (%) .....        -0.014
+  Continuity Error (%) .....        -0.002
   
   
   **************************        Volume        Volume
   Flow Routing Continuity        acre-feet      10^6 gal
   **************************     ---------     ---------
   Dry Weather Inflow .......         0.000         0.000
-  Wet Weather Inflow .......       154.538        50.358
+  Wet Weather Inflow .......       978.709       318.927
   Groundwater Inflow .......         0.000         0.000
   RDII Inflow ..............         0.000         0.000
   External Inflow ..........         0.000         0.000
-  External Outflow .........       154.538        50.358
+  External Outflow .........       978.709       318.927
   Flooding Loss ............         0.000         0.000
   Evaporation Loss .........         0.000         0.000
   Exfiltration Loss ........         0.000         0.000
@@ -76,13 +76,13 @@
                            Precip      Runon       Evap      Infil     Runoff      Runoff   Runoff   Coeff
   Subcatchment                 in         in         in         in         in    10^6 gal      CFS
   --------------------------------------------------------------------------------------------------------
-  S1                        40.33      85.90       1.46      84.86      39.92       50.35   279.81   0.316
-  S2                        40.33       0.00       5.19       4.02      31.12       15.54    22.71   0.772
-  S3                        40.33      43.39       4.16      23.07      56.49       92.82   222.01   0.675
-  S4                        40.33      70.77       4.84      19.52      86.76       71.28   157.40   0.781
-  S5                        40.33       0.00       1.93      26.55      11.85       23.61    51.33   0.294
-  S6                        40.33       0.00       5.21       4.02      31.11       21.89    31.97   0.771
-  S7                        40.33      19.16       3.49      25.77      30.23       34.55    73.05   0.508
+  S1                        40.33      76.81       1.91      89.95      25.28      318.90   308.07   0.216
+  S2                        40.33       0.00       7.72       4.03      28.58      142.73   126.78   0.709
+  S3                        40.33      40.25       6.39      23.91      50.29      826.26   631.72   0.624
+  S4                        40.33      68.20       7.37      20.67      80.49      661.38   583.64   0.742
+  S5                        40.33       0.00       2.43      26.59      11.31      225.15   302.52   0.280
+  S6                        40.33       0.00       7.87       4.03      28.43      200.08   167.85   0.705
+  S7                        40.33      17.51       5.17      23.33      29.34      335.24   304.04   0.507
   
 
   ***********************
@@ -94,8 +94,8 @@
                                         Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
   Subcatchment      LID Control             in        in        in        in        in        in        in           %
   --------------------------------------------------------------------------------------------------------------------
-  S7                Anna_TT_infil       575.69      0.48    572.89      1.98      0.00      0.00      0.00        0.06
+  S7                Anna_TT_infil       533.20      0.01    532.71      0.42      0.00      0.00      0.00        0.01
 
-  Analysis begun on:  Fri Jan 29 20:01:34 2016
-  Analysis ended on:  Fri Jan 29 20:01:37 2016
+  Analysis begun on:  Mon Feb  1 20:11:22 2016
+  Analysis ended on:  Mon Feb  1 20:11:25 2016
   Total elapsed time: 00:00:03

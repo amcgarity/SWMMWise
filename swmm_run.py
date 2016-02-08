@@ -52,7 +52,7 @@ def main():
 	#client = MongoClient('mongodb://server.mcgarity.info:27017/')
 	client = MongoClient()  # use local server by default
 	db = client['swmmwise_Wingo_Wakefield_Anna']  # use or create the database
-	runsToday = db['y16m01d29_testing']   # use or create the collection
+	runsToday = db['y16m02d01_rerun_wingo_fixed_areas']   # use or create the collection
 	###outfile = 'swmm_run_output.txt'
 	###f = open(outfile,'w')
 	swmmInpFile = "wingohocking_borg_initial.inp"
