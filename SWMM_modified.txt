@@ -96,6 +96,6 @@
   --------------------------------------------------------------------------------------------------------------------
   S7                Anna_TT_infil       533.20      0.01    532.71      0.42      0.00      0.00      0.00        0.01
 
-  Analysis begun on:  Mon Feb  1 20:11:22 2016
-  Analysis ended on:  Mon Feb  1 20:11:25 2016
+  Analysis begun on:  Fri Feb 26 15:13:00 2016
+  Analysis ended on:  Fri Feb 26 15:13:03 2016
   Total elapsed time: 00:00:03
