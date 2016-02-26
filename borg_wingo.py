@@ -42,7 +42,8 @@ def swmm(*variables):  # v is a list of variables
     for subcat in subcatnames:
         model1.lidChangeNumber(subcat,lid,numlid[i])
         area = model1.lidGetArea(subcat,lid)
-        model1.lidChangeArea(subcat,lid,area,captAreaPct_Wakefield)   # adjust FromImp for new number by resetting area
+        # adjust FromImp for new number by resetting area:
+        model1.lidChangeArea(subcat,lid,area,captAreaPct_Wakefield)   
         i += 1
     f = open("borg_wingo_modified.inp",'w')
     swmmInputFileStr=model1.output()

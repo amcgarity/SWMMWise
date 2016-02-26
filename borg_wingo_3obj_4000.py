@@ -46,7 +46,9 @@ def swmm(*variables):  # v is a list of variables
     for subcat in subcatnames:
         model1.lidChangeNumber(subcat,lid,numlid[i])
         area = model1.lidGetArea(subcat,lid)
-        model1.lidChangeArea(subcat,lid,area,captAreaPct_Anna)   # adjust FromImp for new number by resetting area        i += 1
+        # adjust FromImp for new number by resetting area:
+        model1.lidChangeArea(subcat,lid,area,captAreaPct_Anna)           
+        i += 1
     f = open("borg_wingo_modified_4000.inp",'w')
     swmmInputFileStr=model1.output()
     f.write(swmmInputFileStr)  # write out the swmmInputFileStr for modified problem
@@ -55,8 +57,8 @@ def swmm(*variables):  # v is a list of variables
     (peak,volume,lidDict) = read_report("borg_wingo_modified_4000.txt")
     startingVolume = 51.463  # MGAL/yr from single SWMM run of unmodified problem
     volReduction = startingVolume - volume  # objective 3
-    numLidWakefield = numlid[:6]   # the first 6 lid numbers in the list
-    numLidAnna = numlid[-6:]       # the last 6 lid numbers in the list
+    numLidWakefield = numlid[:ncat]   # the first ncat lid numbers in the list
+    numLidAnna = numlid[-ncat:]       # the last ncat lid numbers in the list
     numLidTotalWakefield = sum(numLidWakefield)   # objective 1 
     numLidTotalAnna = sum(numLidAnna)             # objective 2
     run = {"runCount":runCount,"numLidTotalWakefield":numLidTotalWakefield,"numLidTotalAnna":numLidTotalAnna,

@@ -42,24 +42,23 @@
   **************************        Volume         Depth
   Runoff Quantity Continuity     acre-feet        inches
   **************************     ---------       -------
-  Initial LID Storage ......         0.006         0.000
-  Total Precipitation ......       998.033        40.330
-  Evaporation Loss .........        82.367         3.328
-  Infiltration Loss ........       761.001        30.752
-  Surface Runoff ...........       154.814         6.256
-  Final Storage ............         0.010         0.000
-  Continuity Error (%) .....        -0.015
+  Total Precipitation ......      9980.331        40.330
+  Evaporation Loss .........      1200.385         4.851
+  Infiltration Loss ........      7799.859        31.519
+  Surface Runoff ...........       980.234         3.961
+  Final Storage ............         0.000         0.000
+  Continuity Error (%) .....        -0.001
   
   
   **************************        Volume        Volume
   Flow Routing Continuity        acre-feet      10^6 gal
   **************************     ---------     ---------
   Dry Weather Inflow .......         0.000         0.000
-  Wet Weather Inflow .......       154.814        50.448
+  Wet Weather Inflow .......       980.234       319.424
   Groundwater Inflow .......         0.000         0.000
   RDII Inflow ..............         0.000         0.000
   External Inflow ..........         0.000         0.000
-  External Outflow .........       154.814        50.448
+  External Outflow .........       980.234       319.424
   Flooding Loss ............         0.000         0.000
   Evaporation Loss .........         0.000         0.000
   Exfiltration Loss ........         0.000         0.000
@@ -77,30 +76,15 @@
                            Precip      Runon       Evap      Infil     Runoff      Runoff   Runoff   Coeff
   Subcatchment                 in         in         in         in         in    10^6 gal      CFS
   --------------------------------------------------------------------------------------------------------
-  S1                        40.33      86.44       1.47      85.33      39.99       50.44   281.38   0.315
-  S2                        40.33       0.00       5.24       4.75      30.34       15.15    22.16   0.752
-  S3                        40.33      44.60       4.15      23.63      57.15       93.90   224.11   0.673
-  S4                        40.33      73.60       4.84      19.92      89.18       73.27   160.34   0.783
-  S5                        40.33       0.00       1.96      26.71      11.67       23.24    50.81   0.289
-  S6                        40.33       0.00       5.18       4.47      30.69       21.60    31.55   0.761
-  S7                        40.33      18.90       3.53      23.13      32.58       37.23    76.48   0.550
+  S1                        40.33      76.93       1.91      90.03      25.32      319.40   308.19   0.216
+  S2                        40.33       0.00       7.72       4.03      28.58      142.73   126.78   0.709
+  S3                        40.33      40.39       6.39      23.94      50.38      827.80   632.26   0.624
+  S4                        40.33      68.52       7.37      20.73      80.76      663.56   585.00   0.742
+  S5                        40.33       0.00       2.43      26.59      11.31      225.15   302.52   0.280
+  S6                        40.33       0.00       7.87       4.03      28.43      200.08   167.85   0.705
+  S7                        40.33      17.51       5.17      23.10      29.57      337.89   306.30   0.511
   
 
-  ***********************
-  LID Performance Summary
-  ***********************
-
-  --------------------------------------------------------------------------------------------------------------------
-                                         Total      Evap     Infil   Surface    Drain    Initial     Final  Continuity
-                                        Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
-  Subcatchment      LID Control             in        in        in        in        in        in        in           %
-  --------------------------------------------------------------------------------------------------------------------
-  S1                wakefield_BR_RG    2458.32     19.62    810.95   1627.74      0.00      0.30      0.50       -0.01
-  S2                wakefield_BR_RG     178.00     14.72    163.15      0.00      0.00      0.30      0.49       -0.04
-  S3                Anna_TT_infil       127.68      0.01    127.67      0.00      0.00      0.00      0.00        0.00
-  S5                wakefield_BR_RG     126.95     14.41    112.40      0.00      0.00      0.30      0.49       -0.04
-  S6                Anna_TT_infil        78.24      0.27     77.96      0.00      0.00      0.00      0.00        0.00
-
-  Analysis begun on:  Thu Jan 28 21:22:15 2016
-  Analysis ended on:  Thu Jan 28 21:22:19 2016
+  Analysis begun on:  Mon Feb 15 18:49:57 2016
+  Analysis ended on:  Mon Feb 15 18:50:01 2016
   Total elapsed time: 00:00:04
