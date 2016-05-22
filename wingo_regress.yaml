@@ -1,0 +1,57 @@
+# wingo_regress.yaml
+I: {S1,S2,S3,S4,S5,S6,S7}
+J: {private}
+K: {1_rain_garden, 2_tree_trench}
+T: {volume}
+D: {pervious, impervious}
+
+convert:
+    volume: 1.0    # no conversion (Mgal/yr)
+a:
+    private: 4.98
+b:
+    private: 0.24
+g:
+    1_rain_garden:    1.05
+    2_tree_trench:    2.7  
+
+deploy:
+    1_rain_garden:
+        pervious:   0.2
+        impervious: 0.5
+    2_tree_trench:
+        pervious:   0.0
+        impervious: 0.7
+
+ownfr:     
+    S1:
+        private: 1.0
+    S2:
+        private: 1.0       
+    S3:
+        private: 1.0
+    S4:
+        private: 1.0
+    S5:
+        private: 1.0   
+    S6:
+        private: 1.0       
+    S7:
+        private: 1.0
+
+area:      #  acre
+    S1:      464.6
+    S2:      183.9
+    S3:      605.1
+    S4:      302.6
+    S5:      733.4
+    S6:      259.2
+    S7:      420.8
+impfr:   #  impervious fraction
+    S1:      0.40
+    S2:      0.90
+    S3:      0.70
+    S4:      0.80
+    S5:      0.34
+    S6:      0.90
+    S7:      0.60
