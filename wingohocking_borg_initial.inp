@@ -1,0 +1,123 @@
+[TITLE]
+Wingohocking
+[OPTIONS]
+FLOW_UNITS           CFS
+INFILTRATION         HORTON
+FLOW_ROUTING         KINWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           01/01/2008
+START_TIME           00:00:00
+REPORT_START_DATE    01/01/2008
+REPORT_START_TIME    00:00:00
+END_DATE             01/01/2009
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:01:00
+WET_STEP             00:01:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:15 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  SLOPE
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+MAX_TRIALS           0
+HEAD_TOLERANCE       0
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+TEMPERATURE 
+DRY_ONLY         NO
+
+[TEMPERATURE]
+;;Data Element     Values     
+FILE               "668594.dat"
+WINDSPEED FILE    
+SNOWMELT           34 0.5 0.6 0.0 50.0 0.0
+ADC IMPERVIOUS     1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+ADC PERVIOUS       1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+;;-------------- --------- ------ ------ ----------
+RG               VOLUME    0:05     1.0      FILE       "8591312066066.dat" *          IN  
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+S1	               RG              outfall         464.6      20     1686.5      8         0 
+S2	               RG                 S1           183.9      90     667.6       1.45      0 
+S3	               RG                 S1           605.1      70     2196.5      2         0 
+S4	               RG                 S3           302.6      80     1098.4      2.66      0 
+S5	               RG                 S4           733.4      34     2662.2      3.2       0 
+S6	               RG                 S7           259.2      90     940.9       1.14      0 
+S7	               RG                 S4           420.8      60     1527.5      1.73      0 
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+S1               0.015      0.24       0.06       0.3        25         OUTLET    
+S2               0.015      0.24       0.06       0.3        25         OUTLET    
+S3               0.015      0.24       0.06       0.3        25         OUTLET    
+S4               0.015      0.24       0.06       0.3        25         OUTLET    
+S5               0.015      0.24       0.06       0.3        25         OUTLET    
+S6               0.015      0.24       0.06       0.3        25         OUTLET    
+S7               0.015      0.24       0.06       0.3        25         OUTLET    
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+S1	3.0 0.5 4 7 0 
+S2	3.0 0.5 4 7 0 
+S3	3.0 0.5 4 7 0 
+S4	3.0 0.5 4 7 0 
+S5	3.0 0.5 4 7 0 
+S6	3.0 0.5 4 7 0 
+S7	3.0 0.5 4 7 0 
+[LID_CONTROLS]
+;;Name           Type/Layer Parameters
+;;-------------- ---------- ----------
+wakefield_BR_RG  BC
+wakefield_BR_RG  SURFACE    36         0.7        0.1        1.0        5.0       
+wakefield_BR_RG  SOIL       3          0.5        0.2        0.1        1.0        10.0       3.5       
+wakefield_BR_RG  STORAGE    0.1        0.75       0.5        0         
+wakefield_BR_RG  DRAIN      0          0.5        0          6 
+Anna_TT_infil	IT
+Anna_TT_infil	SURFACE     3          0.15       0.05       1.0          5 
+Anna_TT_infil	STORAGE    48          0.75       1.5        0 
+Anna_TT_infil	DRAIN       0          0.5        6          6     
+[LID_USAGE]
+;;Subcatchment   LID Process      Number  Area       Width      InitSat    FromImp    ToPerv     RptFile                  DrainTo         
+;;-------------- ---------------- ------- ---------- ---------- ---------- ---------- ---------- ------------------------ ----------------
+S1               wakefield_BR_RG    0       741        0          0          0          0         
+S1	             Anna_TT_infil	    0       760        5          0          0          0
+S2               wakefield_BR_RG    0       741        0          0          0          0         
+S2	             Anna_TT_infil	    0       760        5          0          0          0
+S3               wakefield_BR_RG    0       741        0          0          0          0
+S3	             Anna_TT_infil	    0       760        5          0          0          0         
+S4               wakefield_BR_RG    0       741        0          0          0          0         
+S4	             Anna_TT_infil	    0       760        5          0          0          0
+S5               wakefield_BR_RG    0       741        0          0          0          0
+S5	             Anna_TT_infil	    0       760        5          0          0          0         
+S6               wakefield_BR_RG    0       741        0          0          0          0         
+S6	             Anna_TT_infil	    0       760        5          0          0          0
+S7               wakefield_BR_RG    0       741        0          0          0          0         
+S7	             Anna_TT_infil	    0       760        5          0          0          0
+[OUTFALLS]
+outfall	 0 FREE 
+[REPORT]
+INPUT	NO 
+CONTROLS	NO 
+SUBCATCHMENTS	ALL 
+NODES	ALL 
+LINKS	ALL 

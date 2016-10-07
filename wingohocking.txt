@@ -1,0 +1,115 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.010)
+  --------------------------------------------------------------
+
+  Wingohocking 
+  
+  *********************
+  Rainfall File Summary
+  *********************
+  Station    First        Last         Recording   Periods    Periods    Periods
+  ID         Date         Date         Frequency  w/Precip    Missing    Malfunc.
+  -------------------------------------------------------------------------------
+  *          JAN-01-2008  MAY-01-2009     60 min       784          0          0
+
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... NO
+    Water Quality .......... NO
+  Infiltration Method ...... HORTON
+  Starting Date ............ JAN-01-2008 00:00:00
+  Ending Date .............. JAN-01-2009 00:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:01:00
+  Wet Time Step ............ 00:01:00
+  Dry Time Step ............ 01:00:00
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Initial LID Storage ......         0.006         0.000
+  Total Precipitation ......       998.033        40.330
+  Evaporation Loss .........        79.424         3.210
+  Infiltration Loss ........       449.434        18.161
+  Surface Runoff ...........       469.274        18.963
+  Final Storage ............         0.010         0.000
+  Continuity Error (%) .....        -0.010
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......       469.274       152.920
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........       469.274       152.920
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.000
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  --------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in    10^6 gal      CFS
+  --------------------------------------------------------------------------------------------------------
+  S1                        40.33       0.00       1.15      32.53       6.65        8.39    28.90   0.165
+  S2                        40.33       0.00       5.21       5.00      30.12       15.04    22.45   0.747
+  S3                        40.33       0.00       4.01      12.35      23.97       39.38    64.19   0.594
+  S4                        40.33       0.00       4.58       8.63      27.12       22.28    34.98   0.672
+  S5                        40.33       0.00       1.94      26.78      11.61       23.13    51.10   0.288
+  S6                        40.33       0.00       5.22       4.72      30.39       21.39    31.71   0.754
+  S7                        40.33       0.00       3.44      16.50      20.39       23.29    39.86   0.506
+  
+
+  ***********************
+  LID Performance Summary
+  ***********************
+
+  --------------------------------------------------------------------------------------------------------------------
+                                         Total      Evap     Infil   Surface    Drain    Initial     Final  Continuity
+                                        Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
+  Subcatchment      LID Control             in        in        in        in        in        in        in           %
+  --------------------------------------------------------------------------------------------------------------------
+  S1                Anna_TT_infil       387.86      0.34    387.52      0.00      0.00      0.00      0.00       -0.00
+  S1                wakefield_BR_RG     387.75     16.60    344.50     26.64      0.00      0.30      0.50       -0.05
+  S2                Anna_TT_infil       385.01      0.60    384.41      0.00      0.00      0.00      0.00       -0.00
+  S2                wakefield_BR_RG     385.12     16.30    342.81     25.96      0.00      0.30      0.50       -0.04
+  S3                Anna_TT_infil       384.71      0.52    384.19      0.00      0.00      0.00      0.00       -0.00
+  S3                wakefield_BR_RG     386.22     16.38    343.53     26.25      0.00      0.30      0.50       -0.04
+  S4                Anna_TT_infil       386.17      0.52    385.65      0.00      0.00      0.00      0.00       -0.00
+  S4                wakefield_BR_RG     385.94     16.39    343.34     26.18      0.00      0.30      0.50       -0.04
+  S5                Anna_TT_infil       387.48      0.41    387.07      0.00      0.00      0.00      0.00       -0.00
+  S5                wakefield_BR_RG     387.22     16.51    344.17     26.51      0.00      0.30      0.50       -0.04
+  S6                Anna_TT_infil       382.87      0.62    382.25      0.00      0.00      0.00      0.00       -0.00
+  S6                wakefield_BR_RG     385.04     16.27    342.76     25.94      0.00      0.30      0.50       -0.03
+  S7                Anna_TT_infil       386.27      0.51    385.76      0.00      0.00      0.00      0.00       -0.00
+  S7                wakefield_BR_RG     386.42     16.40    343.66     26.31      0.00      0.30      0.50       -0.04
+
+  Analysis begun on:  Thu Jan 28 23:00:50 2016
+  Analysis ended on:  Thu Jan 28 23:00:56 2016
+  Total elapsed time: 00:00:06
