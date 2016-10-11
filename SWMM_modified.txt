@@ -103,6 +103,6 @@
   S6                wakefield_BR_RG     671.32     14.55    521.83    134.83      0.00      0.30      0.51       -0.01
   S7                wakefield_BR_RG    1016.90     16.02    672.02    328.76      0.00      0.30      0.51       -0.01
 
-  Analysis begun on:  Sun Oct  9 19:25:38 2016
-  Analysis ended on:  Sun Oct  9 19:25:43 2016
-  Total elapsed time: 00:00:05
+  Analysis begun on:  Tue Oct 11 18:16:43 2016
+  Analysis ended on:  Tue Oct 11 18:16:47 2016
+  Total elapsed time: 00:00:04
