@@ -79,19 +79,19 @@ Anna_TT_infil	SURFACE 3 0.15 0.05 1.0 5
 Anna_TT_infil	STORAGE 48 0.75 1.5 0 
 Anna_TT_infil	DRAIN 0 0.5 6 6 
 [LID_USAGE]
-S1	wakefield_BR_RG	20 741 0 0 7.323 0   
+S1	wakefield_BR_RG	0 741 0 0 0.000 0   
 S1	Anna_TT_infil	0 760 5 0 0 0   
-S2	wakefield_BR_RG	20 741 0 0 4.111 0   
+S2	wakefield_BR_RG	0 741 0 0 0.000 0   
 S2	Anna_TT_infil	0 760 5 0 0 0   
-S3	wakefield_BR_RG	20 741 0 0 1.606 0   
+S3	wakefield_BR_RG	0 741 0 0 0.000 0   
 S3	Anna_TT_infil	0 760 5 0 0 0   
-S4	wakefield_BR_RG	20 741 0 0 2.811 0   
+S4	wakefield_BR_RG	0 741 0 0 0.000 0   
 S4	Anna_TT_infil	0 760 5 0 0 0   
-S5	wakefield_BR_RG	20 741 0 0 2.729 0   
+S5	wakefield_BR_RG	0 741 0 0 0.000 0   
 S5	Anna_TT_infil	0 760 5 0 0 0   
-S6	wakefield_BR_RG	20 741 0 0 2.917 0   
+S6	wakefield_BR_RG	0 741 0 0 0.000 0   
 S6	Anna_TT_infil	0 760 5 0 0 0   
-S7	wakefield_BR_RG	20 741 0 0 2.695 0   
+S7	wakefield_BR_RG	0 741 0 0 0.000 0   
 S7	Anna_TT_infil	0 760 5 0 0 0   
 [OUTFALLS]
 outfall	0 FREE 
