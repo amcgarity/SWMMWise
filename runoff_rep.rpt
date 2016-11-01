@@ -1,0 +1,1955 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.009)
+  --------------------------------------------------------------
+
+  Polygons for the sheds: Projected Coordinate System:NAD_1983_StatePlane_Pennsylvania_South_FIPS_3702_Feet 
+  Polygons for the sheds: Projected Coordinate System:NAD_1983_StatePlane_Pennsylvania_South_FIPS_3702_Feet 
+  Polygons for the sheds: Projected Coordinate System:NAD_1983_StatePlane_Pennsylvania_South_FIPS_3702_Feet 
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 1
+  Number of subcatchments ... 145
+  Number of nodes ........... 76
+  Number of links ........... 76
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  GAGE1                rain_data_philly.dat          
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  CHEWSTA_shed               5.13    945.00     55.12    5.1648 GAGE1                TT14-275            
+  CHEWSTB_shed               8.62   1226.00     15.27   13.5463 GAGE1                TT14-275            
+  CLEARVIEW_shed             2.98    721.00     68.88    8.2804 GAGE1                TT14-286            
+  T14-A1_shed               99.01   4153.00     62.23    6.6143 GAGE1                TT14-006            
+  T14-A2_shed              138.27   4908.00     47.88    5.5028 GAGE1                TT14-016            
+  T14-A3_shed               98.68   4147.00     55.94    5.9027 GAGE1                TT14-030            
+  T14-A4_shed               91.79   3999.00     74.13    4.6798 GAGE1                TT14-044            
+  T14-A5_shed               15.27   1631.00     88.82    4.5005 GAGE1                TT14-048            
+  T14-B_shed               327.26   7551.00     65.86    3.4501 GAGE1                TT14-904            
+  T14-C1_shed               74.48   3602.00     86.05    4.6450 GAGE1                TT14-048            
+  T14-C2_shed               72.21   3547.00     71.70    5.8267 GAGE1                TT14-058            
+  T14-C3_shed               29.40   2263.00     61.46    3.7465 GAGE1                TT14-068            
+  T14-C4_shed               17.84   1763.00     80.89    4.7208 GAGE1                TT14-068            
+  T14-D_shed                81.14   3760.00     50.46    3.6339 GAGE1                TT14-106            
+  T14-E_shed               153.01   5163.00     63.67    4.0992 GAGE1                TT14-076            
+  T14-F_shed                23.84   2038.00     29.72    5.6956 GAGE1                TT14-076            
+  T14-G_shed                55.59   3112.00     66.14    4.4413 GAGE1                TT14-076            
+  T14-H_shed                 2.19    618.00     66.15   20.4101 GAGE1                TT14-092            
+  T14-J_shed               148.01   5078.00     72.76    5.1622 GAGE1                TT14-306            
+  T14-K1_shed               25.55   2110.00     66.17    1.9451 GAGE1                TT14-306            
+  T14-K2_shed               25.77   2119.00     79.80    5.0437 GAGE1                TT14-312            
+  T14-K3_shed              328.15   7562.00     59.18    6.5841 GAGE1                TT14-312            
+  T14-L1_shed                6.84   1092.00     89.62    3.3775 GAGE1                TT14-406            
+  T14-L2_shed              105.35   4284.00     66.70    6.1219 GAGE1                TT14-418            
+  T14-M1_shed               67.21   3422.00     70.42    5.2613 GAGE1                TT14-202            
+  T14-M2_shed               77.25   3669.00     65.70    8.3501 GAGE1                TT14-222            
+  T14-P1_shed              106.64   4311.00     36.24    8.7182 GAGE1                TT14-228            
+  T14-P2_shed               36.28   2514.00     48.31    8.3055 GAGE1                TT14-240            
+  T14-P3_shed               94.70   4062.00     53.42    7.7216 GAGE1                TT14-243            
+  T14-P4_shed               60.49   3247.00     51.75    8.6727 GAGE1                TT14-248            
+  T14-P5_shed               31.05   2326.00     43.67    9.0507 GAGE1                TT14-262            
+  T14-R1_shed               73.62   3582.00     65.16    6.4070 GAGE1                TT14-262            
+  T14-R2_shed               64.46   3351.00     50.62    4.6868 GAGE1                TT14-814            
+  T14-R3_shed               29.84   2280.00     69.08    3.0616 GAGE1                TT14-828            
+  T14-R4_shed               23.46   2022.00     72.59    4.6880 GAGE1                TT14-828            
+  T14-R5_shed               72.04   3543.00     54.12    5.2836 GAGE1                TT14-834            
+  T14-R6_shed               60.67   3251.00     49.63    3.6605 GAGE1                TT14-834            
+  T14-R7_shed               73.82   3586.00     45.51    4.4664 GAGE1                TT14-848            
+  T14-T_shed                 6.05   1027.00     79.71    4.4655 GAGE1                TT14-112            
+  T14-U_shed                13.50   1534.00     77.62    7.3625 GAGE1                TT14-112            
+  TT14-262A_shed            95.49   4079.00     58.84    7.2167 GAGE1                TT14-262            
+  TT14-263A_shed            15.20   1627.00     38.58    6.8504 GAGE1                TT14-263            
+  TT14-264A_shed            22.33   1973.00     63.42    7.7536 GAGE1                TT14-264            
+  TT14-264B_shed             2.35    640.00     56.69   16.0470 GAGE1                TT14-264            
+  TT14-264C_shed            26.04   2130.00     53.43    5.4776 GAGE1                TT14-264            
+  TT14-264D_shed            22.12   1963.00     63.23    4.2933 GAGE1                TT14-264            
+  TT14-264E_shed             2.58    670.00     78.84    9.3642 GAGE1                TT14-264            
+  TT14-266A_shed             1.50    511.00     81.19    6.4237 GAGE1                TT14-268            
+  TT14-266B_shed             3.70    803.00     90.08    5.6761 GAGE1                TT14-268            
+  TT14-270A_shed             4.51    886.00     54.27    9.0885 GAGE1                TT14-268            
+  TT14-270B_shed             3.12    737.00     35.03    6.3066 GAGE1                TT14-268            
+  TT14-272A_shed             3.42    772.00     44.73    8.5089 GAGE1                TT14-275            
+  TT14-274A_shed             2.08    602.00     85.84    4.3110 GAGE1                TT14-275            
+  TT14-274B_shed            11.11   1391.00     60.58    8.7356 GAGE1                TT14-275            
+  TT14-274C_shed            16.67   1704.00     61.86    7.8600 GAGE1                TT14-275            
+  TT14-278A_shed             5.74   1000.00     67.35   12.9272 GAGE1                TT14-280            
+  TT14-278B_shed            12.67   1486.00     58.41    7.3345 GAGE1                TT14-280            
+  TT14-278C_shed             2.67    682.00     81.92    6.1641 GAGE1                TT14-280            
+  TT14-280A_shed             1.85    568.00     61.93   10.2883 GAGE1                TT14-280            
+  TT14-282A_shed            39.75   2632.00     64.22    7.4516 GAGE1                TT14-280            
+  TT14-284A_shed             2.94    716.00     59.79    3.7087 GAGE1                TT14-286            
+  TT14-284B_shed             0.55    310.00     69.24    4.3028 GAGE1                TT14-286            
+  TT14-284C_shed             0.95    407.00     85.75    2.3486 GAGE1                TT14-286            
+  TT14-286A_shed             2.56    668.00     78.26    5.0568 GAGE1                TT14-286            
+  TT14-288A_shed             0.43    274.00     82.84    2.7076 GAGE1                TT14-286            
+  TT14-288B_shed             6.60   1072.00     70.84   12.1775 GAGE1                TT14-286            
+  TT14-288C_shed             3.21    748.00     46.19    8.6243 GAGE1                TT14-286            
+  TT14-291A_shed            18.07   1774.00     59.44    7.7606 GAGE1                TT14-291            
+  TT14-291B_shed             5.33    964.00     65.68    5.4610 GAGE1                TT14-291            
+  TT14-291C_shed             0.58    318.00     92.36    0.0293 GAGE1                TT14-291            
+  TT14-291D_shed            85.18   3853.00     25.08    7.1724 GAGE1                TT14-291            
+  TT14-294A_shed             1.85    568.00     60.11    3.4355 GAGE1                TT14-296            
+  TT14-294B_shed             0.71    352.00     62.98    7.0827 GAGE1                TT14-296            
+  TT14-294C_shed            14.12   1569.00     51.41    9.3086 GAGE1                TT14-296            
+  TT14-296A_shed             0.96    409.00     81.79    4.4320 GAGE1                TT14-296            
+  TT14-296B_shed           186.82   5705.00     54.48    5.5072 GAGE1                TT14-296            
+  TT14-502_shed            112.50   4427.00     36.23    9.5180 GAGE1                TT14-502            
+  TT14-524_shed             85.18   3853.00     67.08    5.8370 GAGE1                TT14-524            
+  TT14-530_shed             89.78   3955.00     73.73    6.7967 GAGE1                TT14-530            
+  TT14-544_shed             31.09   2327.00     68.91    8.4910 GAGE1                TT14-546            
+  TT14-552A_shed            47.94   2890.00     67.63    5.3960 GAGE1                TT14-554            
+  TT14-552B_shed           105.38   4285.00     56.25    4.0840 GAGE1                TT14-554            
+  TT14-554_shed             12.55   1479.00     62.53    4.3423 GAGE1                TT14-554            
+  TT14-558_shed            121.62   4603.00     63.76    3.5397 GAGE1                TT14-560            
+  TT14-560_shed             29.10   2252.00     61.54    5.6022 GAGE1                TT14-560            
+  TT14-574_shed            150.12   5114.00     50.05    5.8044 GAGE1                TT14-574            
+  TT14-584_shed            143.95   5008.00     56.00    5.9178 GAGE1                TT14-582            
+  TT14-602A_shed             1.86    569.00     83.39    9.3377 GAGE1                TT14-296            
+  TT14-602B_shed             6.37   1054.00     43.80    6.2733 GAGE1                TT14-296            
+  TT14-602C_shed            36.63   2526.00     42.88    7.0148 GAGE1                TT14-296            
+  TT14-602D_shed             3.85    819.00     55.71    5.0698 GAGE1                TT14-296            
+  TT14-606A_shed             2.91    712.00     62.20    8.6558 GAGE1                TT14-606            
+  TT14-606B_shed             5.32    963.00     63.73    5.9962 GAGE1                TT14-606            
+  TT14-610A_shed             0.62    329.00     66.53    2.3854 GAGE1                TT14-612            
+  TT14-610B_shed             0.84    383.00     71.02    6.4988 GAGE1                TT14-612            
+  TT14-610C_shed            53.32   3048.00     48.88    8.1023 GAGE1                TT14-612            
+  TT14-610D_shed             3.62    794.00     49.47    4.6156 GAGE1                TT14-612            
+  TT14-612A_shed             2.48    657.00     54.28    5.4626 GAGE1                TT14-612            
+  TT14-612B_shed             0.77    366.00     60.70    5.4389 GAGE1                TT14-612            
+  TT14-612C_shed             5.96   1019.00     67.18    5.9432 GAGE1                TT14-612            
+  TT14-614A_shed             2.34    639.00     48.64    6.3496 GAGE1                TT14-616            
+  TT14-614B_shed             0.87    389.00     65.41    5.8590 GAGE1                TT14-616            
+  TT14-614C_shed             4.31    867.00     71.41    7.0414 GAGE1                TT14-616            
+  TT14-616A_shed             2.33    637.00     65.53    5.7363 GAGE1                TT14-616            
+  TT14-616B_shed             4.00    835.00     65.86    6.5364 GAGE1                TT14-616            
+  TT14-618A_shed            14.09   1567.00     66.26    7.2702 GAGE1                TT14-622            
+  TT14-620A_shed             3.46    776.00     63.96    7.3269 GAGE1                TT14-622            
+  TT14-620B_shed            92.26   4009.00     50.31    6.4510 GAGE1                TT14-622            
+  TT14-622A_shed             4.20    855.00     63.61    6.4604 GAGE1                TT14-622            
+  TT14-624A_shed             3.46    776.00     64.01    6.2178 GAGE1                TT14-622            
+  TT14-630A_shed             7.72   1160.00     51.84    7.5646 GAGE1                TT14-622            
+  TT14-636A_shed             1.03    424.00     66.54    6.6110 GAGE1                TT14-636            
+  TT14-636B_shed             5.74   1000.00     53.45    6.0380 GAGE1                TT14-636            
+  TT14-639A_shed             1.75    552.00     64.57    6.3578 GAGE1                TT14-639            
+  TT14-639B_shed             9.81   1307.00     44.85   11.9940 GAGE1                TT14-639            
+  TT14-639C_shed            10.13   1329.00     48.05    7.4148 GAGE1                TT14-639            
+  TT14-640A_shed             3.48    779.00     43.61    6.5414 GAGE1                TT14-642            
+  TT14-642A_shed            23.68   2031.00     33.71    7.0016 GAGE1                TT14-642            
+  TT14-642B_shed             2.14    611.00     57.98   11.4478 GAGE1                TT14-642            
+  TT14-642C_shed             6.73   1083.00     45.41    6.3176 GAGE1                TT14-642            
+  TT14-644A_shed             3.43    773.00     36.66    4.9399 GAGE1                TT14-642            
+  TT14-646A_shed            73.42   3577.00     52.52    6.1808 GAGE1                TT14-646            
+  TT14-648A_shed            47.95   2890.00     41.43    6.2150 GAGE1                TT14-646            
+  TT14-648B_shed             3.55    786.00     54.98    8.1076 GAGE1                TT14-646            
+  TT14-658A_shed            22.00   1958.00     43.94    7.3366 GAGE1                TT14-660            
+  TT14-658B_shed             9.66   1297.00     52.68    7.8042 GAGE1                TT14-660            
+  TT14-660A_shed             3.35    764.00     45.31    6.1643 GAGE1                TT14-660            
+  TT14-666A_shed             6.87   1094.00     57.50    6.5173 GAGE1                TT14-666            
+  TT14-668A_shed             3.91    825.00     38.03    5.8384 GAGE1                TT14-666            
+  TT14-676A_shed             3.99    834.00     46.58    5.9884 GAGE1                TT14-676            
+  TT14-684A_shed             3.20    747.00     44.46    5.3639 GAGE1                TT14-688            
+  TT14-684B_shed             1.19    455.00     58.03    6.6967 GAGE1                TT14-688            
+  TT14-688A_shed             1.62    531.00     51.17    5.7306 GAGE1                TT14-688            
+  TT14-688B_shed             0.77    366.00     67.52    6.3366 GAGE1                TT14-688            
+  TT14-688C_shed             3.27    755.00     61.60    5.2865 GAGE1                TT14-688            
+  TT14-690A_shed             5.05    938.00     51.49    2.7878 GAGE1                TT14-692            
+  TT14-690B_shed             1.07    432.00     47.07    5.0811 GAGE1                TT14-692            
+  TT14-692A_shed             5.82   1007.00     46.68    4.6122 GAGE1                TT14-692            
+  TT14-702_shed             43.93   2767.00     68.08    6.5474 GAGE1                TT14-702            
+  TT14-706_shed             60.21   3239.00     55.34    5.1472 GAGE1                TT14-708            
+  TT14-708_shed             82.20   3785.00     46.91    5.6262 GAGE1                TT14-708            
+  TT14-720_shed            132.26   4801.00     57.69    6.5093 GAGE1                TT14-716            
+  TT14-736_shed             83.15   3806.00     53.93    5.1102 GAGE1                TT14-738            
+  TT14-740_shed             50.24   2959.00     50.41    4.5462 GAGE1                TT14-738            
+  TT14-746_shed             51.49   2995.00     39.35    4.2342 GAGE1                TT14-746            
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  TT14-006             JUNCTION             27.51     87.39       0.0
+  TT14-044             JUNCTION             42.38     78.42       0.0
+  TT14-030             JUNCTION             36.52     64.98       0.0
+  TT14-904             JUNCTION             43.58     67.12       0.0
+  TT14-048             JUNCTION             44.52     79.98       0.0
+  TT14-058             JUNCTION             49.57     29.53       0.0
+  TT14-068             JUNCTION             53.44     55.86       0.0
+  TT14-106             JUNCTION             53.83     64.87       0.0
+  TT14-076             JUNCTION             57.57     71.33       0.0
+  TT14-092             JUNCTION             68.16     51.84       0.0
+  TT14-112             JUNCTION             68.08     58.22       0.0
+  TT14-202             JUNCTION             72.43     25.97       0.0
+  TT14-406             JUNCTION             77.83     37.07       0.0
+  TT14-418             JUNCTION             86.72     50.38       0.0
+  TT14-306             JUNCTION             69.20     54.80       0.0
+  TT14-312             JUNCTION             89.85     64.05       0.0
+  TT14-222             JUNCTION             82.70     54.50       0.0
+  TT14-228             JUNCTION             88.00     78.00       0.0
+  TT14-502             JUNCTION             92.61     27.29       0.0
+  TT14-524             JUNCTION            124.63     40.47       0.0
+  TT14-240             JUNCTION            119.64     68.16       0.0
+  TT14-243             JUNCTION            128.55    111.75       0.0
+  TT14-248             JUNCTION            141.51    100.00       0.0
+  TT14-546             JUNCTION            159.48    100.00       0.0
+  TT14-530             JUNCTION            134.72     80.28       0.0
+  TT14-262             JUNCTION            161.00     51.90       0.0
+  TT14-814             JUNCTION            172.88     45.22       0.0
+  TT14-263             JUNCTION            169.19     81.31       0.0
+  TT14-828             JUNCTION            199.43     39.57       0.0
+  TT14-834             JUNCTION            217.92     27.98       0.0
+  TT14-264             JUNCTION            180.16    100.00       0.0
+  TT14-268             JUNCTION            191.54     53.86       0.0
+  TT14-554             JUNCTION            171.70     33.40       0.0
+  TT14-560             JUNCTION            185.60     36.60       0.0
+  TT14-574             JUNCTION            198.62     41.28       0.0
+  TT14-582             JUNCTION            204.52     66.98       0.0
+  TT14-275             JUNCTION            200.39    100.00       0.0
+  TT14-280             JUNCTION            208.48    100.00       0.0
+  TT14-286             JUNCTION            214.29     95.71       0.0
+  TT14-291             JUNCTION            222.40    103.00       0.0
+  TT14-296             JUNCTION            228.48     30.42       0.0
+  TT14-606             JUNCTION            232.91     59.09       0.0
+  TT14-746             JUNCTION            319.04    100.00       0.0
+  TT14-738             JUNCTION            303.71    100.00       0.0
+  TT14-716             JUNCTION            268.81     82.69       0.0
+  TT14-708             JUNCTION            260.50     36.30       0.0
+  TT14-702             JUNCTION            248.90    100.00       0.0
+  TT14-612             JUNCTION            242.53    100.00       0.0
+  TT14-616             JUNCTION            245.92    100.00       0.0
+  TT14-622             JUNCTION            251.34     26.86       0.0
+  TT14-636             JUNCTION            260.84     77.26       0.0
+  TT14-639             JUNCTION            263.69     31.32       0.0
+  TT14-642             JUNCTION            268.42    100.00       0.0
+  TT14-646             JUNCTION            274.44     38.16       0.0
+  TT14-660             JUNCTION            306.23     65.07       0.0
+  TT14-666             JUNCTION            311.00    100.00       0.0
+  TT14-676             JUNCTION            316.00    100.00       0.0
+  TT14-688             JUNCTION            321.00    100.00       0.0
+  TT14-692             JUNCTION            326.00    100.00       0.0
+  TT14-848             JUNCTION            244.19     34.31       0.0
+  TT14-016             JUNCTION             28.96     79.34       0.0
+  T14_1_1090           JUNCTION             36.94     67.56       0.0
+  T14_1_1160           JUNCTION             37.73     66.57       0.0
+  T14_1_1440_west_split JUNCTION             47.67     58.03       0.0
+  T14_1_2390_east      JUNCTION             68.64     29.46       0.0
+  T14_1_2410           JUNCTION             69.22    100.00       0.0
+  T14_1_1520_west      JUNCTION             68.48     58.82       0.0
+  T14_2_230            JUNCTION            112.90     77.10       0.0
+  T14_2_2040           JUNCTION            273.38     21.62       0.0
+  T14_2_2070           JUNCTION            273.74     72.36       0.0
+  T14_2_2120           JUNCTION            276.38     47.92       0.0
+  T14_2_2530           JUNCTION            310.30     68.30       0.0
+  T14_3_640            JUNCTION            159.90     87.31       0.0
+  T14_3_3_10           JUNCTION            166.82     57.98       0.0
+  T14_3_1340           JUNCTION            237.51     32.29       0.0
+  outfall              OUTFALL              24.00     21.00       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  C1               TT14-016         TT14-006         CONDUIT          695.0    0.2086    0.0130
+  C2               TT14-030         TT14-016         CONDUIT         2844.6    0.2658    0.0130
+  C3               TT14-904         TT14-030         CONDUIT          710.9    0.9929    0.0150
+  C4               T14_1_1090       TT14-030         CONDUIT          843.4    0.0496    0.0130
+  C5               T14_1_1160       T14_1_1090       CONDUIT          261.3    0.3023    0.0100
+  C6               TT14-044         T14_1_1160       CONDUIT         1421.4    0.3271    0.0130
+  C7               TT14-048         TT14-044         CONDUIT          638.4    0.3354    0.0130
+  C8               T14_1_1440_west_split TT14-048         CONDUIT          536.0    0.5877    0.0130
+  C9               TT14-106         T14_1_1440_west_split CONDUIT         2372.7    0.2596    0.0130
+  C10              TT14-112         TT14-106         CONDUIT         2664.7    0.5346    0.0130
+  C11              TT14-076         TT14-068         CONDUIT         1061.0    0.3893    0.0150
+  C12              TT14-092         TT14-076         CONDUIT         1906.2    0.5556    0.0150
+  C13              TT14-058         TT14-048         CONDUIT         1331.1    0.3794    0.0130
+  C14              TT14-068         TT14-058         CONDUIT          904.2    0.4280    0.0100
+  C15              T14_1_2390_east  TT14-092         CONDUIT          347.7    0.1369    0.0130
+  C16              TT14-306         T14_1_2410       CONDUIT          368.7    2.7285    0.0150
+  C17              T14_1_2410       T14_1_2390_east  CONDUIT           94.1    0.6206    0.0130
+  C18              T14_1_2410       T14_1_1520_west  CONDUIT           75.6    0.9789    0.0130
+  C19              T14_1_1520_west  TT14-112         CONDUIT          102.0    0.3961    0.0130
+  C20              TT14-202         T14_1_2410       CONDUIT          133.0    2.4142    0.0100
+  C21              TT14-312         TT14-306         CONDUIT          133.0   15.7193    0.0100
+  C22              TT14-406         T14_1_2390_east  CONDUIT          896.7    1.0254    0.0130
+  C23              TT14-418         TT14-406         CONDUIT         1341.9    0.6625    0.0130
+  C24              TT14-222         TT14-202         CONDUIT         1841.0    0.5579    0.0130
+  C25              TT14-228         TT14-222         CONDUIT          868.6    0.6102    0.0130
+  C26              TT14-502         TT14-228         CONDUIT          112.2    7.2368    0.0130
+  C27              T14_2_230        TT14-502         CONDUIT         2408.2    0.8425    0.0130
+  C28              TT14-524         T14_2_230        CONDUIT         1030.9    1.1378    0.0130
+  C29              TT14-530         TT14-524         CONDUIT         1030.9    0.9789    0.0150
+  C30              TT14-546         TT14-530         CONDUIT         1641.5    1.5085    0.0150
+  C31              TT14-554         TT14-546         CONDUIT          884.0    1.3827    0.0150
+  C32              TT14-560         TT14-554         CONDUIT         1100.2    1.2635    0.0150
+  C33              TT14-574         TT14-560         CONDUIT         1306.4    0.9969    0.0150
+  C34              TT14-582         TT14-574         CONDUIT          972.9    0.6062    0.0150
+  C35              TT14-702         TT14-582         CONDUIT         2477.0    1.7921    0.0150
+  C36              TT14-708         TT14-702         CONDUIT          929.5    1.2478    0.0130
+  C37              TT14-716         TT14-708         CONDUIT         1124.0    0.7393    0.0130
+  C38              T14_2_2040       TT14-716         CONDUIT          736.9    0.6202    0.0130
+  C39              T14_2_2070       T14_2_2040       CONDUIT           31.0    1.1452    0.0150
+  C40              T14_2_2120       T14_2_2070       CONDUIT          231.4    1.1453    0.0130
+  C41              TT14-738         T14_2_2120       CONDUIT         2076.9    1.3158    0.0130
+  C42              T14_2_2530       TT14-738         CONDUIT          499.6    1.3193    0.0130
+  C43              TT14-746         T14_2_2530       CONDUIT          554.3    1.5771    0.0150
+  C44              TT14-240         TT14-228         CONDUIT         2468.4    1.2819    0.0130
+  C45              TT14-243         TT14-240         CONDUIT          621.7    1.4332    0.0130
+  C46              TT14-248         TT14-243         CONDUIT          743.4    1.7441    0.0130
+  C47              T14_3_640        TT14-248         CONDUIT         1057.3    1.7388    0.0130
+  C48              TT14-262         T14_3_640        CONDUIT         1194.3    0.0925    0.0150
+  C49              T14_3_3_10       TT14-262         CONDUIT          129.4    0.1935    0.0150
+  C50              TT14-814         T14_3_3_10       CONDUIT          646.9    0.9376    0.0150
+  C51              TT14-814         TT14-828         CONDUIT         4185.2   -0.6344    0.0130
+  C52              TT14-834         TT14-828         CONDUIT         1126.3    1.6415    0.0130
+  C53              TT14-848         TT14-834         CONDUIT         1543.2    1.7028    0.0150
+  C54              TT14-263         TT14-262         CONDUIT          681.5    1.2013    0.0150
+  C55              TT14-264         TT14-263         CONDUIT          945.5    1.1607    0.0150
+  C56              TT14-268         TT14-264         CONDUIT          972.2    1.1707    0.0150
+  C57              TT14-275         TT14-268         CONDUIT          810.7    1.0917    0.0150
+  C58              TT14-280         TT14-275         CONDUIT          757.8    1.0676    0.0150
+  C59              TT14-286         TT14-280         CONDUIT          579.2    1.0032    0.0150
+  C60              TT14-291         TT14-286         CONDUIT          788.5    1.0286    0.0150
+  C61              TT14-296         TT14-291         CONDUIT          834.7    0.7285    0.0150
+  C62              TT14-606         TT14-296         CONDUIT          627.9    0.7054    0.0130
+  C63              T14_3_1340       TT14-606         CONDUIT          713.5    0.6454    0.0130
+  C64              TT14-612         T14_3_1340       CONDUIT          292.8    1.7130    0.0150
+  C65              TT14-616         TT14-612         CONDUIT          249.6    1.3587    0.0150
+  C66              TT14-622         TT14-616         CONDUIT          350.7    1.5457    0.0150
+  C67              TT14-636         TT14-622         CONDUIT          653.4    1.1740    0.0130
+  C68              TT14-639         TT14-636         CONDUIT          233.8    1.2169    0.0150
+  C69              TT14-642         TT14-639         CONDUIT          422.9    1.1198    0.0150
+  C70              TT14-646         TT14-642         CONDUIT          542.7    1.1086    0.0150
+  C71              TT14-660         TT14-646         CONDUIT          990.7    3.2110    0.0150
+  C72              TT14-666         TT14-660         CONDUIT          406.9    1.1718    0.0150
+  C73              TT14-676         TT14-666         CONDUIT          743.3    0.6727    0.0150
+  C74              TT14-688         TT14-676         CONDUIT          859.2    0.5819    0.0150
+  C75              TT14-692         TT14-688         CONDUIT          251.9    1.9851    0.0150
+  outflow          TT14-006         outfall          CONDUIT         1090.0    0.3220    0.0130
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  C1               MODBASKETHANDLE     21.00   442.19     5.55    24.00        1  7235.82
+  C2               MODBASKETHANDLE     21.00   442.19     5.55    24.00        1  8167.78
+  C3               CIRCULAR             7.00    38.48     1.75     7.00        1   551.68
+  C4               RECT_OPEN           19.00   418.00     6.97    22.00        1  3880.07
+  C5               CIRCULAR            19.00   283.53     4.75    19.00        1  6546.21
+  C6               CIRCULAR            19.00   283.53     4.75    19.00        1  5237.50
+  C7               RECT_OPEN           18.00   378.00     6.63    21.00        1  8832.32
+  C8               RECT_OPEN           15.00   255.00     5.43    17.00        1  6899.55
+  C9               MODBASKETHANDLE     12.00   214.42     3.68    21.00        1  2979.44
+  C10              RECT_OPEN           16.00   272.00     5.55    17.00        1  7127.18
+  C11              CIRCULAR            16.00   201.06     4.00    16.00        1  3131.53
+  C12              CIRCULAR            14.00   153.94     3.50    14.00        1  2620.32
+  C13              CIRCULAR            17.50   240.53     4.38    17.50        1  4530.11
+  C14              CIRCULAR            17.40   237.79     4.35    17.40        1  6160.06
+  C15              RECT_OPEN           14.00   196.00     4.67    14.00        1  2314.82
+  C16              CIRCULAR             8.00    50.27     2.00     8.00        1  1305.70
+  C17              RECT_CLOSED          6.00    69.00     1.97    11.50        1   976.92
+  C18              RECT_CLOSED          6.00    55.06     1.81     9.18        1   926.23
+  C19              RECT_OPEN           14.00   224.00     5.09    16.00        1  4768.84
+  C20              RECT_OPEN           15.00   255.00     5.43    17.00        1 18179.30
+  C21              CIRCULAR             7.50    44.18     1.88     7.50        1  3957.75
+  C22              RECT_OPEN            6.00    30.00     1.76     5.00        1   507.10
+  C23              RECT_OPEN            6.00    30.00     1.76     5.00        1   407.60
+  C24              RECT_OPEN           15.00   300.00     6.00    20.00        1  8457.19
+  C25              RECT_OPEN           15.00   255.00     5.43    17.00        1  7030.50
+  C26              RECT_OPEN           12.00   216.00     5.14    18.00        1 19789.67
+  C27              RECT_OPEN            9.50   133.00     4.03    14.00        1  3534.03
+  C28              CIRCULAR            10.00    78.54     2.50    10.00        1  1763.95
+  C29              CIRCULAR             9.50    70.88     2.38     9.50        1  1236.76
+  C30              CIRCULAR             9.00    63.62     2.25     9.00        1  1329.10
+  C31              CIRCULAR             8.50    56.75     2.13     8.50        1  1092.59
+  C32              CIRCULAR             8.50    56.75     2.13     8.50        1  1044.42
+  C33              CIRCULAR             8.50    56.75     2.13     8.50        1   927.71
+  C34              CIRCULAR             8.50    56.75     2.13     8.50        1   723.46
+  C35              CIRCULAR             8.50    56.75     2.13     8.50        1  1243.88
+  C36              RECT_OPEN            8.00    60.00     2.55     7.50        1  1431.15
+  C37              RECT_OPEN            8.00    60.00     2.55     7.50        1  1101.61
+  C38              RECT_OPEN            7.50    56.25     2.50     7.50        1   932.72
+  C39              CIRCULAR             6.00    28.27     1.50     6.00        1   392.79
+  C40              RECT_OPEN            6.00    36.00     2.00     6.00        1   699.07
+  C41              RECT_OPEN            7.50    45.00     2.14     6.00        1   980.71
+  C42              RECT_OPEN            6.00    30.00     1.76     5.00        1   575.19
+  C43              CIRCULAR             5.00    19.63     1.25     5.00        1   283.46
+  C44              RECT_OPEN           13.00   286.00     5.96    22.00        1 12165.15
+  C45              RECT_OPEN           13.00   279.50     5.88    21.50        1 12466.38
+  C46              RECT_OPEN           13.00   279.50     5.88    21.50        1 13752.22
+  C47              RECT_OPEN           13.00   279.50     5.88    21.50        1 13730.99
+  C48              CIRCULAR            12.00   113.10     3.00    12.00        1   708.90
+  C49              CIRCULAR             7.00    38.48     1.75     7.00        1   243.53
+  C50              RECT_OPEN            7.00    56.00     2.55     8.00        1  1001.46
+  C51              RECT_OPEN            6.50    48.75     2.38     7.50        1   790.73
+  C52              RECT_OPEN            6.00    36.00     2.00     6.00        1   836.92
+  C53              CIRCULAR             5.00    19.63     1.25     5.00        1   294.54
+  C54              CIRCULAR             9.00    63.62     2.25     9.00        1  1186.07
+  C55              CIRCULAR             8.50    56.75     2.13     8.50        1  1001.06
+  C56              CIRCULAR             8.50    56.75     2.13     8.50        1  1005.33
+  C57              CIRCULAR             8.50    56.75     2.13     8.50        1   970.84
+  C58              CIRCULAR             8.25    53.46     2.06     8.25        1   886.59
+  C59              CIRCULAR             8.25    53.46     2.06     8.25        1   859.45
+  C60              CIRCULAR             8.25    53.46     2.06     8.25        1   870.26
+  C61              CIRCULAR             8.25    53.46     2.06     8.25        1   732.36
+  C62              RECT_OPEN           10.00    90.00     3.10     9.00        1  1838.36
+  C63              RECT_OPEN           11.50    92.00     2.97     8.00        1  1744.76
+  C64              CIRCULAR             7.50    44.18     1.88     7.50        1   871.01
+  C65              CIRCULAR             7.50    44.18     1.88     7.50        1   775.72
+  C66              CIRCULAR             7.50    44.18     1.88     7.50        1   827.37
+  C67              RECT_OPEN           10.50    73.50     2.63     7.00        1  1732.27
+  C68              CIRCULAR             7.00    38.48     1.75     7.00        1   610.76
+  C69              CIRCULAR             6.00    28.27     1.50     6.00        1   388.41
+  C70              CIRCULAR             6.00    28.27     1.50     6.00        1   386.45
+  C71              CIRCULAR             4.00    12.57     1.00     4.00        1   223.08
+  C72              CIRCULAR             3.50     9.62     0.88     3.50        1    94.39
+  C73              CIRCULAR             3.50     9.62     0.88     3.50        1    71.52
+  C74              CIRCULAR             3.50     9.62     0.88     3.50        1    66.52
+  C75              CIRCULAR             3.00     7.07     0.75     3.00        1    81.44
+  outflow          MODBASKETHANDLE     21.00   442.19     5.55    24.00        1  8989.53
+  
+  
+  
+  *********************
+  Rainfall File Summary
+  *********************
+  Station    First        Last         Recording   Periods    Periods    Periods
+  ID         Date         Date         Frequency  w/Precip    Missing    Malfunc.
+  -------------------------------------------------------------------------------
+  PHILADELPHIA JAN-28-2007  JAN-01-2016     60 min     50601          0          0
+
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... GREEN_AMPT
+  Flow Routing Method ...... DYNWAVE
+  Starting Date ............ JUL-01-2008 00:00:00
+  Ending Date .............. JUL-10-2008 00:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:15:00
+  Wet Time Step ............ 00:15:00
+  Dry Time Step ............ 00:15:00
+  Routing Time Step ........ 15.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.005000 ft
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......       230.100         0.510
+  Evaporation Loss .........        20.067         0.044
+  Infiltration Loss ........        97.404         0.216
+  Surface Runoff ...........       111.762         0.248
+  Final Storage ............         3.025         0.007
+  Continuity Error (%) .....        -0.938
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......       111.738        36.411
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........       108.638        35.401
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.097         0.032
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.001         0.000
+  Final Stored Volume ......         2.016         0.657
+  Continuity Error (%) .....         0.884
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node TT14-306 (8.65%)
+  Node TT14-502 (4.70%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  None
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :    10.74 sec
+  Average Time Step           :    14.99 sec
+  Maximum Time Step           :    15.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     2.00
+  Percent Not Converging      :     0.00
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  --------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in    10^6 gal      CFS
+  --------------------------------------------------------------------------------------------------------
+  CHEWSTA_shed               0.51       0.00       0.04       0.23       0.24        0.03     0.54   0.479
+  CHEWSTB_shed               0.51       0.00       0.01       0.43       0.07        0.02     0.25   0.135
+  CLEARVIEW_shed             0.51       0.00       0.05       0.16       0.31        0.02     0.39   0.601
+  T14-A1_shed                0.51       0.00       0.05       0.19       0.27        0.72    11.66   0.524
+  T14-A2_shed                0.51       0.00       0.04       0.27       0.21        0.77    12.53   0.403
+  T14-A3_shed                0.51       0.00       0.04       0.22       0.24        0.64    10.45   0.472
+  T14-A4_shed                0.51       0.00       0.06       0.13       0.32        0.79    12.80   0.618
+  T14-A5_shed                0.51       0.00       0.07       0.06       0.39        0.16     2.57   0.756
+  T14-B_shed                 0.51       0.00       0.06       0.17       0.27        2.43    38.87   0.536
+  T14-C1_shed                0.51       0.00       0.07       0.07       0.37        0.74    12.04   0.717
+  T14-C2_shed                0.51       0.00       0.06       0.14       0.31        0.60     9.79   0.603
+  T14-C3_shed                0.51       0.00       0.05       0.20       0.27        0.21     3.43   0.522
+  T14-C4_shed                0.51       0.00       0.06       0.10       0.35        0.17     2.74   0.689
+  T14-D_shed                 0.51       0.00       0.04       0.25       0.22        0.48     7.75   0.425
+  T14-E_shed                 0.51       0.00       0.05       0.19       0.27        1.12    18.23   0.528
+  T14-F_shed                 0.51       0.00       0.02       0.36       0.13        0.09     1.34   0.258
+  T14-G_shed                 0.51       0.00       0.05       0.17       0.28        0.43     6.96   0.558
+  T14-H_shed                 0.51       0.00       0.05       0.17       0.30        0.02     0.27   0.582
+  T14-J_shed                 0.51       0.00       0.06       0.14       0.31        1.24    20.15   0.604
+  T14-K1_shed                0.51       0.00       0.05       0.17       0.28        0.20     3.20   0.557
+  T14-K2_shed                0.51       0.00       0.06       0.10       0.35        0.24     3.90   0.678
+  T14-K3_shed                0.51       0.00       0.05       0.21       0.25        2.23    36.22   0.490
+  T14-L1_shed                0.51       0.00       0.07       0.05       0.39        0.07     1.16   0.767
+  T14-L2_shed                0.51       0.00       0.05       0.17       0.29        0.82    13.27   0.560
+  T14-M1_shed                0.51       0.00       0.05       0.15       0.30        0.55     8.95   0.592
+  T14-M2_shed                0.51       0.00       0.05       0.17       0.28        0.60     9.62   0.556
+  T14-P1_shed                0.51       0.00       0.03       0.33       0.16        0.46     7.33   0.310
+  T14-P2_shed                0.51       0.00       0.04       0.26       0.21        0.21     3.33   0.416
+  T14-P3_shed                0.51       0.00       0.04       0.24       0.23        0.59     9.59   0.453
+  T14-P4_shed                0.51       0.00       0.04       0.25       0.23        0.37     5.94   0.442
+  T14-P5_shed                0.51       0.00       0.03       0.29       0.19        0.16     2.57   0.377
+  T14-R1_shed                0.51       0.00       0.05       0.18       0.28        0.56     9.09   0.550
+  T14-R2_shed                0.51       0.00       0.04       0.25       0.22        0.38     6.19   0.429
+  T14-R3_shed                0.51       0.00       0.05       0.16       0.30        0.24     3.90   0.584
+  T14-R4_shed                0.51       0.00       0.05       0.14       0.32        0.20     3.23   0.618
+  T14-R5_shed                0.51       0.00       0.04       0.23       0.23        0.46     7.39   0.458
+  T14-R6_shed                0.51       0.00       0.04       0.26       0.21        0.35     5.71   0.420
+  T14-R7_shed                0.51       0.00       0.03       0.28       0.20        0.39     6.37   0.386
+  T14-T_shed                 0.51       0.00       0.06       0.10       0.35        0.06     0.92   0.687
+  T14-U_shed                 0.51       0.00       0.06       0.11       0.34        0.12     1.99   0.667
+  TT14-262A_shed             0.51       0.00       0.04       0.21       0.25        0.66    10.64   0.497
+  TT14-263A_shed             0.51       0.00       0.03       0.31       0.17        0.07     1.11   0.335
+  TT14-264A_shed             0.51       0.00       0.05       0.19       0.28        0.17     2.69   0.545
+  TT14-264B_shed             0.51       0.00       0.04       0.22       0.25        0.02     0.25   0.499
+  TT14-264C_shed             0.51       0.00       0.04       0.24       0.23        0.17     2.64   0.458
+  TT14-264D_shed             0.51       0.00       0.05       0.19       0.28        0.17     2.65   0.540
+  TT14-264E_shed             0.51       0.00       0.05       0.11       0.35        0.02     0.39   0.688
+  TT14-266A_shed             0.51       0.00       0.06       0.10       0.36        0.01     0.23   0.709
+  TT14-266B_shed             0.51       0.00       0.06       0.05       0.40        0.04     0.63   0.779
+  TT14-270A_shed             0.51       0.00       0.04       0.23       0.24        0.03     0.46   0.474
+  TT14-270B_shed             0.51       0.00       0.02       0.33       0.16        0.01     0.21   0.308
+  TT14-272A_shed             0.51       0.00       0.03       0.28       0.20        0.02     0.29   0.392
+  TT14-274A_shed             0.51       0.00       0.06       0.07       0.38        0.02     0.34   0.745
+  TT14-274B_shed             0.51       0.00       0.04       0.20       0.27        0.08     1.28   0.525
+  TT14-274C_shed             0.51       0.00       0.04       0.19       0.27        0.12     1.96   0.533
+  TT14-278A_shed             0.51       0.00       0.05       0.17       0.30        0.05     0.73   0.587
+  TT14-278B_shed             0.51       0.00       0.04       0.21       0.26        0.09     1.40   0.505
+  TT14-278C_shed             0.51       0.00       0.06       0.09       0.36        0.03     0.42   0.712
+  TT14-280A_shed             0.51       0.00       0.04       0.19       0.28        0.01     0.22   0.544
+  TT14-282A_shed             0.51       0.00       0.05       0.18       0.28        0.30     4.84   0.548
+  TT14-284A_shed             0.51       0.00       0.04       0.21       0.27        0.02     0.33   0.521
+  TT14-284B_shed             0.51       0.00       0.05       0.16       0.31        0.00     0.07   0.609
+  TT14-284C_shed             0.51       0.00       0.06       0.07       0.38        0.01     0.15   0.745
+  TT14-286A_shed             0.51       0.00       0.06       0.11       0.35        0.02     0.38   0.680
+  TT14-288A_shed             0.51       0.00       0.06       0.09       0.37        0.00     0.07   0.725
+  TT14-288B_shed             0.51       0.00       0.05       0.15       0.31        0.06     0.89   0.616
+  TT14-288C_shed             0.51       0.00       0.03       0.27       0.21        0.02     0.28   0.405
+  TT14-291A_shed             0.51       0.00       0.04       0.21       0.26        0.13     2.04   0.512
+  TT14-291B_shed             0.51       0.00       0.05       0.18       0.29        0.04     0.66   0.569
+  TT14-291C_shed             0.51       0.00       0.07       0.04       0.39        0.01     0.10   0.765
+  TT14-291D_shed             0.51       0.00       0.02       0.38       0.11        0.26     4.05   0.216
+  TT14-294A_shed             0.51       0.00       0.04       0.20       0.27        0.01     0.21   0.524
+  TT14-294B_shed             0.51       0.00       0.04       0.19       0.28        0.01     0.08   0.555
+  TT14-294C_shed             0.51       0.00       0.04       0.25       0.23        0.09     1.38   0.446
+  TT14-296A_shed             0.51       0.00       0.06       0.09       0.36        0.01     0.15   0.715
+  TT14-296B_shed             0.51       0.00       0.04       0.23       0.23        1.18    19.17   0.455
+  TT14-502_shed              0.51       0.00       0.03       0.33       0.16        0.48     7.73   0.310
+  TT14-524_shed              0.51       0.00       0.05       0.17       0.29        0.67    10.80   0.564
+  TT14-530_shed              0.51       0.00       0.06       0.13       0.32        0.77    12.51   0.619
+  TT14-544_shed              0.51       0.00       0.05       0.16       0.30        0.25     4.06   0.589
+  TT14-552A_shed             0.51       0.00       0.05       0.17       0.29        0.38     6.14   0.573
+  TT14-552B_shed             0.51       0.00       0.04       0.22       0.24        0.69    11.19   0.471
+  TT14-554_shed              0.51       0.00       0.05       0.19       0.27        0.09     1.49   0.537
+  TT14-558_shed              0.51       0.00       0.05       0.18       0.27        0.89    14.53   0.530
+  TT14-560_shed              0.51       0.00       0.05       0.20       0.27        0.21     3.40   0.526
+  TT14-574_shed              0.51       0.00       0.04       0.25       0.21        0.87    14.21   0.421
+  TT14-584_shed              0.51       0.00       0.04       0.22       0.24        0.94    15.23   0.470
+  TT14-602A_shed             0.51       0.00       0.06       0.08       0.37        0.02     0.29   0.729
+  TT14-602B_shed             0.51       0.00       0.03       0.29       0.19        0.03     0.53   0.382
+  TT14-602C_shed             0.51       0.00       0.03       0.29       0.19        0.19     2.98   0.369
+  TT14-602D_shed             0.51       0.00       0.04       0.23       0.25        0.03     0.41   0.485
+  TT14-606A_shed             0.51       0.00       0.04       0.19       0.28        0.02     0.34   0.544
+  TT14-606B_shed             0.51       0.00       0.05       0.18       0.28        0.04     0.64   0.553
+  TT14-610A_shed             0.51       0.00       0.05       0.17       0.30        0.00     0.08   0.582
+  TT14-610B_shed             0.51       0.00       0.05       0.15       0.32        0.01     0.11   0.624
+  TT14-610C_shed             0.51       0.00       0.04       0.26       0.21        0.31     4.94   0.419
+  TT14-610D_shed             0.51       0.00       0.03       0.26       0.22        0.02     0.34   0.431
+  TT14-612A_shed             0.51       0.00       0.04       0.23       0.24        0.02     0.26   0.474
+  TT14-612B_shed             0.51       0.00       0.04       0.20       0.27        0.01     0.09   0.534
+  TT14-612C_shed             0.51       0.00       0.05       0.17       0.30        0.05     0.76   0.582
+  TT14-614A_shed             0.51       0.00       0.03       0.26       0.22        0.01     0.22   0.426
+  TT14-614B_shed             0.51       0.00       0.04       0.18       0.29        0.01     0.11   0.575
+  TT14-614C_shed             0.51       0.00       0.05       0.15       0.32        0.04     0.58   0.621
+  TT14-616A_shed             0.51       0.00       0.05       0.18       0.29        0.02     0.29   0.572
+  TT14-616B_shed             0.51       0.00       0.05       0.17       0.29        0.03     0.50   0.573
+  TT14-618A_shed             0.51       0.00       0.05       0.17       0.29        0.11     1.77   0.571
+  TT14-620A_shed             0.51       0.00       0.04       0.18       0.28        0.03     0.42   0.558
+  TT14-620B_shed             0.51       0.00       0.04       0.25       0.22        0.54     8.80   0.427
+  TT14-622A_shed             0.51       0.00       0.04       0.19       0.28        0.03     0.51   0.553
+  TT14-624A_shed             0.51       0.00       0.04       0.18       0.28        0.03     0.42   0.557
+  TT14-630A_shed             0.51       0.00       0.04       0.25       0.23        0.05     0.76   0.451
+  TT14-636A_shed             0.51       0.00       0.05       0.17       0.30        0.01     0.13   0.584
+  TT14-636B_shed             0.51       0.00       0.04       0.24       0.24        0.04     0.58   0.465
+  TT14-639A_shed             0.51       0.00       0.04       0.18       0.29        0.01     0.21   0.565
+  TT14-639B_shed             0.51       0.00       0.03       0.28       0.20        0.05     0.83   0.391
+  TT14-639C_shed             0.51       0.00       0.03       0.26       0.21        0.06     0.92   0.417
+  TT14-640A_shed             0.51       0.00       0.03       0.29       0.19        0.02     0.29   0.382
+  TT14-642A_shed             0.51       0.00       0.02       0.34       0.15        0.10     1.51   0.292
+  TT14-642B_shed             0.51       0.00       0.04       0.21       0.26        0.02     0.24   0.509
+  TT14-642C_shed             0.51       0.00       0.03       0.28       0.20        0.04     0.58   0.396
+  TT14-644A_shed             0.51       0.00       0.03       0.32       0.16        0.02     0.24   0.321
+  TT14-646A_shed             0.51       0.00       0.04       0.24       0.23        0.45     7.31   0.446
+  TT14-648A_shed             0.51       0.00       0.03       0.30       0.18        0.24     3.77   0.355
+  TT14-648B_shed             0.51       0.00       0.04       0.23       0.25        0.02     0.37   0.481
+  TT14-658A_shed             0.51       0.00       0.03       0.29       0.19        0.12     1.83   0.380
+  TT14-658B_shed             0.51       0.00       0.04       0.24       0.23        0.06     0.97   0.457
+  TT14-660A_shed             0.51       0.00       0.03       0.28       0.20        0.02     0.29   0.397
+  TT14-666A_shed             0.51       0.00       0.04       0.22       0.25        0.05     0.75   0.499
+  TT14-668A_shed             0.51       0.00       0.03       0.32       0.17        0.02     0.28   0.333
+  TT14-676A_shed             0.51       0.00       0.03       0.27       0.21        0.02     0.35   0.407
+  TT14-684A_shed             0.51       0.00       0.03       0.28       0.20        0.02     0.27   0.389
+  TT14-684B_shed             0.51       0.00       0.04       0.21       0.26        0.01     0.13   0.510
+  TT14-688A_shed             0.51       0.00       0.04       0.25       0.23        0.01     0.16   0.449
+  TT14-688B_shed             0.51       0.00       0.05       0.17       0.30        0.01     0.10   0.594
+  TT14-688C_shed             0.51       0.00       0.04       0.20       0.27        0.02     0.38   0.536
+  TT14-690A_shed             0.51       0.00       0.04       0.25       0.23        0.03     0.49   0.446
+  TT14-690B_shed             0.51       0.00       0.03       0.27       0.21        0.01     0.10   0.414
+  TT14-692A_shed             0.51       0.00       0.03       0.27       0.21        0.03     0.52   0.406
+  TT14-702_shed              0.51       0.00       0.05       0.16       0.29        0.35     5.67   0.578
+  TT14-706_shed              0.51       0.00       0.04       0.23       0.24        0.39     6.32   0.469
+  TT14-708_shed              0.51       0.00       0.04       0.27       0.20        0.45     7.31   0.398
+  TT14-720_shed              0.51       0.00       0.04       0.22       0.25        0.89    14.43   0.485
+  TT14-736_shed              0.51       0.00       0.04       0.23       0.23        0.52     8.49   0.456
+  TT14-740_shed              0.51       0.00       0.04       0.25       0.22        0.30     4.80   0.429
+  TT14-746_shed              0.51       0.00       0.03       0.31       0.17        0.24     3.84   0.336
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  TT14-006             JUNCTION     0.06     2.27    29.78     8  18:11        2.25
+  TT14-044             JUNCTION     0.13     3.93    46.31     8  18:06        3.86
+  TT14-030             JUNCTION     0.06     2.37    38.89     8  18:08        2.33
+  TT14-904             JUNCTION     0.04     1.26    44.84     8  18:00        1.26
+  TT14-048             JUNCTION     0.05     2.28    46.80     8  18:05        2.24
+  TT14-058             JUNCTION     0.11     3.38    52.95     8  18:03        3.36
+  TT14-068             JUNCTION     0.08     2.57    56.01     8  18:03        2.56
+  TT14-106             JUNCTION     0.03     1.31    55.14     8  18:05        1.29
+  TT14-076             JUNCTION     0.11     3.51    61.08     8  18:03        3.49
+  TT14-092             JUNCTION     0.09     2.99    71.15     8  18:03        2.97
+  TT14-112             JUNCTION     0.03     1.15    69.23     8  18:04        1.14
+  TT14-202             JUNCTION     0.02     0.97    73.40     8  18:02        0.97
+  TT14-406             JUNCTION     0.01     0.46    78.29     8  18:00        0.46
+  TT14-418             JUNCTION     0.01     0.52    87.24     8  18:00        0.52
+  TT14-306             JUNCTION     5.71    11.29    80.49     8  17:28       11.29
+  TT14-312             JUNCTION     0.01     0.53    90.38     8  18:00        0.53
+  TT14-222             JUNCTION     0.04     1.83    84.53     8  18:03        1.82
+  TT14-228             JUNCTION     0.04     1.72    89.72     8  18:02        1.72
+  TT14-502             JUNCTION     1.99     3.96    96.57     8  18:01        3.96
+  TT14-524             JUNCTION     0.07     2.41   127.04     8  18:00        2.41
+  TT14-240             JUNCTION     0.02     0.77   120.41     8  18:01        0.77
+  TT14-243             JUNCTION     0.02     0.75   129.30     8  18:00        0.75
+  TT14-248             JUNCTION     0.02     0.68   142.19     8  18:00        0.68
+  TT14-546             JUNCTION     0.05     1.83   161.31     8  18:00        1.83
+  TT14-530             JUNCTION     0.06     2.10   136.82     8  18:00        2.10
+  TT14-262             JUNCTION     0.14     4.14   165.14     8  18:00        4.14
+  TT14-814             JUNCTION     0.01     0.63   173.52     8  18:00        0.63
+  TT14-263             JUNCTION     0.05     1.80   170.98     8  18:00        1.80
+  TT14-828             JUNCTION     0.01     0.60   200.03     8  18:00        0.60
+  TT14-834             JUNCTION     0.01     0.43   218.34     8  18:00        0.43
+  TT14-264             JUNCTION     0.05     1.85   182.01     8  18:00        1.85
+  TT14-268             JUNCTION     0.05     1.75   193.29     8  18:00        1.75
+  TT14-554             JUNCTION     0.06     1.89   173.59     8  18:00        1.89
+  TT14-560             JUNCTION     0.05     1.76   187.36     8  18:00        1.76
+  TT14-574             JUNCTION     0.05     1.69   200.31     8  18:00        1.69
+  TT14-582             JUNCTION     0.05     1.75   206.27     8  18:00        1.74
+  TT14-275             JUNCTION     0.05     1.78   202.17     8  18:00        1.78
+  TT14-280             JUNCTION     0.05     1.75   210.23     8  18:00        1.75
+  TT14-286             JUNCTION     0.05     1.70   215.99     8  18:00        1.70
+  TT14-291             JUNCTION     0.05     1.66   224.06     8  18:00        1.66
+  TT14-296             JUNCTION     0.05     1.75   230.23     8  18:00        1.75
+  TT14-606             JUNCTION     0.01     0.72   233.63     8  18:00        0.72
+  TT14-746             JUNCTION     0.01     0.47   319.51     8  18:00        0.47
+  TT14-738             JUNCTION     0.01     0.42   304.13     8  18:00        0.42
+  TT14-716             JUNCTION     0.01     0.64   269.45     8  18:00        0.64
+  TT14-708             JUNCTION     0.01     0.68   261.18     8  18:00        0.68
+  TT14-702             JUNCTION     0.03     1.17   250.07     8  18:00        1.17
+  TT14-612             JUNCTION     0.04     1.36   243.89     8  18:00        1.36
+  TT14-616             JUNCTION     0.03     1.13   247.05     8  18:00        1.13
+  TT14-622             JUNCTION     0.03     1.07   252.41     8  18:00        1.07
+  TT14-636             JUNCTION     0.01     0.48   261.32     8  18:00        0.48
+  TT14-639             JUNCTION     0.03     1.18   264.86     8  18:00        1.18
+  TT14-642             JUNCTION     0.02     0.95   269.37     8  18:00        0.95
+  TT14-646             JUNCTION     0.02     0.88   275.32     8  18:00        0.88
+  TT14-660             JUNCTION     0.01     0.47   306.70     8  18:00        0.47
+  TT14-666             JUNCTION     0.01     0.46   311.46     8  18:00        0.46
+  TT14-676             JUNCTION     0.01     0.45   316.45     8  18:00        0.45
+  TT14-688             JUNCTION     0.01     0.43   321.43     8  18:00        0.43
+  TT14-692             JUNCTION     0.01     0.24   326.24     8  18:00        0.24
+  TT14-848             JUNCTION     0.01     0.53   244.72     8  18:00        0.53
+  TT14-016             JUNCTION     0.06     2.64    31.60     8  18:10        2.61
+  T14_1_1090           JUNCTION     0.10     3.56    40.50     8  18:07        3.49
+  T14_1_1160           JUNCTION     0.13     4.07    41.80     8  18:04        4.03
+  T14_1_1440_west_split JUNCTION     0.03     1.14    48.81     8  18:08        1.12
+  T14_1_2390_east      JUNCTION     0.06     2.88    71.52     8  18:02        2.87
+  T14_1_2410           JUNCTION     0.04     1.89    71.11     8  18:01        1.89
+  T14_1_1520_west      JUNCTION     0.03     1.48    69.96     8  18:02        1.47
+  T14_2_230            JUNCTION     0.02     1.04   113.94     8  18:01        1.04
+  T14_2_2040           JUNCTION     0.01     0.46   273.84     8  18:01        0.46
+  T14_2_2070           JUNCTION     0.03     1.29   275.03     8  18:01        1.29
+  T14_2_2120           JUNCTION     0.01     0.44   276.83     8  18:00        0.44
+  T14_2_2530           JUNCTION     0.00     0.19   310.49     8  18:00        0.19
+  T14_3_640            JUNCTION     0.01     0.67   160.56     8  18:00        0.67
+  T14_3_3_10           JUNCTION     0.06     1.68   168.50     8  18:01        1.68
+  T14_3_1340           JUNCTION     0.02     0.82   238.33     8  18:00        0.82
+  outfall              OUTFALL      0.04     2.27    26.27     8  18:11        2.25
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  TT14-006             JUNCTION     11.66   542.83     8  18:10       0.719        35.4       0.045
+  TT14-044             JUNCTION     12.80   490.62     8  18:05       0.786        30.9       0.038
+  TT14-030             JUNCTION     10.45   531.60     8  18:06       0.645          34       0.086
+  TT14-904             JUNCTION     38.87    38.87     8  18:00        2.43        2.43      -0.225
+  TT14-048             JUNCTION     14.62   480.66     8  18:04       0.899        30.2       0.043
+  TT14-058             JUNCTION      9.79   298.99     8  18:02       0.603        17.4      -0.027
+  TT14-068             JUNCTION      6.16   290.55     8  18:02       0.383        16.8       0.007
+  TT14-106             JUNCTION      7.75   172.30     8  18:03       0.478        11.9       0.132
+  TT14-076             JUNCTION     26.53   285.80     8  18:00        1.63        16.4      -0.011
+  TT14-092             JUNCTION      0.27   262.14     8  18:02      0.0177        14.8       0.060
+  TT14-112             JUNCTION      2.90   166.13     8  18:02       0.182        11.4       0.045
+  TT14-202             JUNCTION      8.95   349.10     8  18:01       0.551        21.6       0.021
+  TT14-406             JUNCTION      1.16    14.41     8  18:00      0.0727       0.889       0.017
+  TT14-418             JUNCTION     13.27    13.27     8  18:00       0.816       0.816      -0.022
+  TT14-306             JUNCTION     23.35    63.42     8  18:00        1.43         3.9       9.471
+  TT14-312             JUNCTION     40.12    40.12     8  18:00        2.47        2.47      -0.073
+  TT14-222             JUNCTION      9.62   341.30     8  18:01       0.595          21       0.043
+  TT14-228             JUNCTION      7.33   333.49     8  18:00       0.458        20.5       0.039
+  TT14-502             JUNCTION      7.73   150.32     8  18:00       0.483        9.39       4.937
+  TT14-524             JUNCTION     10.80   143.25     8  18:00       0.665        8.91      -0.022
+  TT14-240             JUNCTION      3.33   176.44     8  18:00       0.209        11.1       0.050
+  TT14-243             JUNCTION      9.59   173.27     8  18:00       0.594        10.9      -0.012
+  TT14-248             JUNCTION      5.94   163.82     8  18:00        0.37        10.3       0.028
+  TT14-546             JUNCTION      4.06   120.38     8  18:00       0.254        7.47       0.010
+  TT14-530             JUNCTION     12.51   132.71     8  18:00        0.77        8.24       0.010
+  TT14-262             JUNCTION     22.30   158.20     8  18:00        1.38        9.89       0.018
+  TT14-814             JUNCTION      6.19    32.70     8  18:00       0.383        2.03       0.066
+  TT14-263             JUNCTION      1.11   103.41     8  18:00      0.0705        6.49       0.008
+  TT14-828             JUNCTION      7.13    26.58     8  18:00       0.442        1.65       0.000
+  TT14-834             JUNCTION     13.10    19.46     8  18:00        0.81         1.2      -0.018
+  TT14-264             JUNCTION      8.62   102.34     8  18:00        0.54        6.42      -0.033
+  TT14-268             JUNCTION      1.54    93.76     8  18:00      0.0976        5.88       0.042
+  TT14-554             JUNCTION     18.82   116.45     8  18:00        1.16        7.22      -0.030
+  TT14-560             JUNCTION     17.93    97.78     8  18:00         1.1        6.06       0.009
+  TT14-574             JUNCTION     14.21    79.96     8  18:00       0.875        4.95      -0.007
+  TT14-582             JUNCTION     15.23    65.90     8  18:00       0.936        4.08       0.036
+  TT14-275             JUNCTION      4.65    92.26     8  18:00       0.294        5.78      -0.031
+  TT14-280             JUNCTION      7.61    87.64     8  18:00       0.477        5.49      -0.010
+  TT14-286             JUNCTION      2.57    80.06     8  18:00       0.163        5.01       0.024
+  TT14-291             JUNCTION      6.86    77.53     8  18:00       0.432        4.85      -0.021
+  TT14-296             JUNCTION     25.20    70.72     8  18:00        1.56        4.42       0.000
+  TT14-606             JUNCTION      0.99    45.52     8  18:00      0.0627        2.86       0.007
+  TT14-746             JUNCTION      3.84     3.84     8  18:00        0.24        0.24      -0.045
+  TT14-738             JUNCTION     13.30    17.14     8  18:00       0.823        1.06      -0.032
+  TT14-716             JUNCTION     14.43    31.52     8  18:00       0.888        1.95       0.008
+  TT14-708             JUNCTION     13.63    45.11     8  18:00       0.845        2.79       0.007
+  TT14-702             JUNCTION      5.67    50.75     8  18:00       0.352        3.14      -0.010
+  TT14-612             JUNCTION      6.58    44.54     8  18:00       0.413         2.8      -0.022
+  TT14-616             JUNCTION      1.70    37.97     8  18:00       0.108        2.38       0.014
+  TT14-622             JUNCTION     12.68    36.27     8  18:00        0.79        2.27      -0.015
+  TT14-636             JUNCTION      0.71    23.60     8  18:00      0.0453        1.49       0.030
+  TT14-639             JUNCTION      1.97    22.89     8  18:00       0.125        1.44      -0.027
+  TT14-642             JUNCTION      2.86    20.92     8  18:00       0.182        1.31      -0.000
+  TT14-646             JUNCTION     11.45    18.07     8  18:00       0.713        1.13      -0.005
+  TT14-660             JUNCTION      3.09     6.62     8  18:00       0.195       0.419      -0.053
+  TT14-666             JUNCTION      1.03     3.53     8  18:00      0.0655       0.224       0.050
+  TT14-676             JUNCTION      0.35     2.50     8  18:00      0.0225       0.159       0.285
+  TT14-688             JUNCTION      1.04     2.14     8  18:00      0.0663       0.136      -0.273
+  TT14-692             JUNCTION      1.10     1.10     8  18:00        0.07        0.07      -0.098
+  TT14-848             JUNCTION      6.37     6.37     8  18:00       0.395       0.395      -0.035
+  TT14-016             JUNCTION     12.53   537.64     8  18:08       0.772        34.7       0.094
+  T14_1_1090           JUNCTION      0.00   492.86     8  18:07           0        30.9       0.052
+  T14_1_1160           JUNCTION      0.00   490.18     8  18:06           0        30.9       0.017
+  T14_1_1440_west_split JUNCTION      0.00   171.39     8  18:06           0        11.8       0.084
+  T14_1_2390_east      JUNCTION      0.00   262.03     8  18:01           0        14.8       0.015
+  T14_1_2410           JUNCTION      0.00   411.47     8  18:00           0        25.1       0.037
+  T14_1_1520_west      JUNCTION      0.00   163.45     8  18:02           0        11.2       0.011
+  T14_2_230            JUNCTION      0.00   143.09     8  18:00           0        8.91       0.039
+  T14_2_2040           JUNCTION      0.00    17.11     8  18:01           0        1.06       0.035
+  T14_2_2070           JUNCTION      0.00    17.11     8  18:00           0        1.06      -0.014
+  T14_2_2120           JUNCTION      0.00    17.13     8  18:00           0        1.06       0.037
+  T14_2_2530           JUNCTION      0.00     3.84     8  18:00           0        0.24       0.035
+  T14_3_640            JUNCTION      0.00   157.99     8  18:00           0        9.89      -0.000
+  T14_3_3_10           JUNCTION      0.00    32.60     8  18:00           0        2.03       0.112
+  T14_3_1340           JUNCTION      0.00    44.54     8  18:00           0         2.8       0.013
+  outfall              OUTFALL       0.00   542.63     8  18:11           0        35.4       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal
+  -----------------------------------------------------------
+  outfall               57.80     11.09    542.63      35.399
+  -----------------------------------------------------------
+  System                57.80     11.09    542.63      35.399
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  C1                   CONDUIT    535.97     8  18:10      9.10    0.07    0.12
+  C2                   CONDUIT    529.34     8  18:08      8.81    0.06    0.12
+  C3                   CONDUIT     38.78     8  18:00      8.57    0.07    0.25
+  C4                   CONDUIT    492.88     8  18:08      7.56    0.13    0.16
+  C5                   CONDUIT    492.86     8  18:07     12.23    0.08    0.20
+  C6                   CONDUIT    490.18     8  18:06     11.33    0.09    0.21
+  C7                   CONDUIT    480.32     8  18:05      7.38    0.05    0.17
+  C8                   CONDUIT    170.97     8  18:08      5.91    0.02    0.11
+  C9                   CONDUIT    171.39     8  18:06      6.66    0.06    0.10
+  C10                  CONDUIT    165.68     8  18:04      7.92    0.02    0.08
+  C11                  CONDUIT    285.18     8  18:03     10.72    0.09    0.19
+  C12                  CONDUIT    261.71     8  18:03      9.66    0.10    0.23
+  C13                  CONDUIT    298.92     8  18:04     11.85    0.07    0.16
+  C14                  CONDUIT    290.42     8  18:03     10.73    0.05    0.17
+  C15                  CONDUIT    261.90     8  18:02      6.38    0.11    0.21
+  C16                  CONDUIT     63.31     8  18:00     13.70    0.05    0.19
+  C17                  CONDUIT    247.69     8  18:01      9.03    0.25    0.40
+  C18                  CONDUIT    163.45     8  18:02     10.63    0.18    0.28
+  C19                  CONDUIT    163.59     8  18:02      7.78    0.03    0.09
+  C20                  CONDUIT    348.99     8  18:02     14.42    0.02    0.10
+  C21                  CONDUIT     40.07     8  18:00      1.86    0.01    0.54
+  C22                  CONDUIT     14.39     8  18:00      3.18    0.03    0.28
+  C23                  CONDUIT     13.25     8  18:00      5.41    0.03    0.08
+  C24                  CONDUIT    340.98     8  18:03     12.18    0.04    0.09
+  C25                  CONDUIT    332.51     8  18:02     11.02    0.05    0.12
+  C26                  CONDUIT    150.20     8  18:01      7.63    0.01    0.09
+  C27                  CONDUIT    142.92     8  18:02      4.09    0.04    0.26
+  C28                  CONDUIT    143.09     8  18:00     15.81    0.08    0.17
+  C29                  CONDUIT    132.52     8  18:00     10.28    0.11    0.24
+  C30                  CONDUIT    120.27     8  18:00     11.72    0.09    0.22
+  C31                  CONDUIT    116.34     8  18:00     12.67    0.11    0.22
+  C32                  CONDUIT     97.65     8  18:00     10.94    0.09    0.21
+  C33                  CONDUIT     79.86     8  18:00      9.72    0.09    0.20
+  C34                  CONDUIT     65.76     8  18:00      8.04    0.09    0.20
+  C35                  CONDUIT     50.69     8  18:00      7.82    0.04    0.17
+  C36                  CONDUIT     45.08     8  18:00      6.49    0.03    0.12
+  C37                  CONDUIT     31.49     8  18:00      6.36    0.03    0.08
+  C38                  CONDUIT     17.10     8  18:01      4.21    0.02    0.07
+  C39                  CONDUIT     17.11     8  18:01      6.67    0.04    0.15
+  C40                  CONDUIT     17.11     8  18:00      3.29    0.02    0.14
+  C41                  CONDUIT     17.13     8  18:00      6.61    0.02    0.06
+  C42                  CONDUIT      3.84     8  18:00      2.54    0.01    0.05
+  C43                  CONDUIT      3.84     8  18:00      6.92    0.01    0.07
+  C44                  CONDUIT    176.24     8  18:01      6.44    0.01    0.10
+  C45                  CONDUIT    173.16     8  18:00     10.61    0.01    0.06
+  C46                  CONDUIT    163.73     8  18:00     10.67    0.01    0.05
+  C47                  CONDUIT    157.96     8  18:00     10.92    0.01    0.05
+  C48                  CONDUIT    157.99     8  18:00      9.81    0.22    0.20
+  C49                  CONDUIT     32.57     8  18:01      5.09    0.13    0.22
+  C50                  CONDUIT     32.60     8  18:00      3.52    0.03    0.17
+  C51                  CONDUIT     26.52     8  18:00      5.72    0.03    0.10
+  C52                  CONDUIT     19.45     8  18:00      6.53    0.02    0.09
+  C53                  CONDUIT      6.37     8  18:00      6.66    0.02    0.10
+  C54                  CONDUIT    103.39     8  18:00      5.66    0.09    0.33
+  C55                  CONDUIT    102.30     8  18:00     11.46    0.10    0.21
+  C56                  CONDUIT     93.74     8  18:00     10.68    0.09    0.21
+  C57                  CONDUIT     92.23     8  18:00     10.82    0.10    0.21
+  C58                  CONDUIT     87.62     8  18:00     10.46    0.10    0.21
+  C59                  CONDUIT     80.04     8  18:00      9.86    0.09    0.21
+  C60                  CONDUIT     77.50     8  18:00      9.90    0.09    0.20
+  C61                  CONDUIT     70.67     8  18:00      8.83    0.10    0.21
+  C62                  CONDUIT     45.51     8  18:00      4.10    0.02    0.12
+  C63                  CONDUIT     44.53     8  18:00      7.23    0.03    0.07
+  C64                  CONDUIT     44.54     8  18:00     11.24    0.05    0.15
+  C65                  CONDUIT     37.96     8  18:00      7.89    0.05    0.17
+  C66                  CONDUIT     36.27     8  18:00      9.02    0.04    0.15
+  C67                  CONDUIT     23.60     8  18:00      6.99    0.01    0.05
+  C68                  CONDUIT     22.89     8  18:00      8.90    0.04    0.12
+  C69                  CONDUIT     20.92     8  18:00      6.20    0.05    0.18
+  C70                  CONDUIT     18.06     8  18:00      6.63    0.05    0.15
+  C71                  CONDUIT      6.62     8  18:00      4.74    0.03    0.17
+  C72                  CONDUIT      3.53     8  18:00      4.61    0.04    0.13
+  C73                  CONDUIT      2.50     8  18:00      3.40    0.03    0.13
+  C74                  CONDUIT      2.14     8  18:00      3.21    0.03    0.13
+  C75                  CONDUIT      1.10     8  18:00      2.56    0.01    0.11
+  outflow              CONDUIT    542.63     8  18:11      9.97    0.06    0.11
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  C1                      1.00   0.42  0.00  0.00  0.57  0.00  0.00  0.00  0.51  0.00
+  C2                      1.00   0.42  0.00  0.00  0.58  0.00  0.00  0.00  0.55  0.00
+  C3                      1.00   0.42  0.43  0.00  0.09  0.06  0.00  0.00  0.53  0.00
+  C4                      1.00   0.42  0.00  0.00  0.58  0.00  0.00  0.00  0.15  0.00
+  C5                      2.75   0.42  0.02  0.00  0.40  0.16  0.00  0.00  0.32  0.00
+  C6                      1.00   0.42  0.00  0.00  0.51  0.06  0.00  0.00  0.05  0.00
+  C7                      1.11   0.42  0.00  0.00  0.58  0.00  0.00  0.00  0.45  0.00
+  C8                      1.37   0.42  0.00  0.00  0.58  0.00  0.00  0.00  0.53  0.00
+  C9                      1.00   0.42  0.00  0.00  0.56  0.01  0.00  0.00  0.24  0.00
+  C10                     1.00   0.42  0.02  0.00  0.52  0.04  0.00  0.00  0.56  0.00
+  C11                     1.00   0.46  0.04  0.00  0.42  0.08  0.00  0.00  0.01  0.00
+  C12                     1.00   0.46  0.04  0.00  0.48  0.03  0.00  0.00  0.44  0.00
+  C13                     1.00   0.42  0.09  0.00  0.34  0.15  0.00  0.00  0.34  0.00
+  C14                     1.00   0.46  0.06  0.00  0.43  0.06  0.00  0.00  0.43  0.00
+  C15                     1.43   0.42  0.00  0.00  0.58  0.00  0.00  0.00  0.28  0.00
+  C16                     1.71   0.44  0.40  0.00  0.07  0.09  0.00  0.00  0.51  0.00
+  C17                     4.47   0.42  0.02  0.00  0.56  0.01  0.00  0.00  0.57  0.00
+  C18                     6.10   0.44  0.00  0.00  0.39  0.17  0.00  0.00  0.22  0.00
+  C19                     6.25   0.44  0.02  0.00  0.48  0.06  0.00  0.00  0.19  0.00
+  C20                    10.52   0.44  0.05  0.00  0.28  0.24  0.00  0.00  0.57  0.00
+  C21                    11.86   0.42  0.44  0.00  0.14  0.00  0.00  0.00  0.58  0.00
+  C22                     1.00   0.42  0.34  0.00  0.22  0.01  0.00  0.00  0.57  0.00
+  C23                     1.00   0.76  0.04  0.00  0.13  0.07  0.00  0.00  0.51  0.00
+  C24                     1.00   0.42  0.00  0.00  0.43  0.15  0.00  0.00  0.00  0.00
+  C25                     1.00   0.42  0.00  0.00  0.49  0.09  0.00  0.00  0.45  0.00
+  C26                    14.87   0.42  0.30  0.00  0.24  0.04  0.00  0.00  0.56  0.00
+  C27                     1.00   0.42  0.26  0.00  0.32  0.00  0.00  0.00  0.58  0.00
+  C28                     1.00   0.68  0.05  0.00  0.09  0.17  0.00  0.00  0.23  0.00
+  C29                     1.00   0.73  0.00  0.00  0.15  0.12  0.00  0.00  0.45  0.00
+  C30                     1.00   0.73  0.00  0.00  0.13  0.13  0.00  0.00  0.55  0.00
+  C31                     1.00   0.72  0.00  0.00  0.13  0.14  0.00  0.00  0.07  0.00
+  C32                     1.00   0.72  0.01  0.00  0.14  0.13  0.00  0.00  0.58  0.00
+  C33                     1.00   0.73  0.00  0.00  0.16  0.11  0.00  0.00  0.14  0.00
+  C34                     1.00   0.73  0.00  0.00  0.20  0.07  0.00  0.00  0.31  0.00
+  C35                     1.00   0.55  0.00  0.00  0.37  0.08  0.00  0.00  0.58  0.00
+  C36                     1.00   0.55  0.15  0.00  0.29  0.01  0.00  0.00  0.51  0.00
+  C37                     1.00   0.70  0.02  0.00  0.22  0.07  0.00  0.00  0.55  0.00
+  C38                     1.00   0.71  0.03  0.00  0.25  0.00  0.00  0.00  0.58  0.00
+  C39                    13.45   0.42  0.00  0.00  0.44  0.14  0.00  0.00  0.02  0.00
+  C40                     2.16   0.42  0.31  0.00  0.26  0.00  0.00  0.00  0.56  0.00
+  C41                     1.00   0.73  0.05  0.00  0.14  0.08  0.00  0.00  0.55  0.00
+  C42                     1.00   0.78  0.08  0.00  0.14  0.00  0.00  0.00  0.58  0.00
+  C43                     1.00   0.86  0.04  0.00  0.01  0.09  0.00  0.00  0.48  0.00
+  C44                     1.00   0.42  0.04  0.00  0.52  0.02  0.00  0.00  0.53  0.00
+  C45                     1.57   0.45  0.06  0.00  0.33  0.16  0.00  0.00  0.48  0.00
+  C46                     1.41   0.49  0.05  0.00  0.30  0.15  0.00  0.00  0.45  0.00
+  C47                     1.00   0.52  0.01  0.00  0.31  0.16  0.00  0.00  0.36  0.00
+  C48                     1.00   0.48  0.00  0.00  0.44  0.08  0.00  0.00  0.00  0.00
+  C49                     2.47   0.42  0.00  0.00  0.00  0.00  0.00  0.58  0.00  0.00
+  C50                     1.00   0.42  0.14  0.00  0.44  0.00  0.00  0.00  0.57  0.00
+  C51                     1.00   0.56  0.05  0.00  0.34  0.05  0.00  0.00  0.54  0.00
+  C52                     1.00   0.61  0.23  0.00  0.10  0.06  0.00  0.00  0.56  0.00
+  C53                     1.00   0.83  0.06  0.00  0.01  0.10  0.00  0.00  0.48  0.00
+  C54                     1.00   0.48  0.29  0.00  0.23  0.00  0.00  0.00  0.58  0.00
+  C55                     1.00   0.77  0.00  0.00  0.11  0.12  0.00  0.00  0.44  0.00
+  C56                     1.00   0.77  0.00  0.00  0.12  0.11  0.00  0.00  0.22  0.00
+  C57                     1.00   0.77  0.00  0.00  0.11  0.11  0.00  0.00  0.10  0.00
+  C58                     1.00   0.77  0.00  0.00  0.12  0.11  0.00  0.00  0.15  0.00
+  C59                     1.00   0.77  0.00  0.00  0.13  0.10  0.00  0.00  0.17  0.00
+  C60                     1.00   0.77  0.00  0.00  0.12  0.10  0.00  0.00  0.21  0.00
+  C61                     1.00   0.42  0.00  0.00  0.49  0.09  0.00  0.00  0.01  0.00
+  C62                     1.00   0.42  0.37  0.00  0.21  0.00  0.00  0.00  0.58  0.00
+  C63                     1.00   0.79  0.01  0.00  0.12  0.08  0.00  0.00  0.50  0.00
+  C64                     1.81   0.80  0.02  0.00  0.06  0.11  0.00  0.00  0.06  0.00
+  C65                     1.99   0.82  0.01  0.00  0.09  0.08  0.00  0.00  0.50  0.00
+  C66                     1.47   0.81  0.01  0.00  0.08  0.09  0.00  0.00  0.16  0.00
+  C67                     1.00   0.80  0.00  0.00  0.00  0.00  0.00  0.20  0.00  0.00
+  C68                     1.98   0.80  0.09  0.00  0.01  0.10  0.00  0.00  0.48  0.00
+  C69                     1.00   0.89  0.00  0.00  0.03  0.07  0.00  0.00  0.33  0.00
+  C70                     1.00   0.66  0.00  0.00  0.27  0.08  0.00  0.00  0.34  0.00
+  C71                     1.00   0.66  0.24  0.00  0.06  0.04  0.00  0.00  0.58  0.00
+  C72                     1.00   0.65  0.00  0.00  0.28  0.07  0.00  0.00  0.30  0.00
+  C73                     1.00   0.63  0.25  0.00  0.11  0.01  0.00  0.00  0.58  0.00
+  C74                     1.00   0.88  0.02  0.00  0.09  0.00  0.00  0.00  0.55  0.00
+  C75                     1.27   0.90  0.01  0.00  0.09  0.00  0.00  0.00  0.58  0.00
+  outflow                 1.00   0.42  0.00  0.00  0.29  0.29  0.00  0.00  0.01  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  C21                         0.01      0.01    120.96      0.01         0.01
+  
+  
+  ************
+  Node Results
+  ************
+  
+  <<< Node outfall >>>
+  ----------------------------------------------------------------
+                           Inflow  Flooding     Depth      Head
+  Date        Time            CFS       CFS      feet      feet
+  ----------------------------------------------------------------
+  JUL-01-2008 00:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 00:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 00:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 01:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 01:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 01:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 01:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 02:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 02:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 02:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 02:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 03:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 03:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 03:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 03:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 04:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 04:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 04:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 04:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 05:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 05:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 05:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 05:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 06:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 06:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 06:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 06:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 07:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 07:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 07:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 07:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 08:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 08:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 08:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 08:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 09:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 09:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 09:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 09:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 10:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 10:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 10:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 10:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 11:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 11:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 11:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 11:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 12:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 12:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 12:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 12:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 13:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 13:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 13:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 13:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 14:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 14:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 14:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 14:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 15:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 15:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 15:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 15:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 16:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 16:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 16:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 16:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 17:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 17:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 17:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 17:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 18:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 18:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 18:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 18:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 19:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 19:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 19:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 19:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 20:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 20:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 20:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 20:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 21:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 21:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 21:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 21:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 22:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 22:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 22:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 22:45:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 23:00:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 23:15:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 23:30:00      0.000     0.000     0.000    24.000
+  JUL-01-2008 23:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 00:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 00:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 00:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 00:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 01:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 01:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 01:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 01:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 02:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 02:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 02:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 02:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 03:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 03:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 03:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 03:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 04:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 04:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 04:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 04:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 05:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 05:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 05:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 05:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 06:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 06:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 06:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 06:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 07:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 07:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 07:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 07:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 08:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 08:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 08:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 08:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 09:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 09:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 09:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 09:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 10:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 10:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 10:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 10:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 11:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 11:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 11:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 11:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 12:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 12:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 12:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 12:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 13:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 13:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 13:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 13:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 14:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 14:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 14:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 14:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 15:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 15:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 15:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 15:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 16:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 16:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 16:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 16:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 17:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 17:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 17:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 17:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 18:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 18:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 18:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 18:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 19:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 19:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 19:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 19:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 20:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 20:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 20:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 20:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 21:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 21:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 21:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 21:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 22:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 22:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 22:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 22:45:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 23:00:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 23:15:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 23:30:00      0.000     0.000     0.000    24.000
+  JUL-02-2008 23:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 00:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 00:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 00:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 00:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 01:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 01:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 01:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 01:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 02:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 02:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 02:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 02:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 03:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 03:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 03:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 03:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 04:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 04:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 04:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 04:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 05:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 05:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 05:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 05:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 06:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 06:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 06:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 06:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 07:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 07:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 07:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 07:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 08:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 08:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 08:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 08:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 09:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 09:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 09:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 09:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 10:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 10:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 10:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 10:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 11:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 11:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 11:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 11:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 12:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 12:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 12:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 12:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 13:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 13:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 13:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 13:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 14:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 14:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 14:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 14:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 15:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 15:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 15:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 15:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 16:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 16:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 16:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 16:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 17:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 17:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 17:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 17:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 18:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 18:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 18:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 18:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 19:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 19:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 19:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 19:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 20:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 20:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 20:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 20:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 21:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 21:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 21:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 21:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 22:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 22:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 22:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 22:45:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 23:00:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 23:15:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 23:30:00      0.000     0.000     0.000    24.000
+  JUL-03-2008 23:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 00:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 00:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 00:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 00:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 01:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 01:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 01:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 01:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 02:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 02:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 02:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 02:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 03:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 03:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 03:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 03:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 04:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 04:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 04:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 04:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 05:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 05:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 05:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 05:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 06:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 06:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 06:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 06:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 07:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 07:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 07:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 07:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 08:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 08:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 08:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 08:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 09:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 09:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 09:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 09:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 10:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 10:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 10:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 10:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 11:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 11:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 11:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 11:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 12:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 12:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 12:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 12:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 13:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 13:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 13:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 13:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 14:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 14:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 14:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 14:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 15:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 15:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 15:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 15:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 16:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 16:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 16:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 16:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 17:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 17:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 17:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 17:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 18:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 18:15:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 18:30:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 18:45:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 19:00:00      0.000     0.000     0.000    24.000
+  JUL-04-2008 19:15:00      0.001     0.000     0.000    24.000
+  JUL-04-2008 19:30:00      0.010     0.000     0.000    24.000
+  JUL-04-2008 19:45:00      0.037     0.000     0.000    24.000
+  JUL-04-2008 20:00:00      0.172     0.000     0.001    24.001
+  JUL-04-2008 20:15:00      0.276     0.000     0.002    24.002
+  JUL-04-2008 20:30:00      0.431     0.000     0.003    24.003
+  JUL-04-2008 20:45:00      0.725     0.000     0.006    24.006
+  JUL-04-2008 21:00:00      1.225     0.000     0.010    24.010
+  JUL-04-2008 21:15:00      2.115     0.000     0.017    24.017
+  JUL-04-2008 21:30:00      3.496     0.000     0.028    24.028
+  JUL-04-2008 21:45:00      5.285     0.000     0.042    24.042
+  JUL-04-2008 22:00:00      7.589     0.000     0.061    24.061
+  JUL-04-2008 22:15:00     10.493     0.000     0.084    24.084
+  JUL-04-2008 22:30:00     14.017     0.000     0.112    24.112
+  JUL-04-2008 22:45:00     17.805     0.000     0.143    24.143
+  JUL-04-2008 23:00:00     21.257     0.000     0.170    24.170
+  JUL-04-2008 23:15:00     23.067     0.000     0.185    24.185
+  JUL-04-2008 23:30:00     23.357     0.000     0.187    24.187
+  JUL-04-2008 23:45:00     23.795     0.000     0.191    24.191
+  JUL-05-2008 00:00:00     23.242     0.000     0.186    24.186
+  JUL-05-2008 00:15:00     21.153     0.000     0.169    24.169
+  JUL-05-2008 00:30:00     18.379     0.000     0.147    24.147
+  JUL-05-2008 00:45:00     15.622     0.000     0.125    24.125
+  JUL-05-2008 01:00:00     13.114     0.000     0.105    24.105
+  JUL-05-2008 01:15:00     10.952     0.000     0.088    24.088
+  JUL-05-2008 01:30:00      9.167     0.000     0.073    24.073
+  JUL-05-2008 01:45:00      7.696     0.000     0.062    24.062
+  JUL-05-2008 02:00:00      6.488     0.000     0.052    24.052
+  JUL-05-2008 02:15:00      5.642     0.000     0.045    24.045
+  JUL-05-2008 02:30:00      5.419     0.000     0.043    24.043
+  JUL-05-2008 02:45:00      5.869     0.000     0.047    24.047
+  JUL-05-2008 03:00:00      6.903     0.000     0.055    24.055
+  JUL-05-2008 03:15:00      8.525     0.000     0.068    24.068
+  JUL-05-2008 03:30:00     10.725     0.000     0.086    24.086
+  JUL-05-2008 03:45:00     13.752     0.000     0.110    24.110
+  JUL-05-2008 04:00:00     20.244     0.000     0.162    24.162
+  JUL-05-2008 04:15:00     33.298     0.000     0.267    24.267
+  JUL-05-2008 04:30:00     42.630     0.000     0.342    24.342
+  JUL-05-2008 04:45:00     43.503     0.000     0.349    24.349
+  JUL-05-2008 05:00:00     39.814     0.000     0.319    24.319
+  JUL-05-2008 05:15:00     34.399     0.000     0.276    24.276
+  JUL-05-2008 05:30:00     28.522     0.000     0.229    24.229
+  JUL-05-2008 05:45:00     23.175     0.000     0.186    24.186
+  JUL-05-2008 06:00:00     18.688     0.000     0.150    24.150
+  JUL-05-2008 06:15:00     15.107     0.000     0.121    24.121
+  JUL-05-2008 06:30:00     12.258     0.000     0.098    24.098
+  JUL-05-2008 06:45:00     10.039     0.000     0.080    24.080
+  JUL-05-2008 07:00:00      8.291     0.000     0.066    24.066
+  JUL-05-2008 07:15:00      6.937     0.000     0.056    24.056
+  JUL-05-2008 07:30:00      6.013     0.000     0.048    24.048
+  JUL-05-2008 07:45:00      5.485     0.000     0.044    24.044
+  JUL-05-2008 08:00:00      5.261     0.000     0.042    24.042
+  JUL-05-2008 08:15:00      5.087     0.000     0.041    24.041
+  JUL-05-2008 08:30:00      4.821     0.000     0.039    24.039
+  JUL-05-2008 08:45:00      4.542     0.000     0.036    24.036
+  JUL-05-2008 09:00:00      4.278     0.000     0.034    24.034
+  JUL-05-2008 09:15:00      4.047     0.000     0.032    24.032
+  JUL-05-2008 09:30:00      3.858     0.000     0.031    24.031
+  JUL-05-2008 09:45:00      3.730     0.000     0.030    24.030
+  JUL-05-2008 10:00:00      3.700     0.000     0.030    24.030
+  JUL-05-2008 10:15:00      3.776     0.000     0.030    24.030
+  JUL-05-2008 10:30:00      3.884     0.000     0.031    24.031
+  JUL-05-2008 10:45:00      3.914     0.000     0.031    24.031
+  JUL-05-2008 11:00:00      3.813     0.000     0.031    24.031
+  JUL-05-2008 11:15:00      3.602     0.000     0.029    24.029
+  JUL-05-2008 11:30:00      3.326     0.000     0.027    24.027
+  JUL-05-2008 11:45:00      3.022     0.000     0.024    24.024
+  JUL-05-2008 12:00:00      2.719     0.000     0.022    24.022
+  JUL-05-2008 12:15:00      2.433     0.000     0.019    24.019
+  JUL-05-2008 12:30:00      2.172     0.000     0.017    24.017
+  JUL-05-2008 12:45:00      1.939     0.000     0.016    24.016
+  JUL-05-2008 13:00:00      1.734     0.000     0.014    24.014
+  JUL-05-2008 13:15:00      1.554     0.000     0.012    24.012
+  JUL-05-2008 13:30:00      1.397     0.000     0.011    24.011
+  JUL-05-2008 13:45:00      1.259     0.000     0.010    24.010
+  JUL-05-2008 14:00:00      1.138     0.000     0.009    24.009
+  JUL-05-2008 14:15:00      1.031     0.000     0.008    24.008
+  JUL-05-2008 14:30:00      0.937     0.000     0.008    24.008
+  JUL-05-2008 14:45:00      0.854     0.000     0.007    24.007
+  JUL-05-2008 15:00:00      0.781     0.000     0.006    24.006
+  JUL-05-2008 15:15:00      0.715     0.000     0.006    24.006
+  JUL-05-2008 15:30:00      0.656     0.000     0.005    24.005
+  JUL-05-2008 15:45:00      0.604     0.000     0.005    24.005
+  JUL-05-2008 16:00:00      0.557     0.000     0.004    24.004
+  JUL-05-2008 16:15:00      0.514     0.000     0.004    24.004
+  JUL-05-2008 16:30:00      0.476     0.000     0.004    24.004
+  JUL-05-2008 16:45:00      0.441     0.000     0.004    24.004
+  JUL-05-2008 17:00:00      0.409     0.000     0.003    24.003
+  JUL-05-2008 17:15:00      0.381     0.000     0.003    24.003
+  JUL-05-2008 17:30:00      0.354     0.000     0.003    24.003
+  JUL-05-2008 17:45:00      0.330     0.000     0.003    24.003
+  JUL-05-2008 18:00:00      0.308     0.000     0.002    24.002
+  JUL-05-2008 18:15:00      0.288     0.000     0.002    24.002
+  JUL-05-2008 18:30:00      0.269     0.000     0.002    24.002
+  JUL-05-2008 18:45:00      0.252     0.000     0.002    24.002
+  JUL-05-2008 19:00:00      0.236     0.000     0.002    24.002
+  JUL-05-2008 19:15:00      0.222     0.000     0.002    24.002
+  JUL-05-2008 19:30:00      0.209     0.000     0.002    24.002
+  JUL-05-2008 19:45:00      0.196     0.000     0.002    24.002
+  JUL-05-2008 20:00:00      0.185     0.000     0.001    24.001
+  JUL-05-2008 20:15:00      0.174     0.000     0.001    24.001
+  JUL-05-2008 20:30:00      0.164     0.000     0.001    24.001
+  JUL-05-2008 20:45:00      0.155     0.000     0.001    24.001
+  JUL-05-2008 21:00:00      0.147     0.000     0.001    24.001
+  JUL-05-2008 21:15:00      0.139     0.000     0.001    24.001
+  JUL-05-2008 21:30:00      0.132     0.000     0.001    24.001
+  JUL-05-2008 21:45:00      0.125     0.000     0.001    24.001
+  JUL-05-2008 22:00:00      0.118     0.000     0.001    24.001
+  JUL-05-2008 22:15:00      0.112     0.000     0.001    24.001
+  JUL-05-2008 22:30:00      0.107     0.000     0.001    24.001
+  JUL-05-2008 22:45:00      0.102     0.000     0.001    24.001
+  JUL-05-2008 23:00:00      0.097     0.000     0.001    24.001
+  JUL-05-2008 23:15:00      0.092     0.000     0.001    24.001
+  JUL-05-2008 23:30:00      0.088     0.000     0.001    24.001
+  JUL-05-2008 23:45:00      0.084     0.000     0.001    24.001
+  JUL-06-2008 00:00:00      0.080     0.000     0.001    24.001
+  JUL-06-2008 00:15:00      0.077     0.000     0.001    24.001
+  JUL-06-2008 00:30:00      0.073     0.000     0.001    24.001
+  JUL-06-2008 00:45:00      0.070     0.000     0.001    24.001
+  JUL-06-2008 01:00:00      0.067     0.000     0.001    24.001
+  JUL-06-2008 01:15:00      0.065     0.000     0.001    24.001
+  JUL-06-2008 01:30:00      0.062     0.000     0.000    24.000
+  JUL-06-2008 01:45:00      0.059     0.000     0.000    24.000
+  JUL-06-2008 02:00:00      0.057     0.000     0.000    24.000
+  JUL-06-2008 02:15:00      0.055     0.000     0.000    24.000
+  JUL-06-2008 02:30:00      0.053     0.000     0.000    24.000
+  JUL-06-2008 02:45:00      0.051     0.000     0.000    24.000
+  JUL-06-2008 03:00:00      0.049     0.000     0.000    24.000
+  JUL-06-2008 03:15:00      0.047     0.000     0.000    24.000
+  JUL-06-2008 03:30:00      0.045     0.000     0.000    24.000
+  JUL-06-2008 03:45:00      0.043     0.000     0.000    24.000
+  JUL-06-2008 04:00:00      0.042     0.000     0.000    24.000
+  JUL-06-2008 04:15:00      0.020     0.000     0.000    24.000
+  JUL-06-2008 04:30:00      0.022     0.000     0.000    24.000
+  JUL-06-2008 04:45:00      0.024     0.000     0.000    24.000
+  JUL-06-2008 05:00:00      0.025     0.000     0.000    24.000
+  JUL-06-2008 05:15:00      0.026     0.000     0.000    24.000
+  JUL-06-2008 05:30:00      0.027     0.000     0.000    24.000
+  JUL-06-2008 05:45:00      0.027     0.000     0.000    24.000
+  JUL-06-2008 06:00:00      0.027     0.000     0.000    24.000
+  JUL-06-2008 06:15:00      0.027     0.000     0.000    24.000
+  JUL-06-2008 06:30:00      0.027     0.000     0.000    24.000
+  JUL-06-2008 06:45:00      0.027     0.000     0.000    24.000
+  JUL-06-2008 07:00:00      0.026     0.000     0.000    24.000
+  JUL-06-2008 07:15:00      0.026     0.000     0.000    24.000
+  JUL-06-2008 07:30:00      0.025     0.000     0.000    24.000
+  JUL-06-2008 07:45:00      0.025     0.000     0.000    24.000
+  JUL-06-2008 08:00:00      0.024     0.000     0.000    24.000
+  JUL-06-2008 08:15:00      0.024     0.000     0.000    24.000
+  JUL-06-2008 08:30:00      0.023     0.000     0.000    24.000
+  JUL-06-2008 08:45:00      0.022     0.000     0.000    24.000
+  JUL-06-2008 09:00:00      0.022     0.000     0.000    24.000
+  JUL-06-2008 09:15:00      0.021     0.000     0.000    24.000
+  JUL-06-2008 09:30:00      0.021     0.000     0.000    24.000
+  JUL-06-2008 09:45:00      0.020     0.000     0.000    24.000
+  JUL-06-2008 10:00:00      0.019     0.000     0.000    24.000
+  JUL-06-2008 10:15:00      0.019     0.000     0.000    24.000
+  JUL-06-2008 10:30:00      0.018     0.000     0.000    24.000
+  JUL-06-2008 10:45:00      0.018     0.000     0.000    24.000
+  JUL-06-2008 11:00:00      0.017     0.000     0.000    24.000
+  JUL-06-2008 11:15:00      0.017     0.000     0.000    24.000
+  JUL-06-2008 11:30:00      0.016     0.000     0.000    24.000
+  JUL-06-2008 11:45:00      0.016     0.000     0.000    24.000
+  JUL-06-2008 12:00:00      0.015     0.000     0.000    24.000
+  JUL-06-2008 12:15:00      0.015     0.000     0.000    24.000
+  JUL-06-2008 12:30:00      0.014     0.000     0.000    24.000
+  JUL-06-2008 12:45:00      0.014     0.000     0.000    24.000
+  JUL-06-2008 13:00:00      0.014     0.000     0.000    24.000
+  JUL-06-2008 13:15:00      0.013     0.000     0.000    24.000
+  JUL-06-2008 13:30:00      0.013     0.000     0.000    24.000
+  JUL-06-2008 13:45:00      0.012     0.000     0.000    24.000
+  JUL-06-2008 14:00:00      0.012     0.000     0.000    24.000
+  JUL-06-2008 14:15:00      0.012     0.000     0.000    24.000
+  JUL-06-2008 14:30:00      0.011     0.000     0.000    24.000
+  JUL-06-2008 14:45:00      0.011     0.000     0.000    24.000
+  JUL-06-2008 15:00:00      0.011     0.000     0.000    24.000
+  JUL-06-2008 15:15:00      0.010     0.000     0.000    24.000
+  JUL-06-2008 15:30:00      0.010     0.000     0.000    24.000
+  JUL-06-2008 15:45:00      0.010     0.000     0.000    24.000
+  JUL-06-2008 16:00:00      0.010     0.000     0.000    24.000
+  JUL-06-2008 16:15:00      0.009     0.000     0.000    24.000
+  JUL-06-2008 16:30:00      0.009     0.000     0.000    24.000
+  JUL-06-2008 16:45:00      0.009     0.000     0.000    24.000
+  JUL-06-2008 17:00:00      0.009     0.000     0.000    24.000
+  JUL-06-2008 17:15:00      0.008     0.000     0.000    24.000
+  JUL-06-2008 17:30:00      0.008     0.000     0.000    24.000
+  JUL-06-2008 17:45:00      0.008     0.000     0.000    24.000
+  JUL-06-2008 18:00:00      0.008     0.000     0.000    24.000
+  JUL-06-2008 18:15:00      0.007     0.000     0.000    24.000
+  JUL-06-2008 18:30:00      0.007     0.000     0.000    24.000
+  JUL-06-2008 18:45:00      0.007     0.000     0.000    24.000
+  JUL-06-2008 19:00:00      0.007     0.000     0.000    24.000
+  JUL-06-2008 19:15:00      0.007     0.000     0.000    24.000
+  JUL-06-2008 19:30:00      0.007     0.000     0.000    24.000
+  JUL-06-2008 19:45:00      0.006     0.000     0.000    24.000
+  JUL-06-2008 20:00:00      0.006     0.000     0.000    24.000
+  JUL-06-2008 20:15:00      0.006     0.000     0.000    24.000
+  JUL-06-2008 20:30:00      0.006     0.000     0.000    24.000
+  JUL-06-2008 20:45:00      0.006     0.000     0.000    24.000
+  JUL-06-2008 21:00:00      0.006     0.000     0.000    24.000
+  JUL-06-2008 21:15:00      0.005     0.000     0.000    24.000
+  JUL-06-2008 21:30:00      0.005     0.000     0.000    24.000
+  JUL-06-2008 21:45:00      0.005     0.000     0.000    24.000
+  JUL-06-2008 22:00:00      0.005     0.000     0.000    24.000
+  JUL-06-2008 22:15:00      0.005     0.000     0.000    24.000
+  JUL-06-2008 22:30:00      0.005     0.000     0.000    24.000
+  JUL-06-2008 22:45:00      0.005     0.000     0.000    24.000
+  JUL-06-2008 23:00:00      0.005     0.000     0.000    24.000
+  JUL-06-2008 23:15:00      0.004     0.000     0.000    24.000
+  JUL-06-2008 23:30:00      0.004     0.000     0.000    24.000
+  JUL-06-2008 23:45:00      0.004     0.000     0.000    24.000
+  JUL-07-2008 00:00:00      0.004     0.000     0.000    24.000
+  JUL-07-2008 00:15:00      0.004     0.000     0.000    24.000
+  JUL-07-2008 00:30:00      0.004     0.000     0.000    24.000
+  JUL-07-2008 00:45:00      0.004     0.000     0.000    24.000
+  JUL-07-2008 01:00:00      0.004     0.000     0.000    24.000
+  JUL-07-2008 01:15:00      0.004     0.000     0.000    24.000
+  JUL-07-2008 01:30:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 01:45:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 02:00:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 02:15:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 02:30:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 02:45:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 03:00:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 03:15:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 03:30:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 03:45:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 04:00:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 04:15:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 04:30:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 04:45:00      0.003     0.000     0.000    24.000
+  JUL-07-2008 05:00:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 05:15:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 05:30:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 05:45:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 06:00:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 06:15:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 06:30:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 06:45:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 07:00:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 07:15:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 07:30:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 07:45:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 08:00:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 08:15:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 08:30:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 08:45:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 09:00:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 09:15:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 09:30:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 09:45:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 10:00:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 10:15:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 10:30:00      0.002     0.000     0.000    24.000
+  JUL-07-2008 10:45:00      0.001     0.000     0.000    24.000
+  JUL-07-2008 11:00:00      0.001     0.000     0.000    24.000
+  JUL-07-2008 11:15:00      0.001     0.000     0.000    24.000
+  JUL-07-2008 11:30:00      0.001     0.000     0.000    24.000
+  JUL-07-2008 11:45:00      0.001     0.000     0.000    24.000
+  JUL-07-2008 12:00:00      0.001     0.000     0.000    24.000
+  JUL-07-2008 12:15:00      0.001     0.000     0.000    24.000
+  JUL-07-2008 12:30:00      0.001     0.000     0.000    24.000
+  JUL-07-2008 12:45:00      0.001     0.000     0.000    24.000
+  JUL-07-2008 13:00:00      0.001     0.000     0.000    24.000
+  JUL-07-2008 13:15:00      0.366     0.000     0.003    24.003
+  JUL-07-2008 13:30:00      4.691     0.000     0.038    24.038
+  JUL-07-2008 13:45:00     21.736     0.000     0.174    24.174
+  JUL-07-2008 14:00:00     70.751     0.000     0.567    24.567
+  JUL-07-2008 14:15:00    203.808     0.000     1.222    25.222
+  JUL-07-2008 14:30:00    260.610     0.000     1.425    25.425
+  JUL-07-2008 14:45:00    202.600     0.000     1.217    25.217
+  JUL-07-2008 15:00:00    137.790     0.000     0.958    24.958
+  JUL-07-2008 15:15:00     91.800     0.000     0.735    24.735
+  JUL-07-2008 15:30:00     63.392     0.000     0.508    24.508
+  JUL-07-2008 15:45:00     45.246     0.000     0.362    24.362
+  JUL-07-2008 16:00:00     33.205     0.000     0.266    24.266
+  JUL-07-2008 16:15:00     25.044     0.000     0.201    24.201
+  JUL-07-2008 16:30:00     19.332     0.000     0.155    24.155
+  JUL-07-2008 16:45:00     15.218     0.000     0.122    24.122
+  JUL-07-2008 17:00:00     12.176     0.000     0.098    24.098
+  JUL-07-2008 17:15:00      9.885     0.000     0.079    24.079
+  JUL-07-2008 17:30:00      8.119     0.000     0.065    24.065
+  JUL-07-2008 17:45:00      6.734     0.000     0.054    24.054
+  JUL-07-2008 18:00:00      5.639     0.000     0.045    24.045
+  JUL-07-2008 18:15:00      4.761     0.000     0.038    24.038
+  JUL-07-2008 18:30:00      4.056     0.000     0.032    24.032
+  JUL-07-2008 18:45:00      3.483     0.000     0.028    24.028
+  JUL-07-2008 19:00:00      3.010     0.000     0.024    24.024
+  JUL-07-2008 19:15:00      2.617     0.000     0.021    24.021
+  JUL-07-2008 19:30:00      2.288     0.000     0.018    24.018
+  JUL-07-2008 19:45:00      2.012     0.000     0.016    24.016
+  JUL-07-2008 20:00:00      1.778     0.000     0.014    24.014
+  JUL-07-2008 20:15:00      1.579     0.000     0.013    24.013
+  JUL-07-2008 20:30:00      1.408     0.000     0.011    24.011
+  JUL-07-2008 20:45:00      1.261     0.000     0.010    24.010
+  JUL-07-2008 21:00:00      1.134     0.000     0.009    24.009
+  JUL-07-2008 21:15:00      1.023     0.000     0.008    24.008
+  JUL-07-2008 21:30:00      0.926     0.000     0.007    24.007
+  JUL-07-2008 21:45:00      0.841     0.000     0.007    24.007
+  JUL-07-2008 22:00:00      0.767     0.000     0.006    24.006
+  JUL-07-2008 22:15:00      0.700     0.000     0.006    24.006
+  JUL-07-2008 22:30:00      0.642     0.000     0.005    24.005
+  JUL-07-2008 22:45:00      0.589     0.000     0.005    24.005
+  JUL-07-2008 23:00:00      0.543     0.000     0.004    24.004
+  JUL-07-2008 23:15:00      0.501     0.000     0.004    24.004
+  JUL-07-2008 23:30:00      0.463     0.000     0.004    24.004
+  JUL-07-2008 23:45:00      0.428     0.000     0.003    24.003
+  JUL-08-2008 00:00:00      0.397     0.000     0.003    24.003
+  JUL-08-2008 00:15:00      0.369     0.000     0.003    24.003
+  JUL-08-2008 00:30:00      0.343     0.000     0.003    24.003
+  JUL-08-2008 00:45:00      0.319     0.000     0.003    24.003
+  JUL-08-2008 01:00:00      0.298     0.000     0.002    24.002
+  JUL-08-2008 01:15:00      0.278     0.000     0.002    24.002
+  JUL-08-2008 01:30:00      0.260     0.000     0.002    24.002
+  JUL-08-2008 01:45:00      0.243     0.000     0.002    24.002
+  JUL-08-2008 02:00:00      0.228     0.000     0.002    24.002
+  JUL-08-2008 02:15:00      0.214     0.000     0.002    24.002
+  JUL-08-2008 02:30:00      0.201     0.000     0.002    24.002
+  JUL-08-2008 02:45:00      0.189     0.000     0.002    24.002
+  JUL-08-2008 03:00:00      0.178     0.000     0.001    24.001
+  JUL-08-2008 03:15:00      0.168     0.000     0.001    24.001
+  JUL-08-2008 03:30:00      0.159     0.000     0.001    24.001
+  JUL-08-2008 03:45:00      0.150     0.000     0.001    24.001
+  JUL-08-2008 04:00:00      0.142     0.000     0.001    24.001
+  JUL-08-2008 04:15:00      0.134     0.000     0.001    24.001
+  JUL-08-2008 04:30:00      0.127     0.000     0.001    24.001
+  JUL-08-2008 04:45:00      0.120     0.000     0.001    24.001
+  JUL-08-2008 05:00:00      0.114     0.000     0.001    24.001
+  JUL-08-2008 05:15:00      0.108     0.000     0.001    24.001
+  JUL-08-2008 05:30:00      0.103     0.000     0.001    24.001
+  JUL-08-2008 05:45:00      0.098     0.000     0.001    24.001
+  JUL-08-2008 06:00:00      0.093     0.000     0.001    24.001
+  JUL-08-2008 06:15:00      0.089     0.000     0.001    24.001
+  JUL-08-2008 06:30:00      0.085     0.000     0.001    24.001
+  JUL-08-2008 06:45:00      0.081     0.000     0.001    24.001
+  JUL-08-2008 07:00:00      0.077     0.000     0.001    24.001
+  JUL-08-2008 07:15:00      0.074     0.000     0.001    24.001
+  JUL-08-2008 07:30:00      0.071     0.000     0.001    24.001
+  JUL-08-2008 07:45:00      0.068     0.000     0.001    24.001
+  JUL-08-2008 08:00:00      0.065     0.000     0.001    24.001
+  JUL-08-2008 08:15:00      0.062     0.000     0.000    24.000
+  JUL-08-2008 08:30:00      0.060     0.000     0.000    24.000
+  JUL-08-2008 08:45:00      0.057     0.000     0.000    24.000
+  JUL-08-2008 09:00:00      0.055     0.000     0.000    24.000
+  JUL-08-2008 09:15:00      0.053     0.000     0.000    24.000
+  JUL-08-2008 09:30:00      0.051     0.000     0.000    24.000
+  JUL-08-2008 09:45:00      0.049     0.000     0.000    24.000
+  JUL-08-2008 10:00:00      0.047     0.000     0.000    24.000
+  JUL-08-2008 10:15:00      0.045     0.000     0.000    24.000
+  JUL-08-2008 10:30:00      0.043     0.000     0.000    24.000
+  JUL-08-2008 10:45:00      0.042     0.000     0.000    24.000
+  JUL-08-2008 11:00:00      0.020     0.000     0.000    24.000
+  JUL-08-2008 11:15:00      0.022     0.000     0.000    24.000
+  JUL-08-2008 11:30:00      0.024     0.000     0.000    24.000
+  JUL-08-2008 11:45:00      0.025     0.000     0.000    24.000
+  JUL-08-2008 12:00:00      0.026     0.000     0.000    24.000
+  JUL-08-2008 12:15:00      0.027     0.000     0.000    24.000
+  JUL-08-2008 12:30:00      0.027     0.000     0.000    24.000
+  JUL-08-2008 12:45:00      0.027     0.000     0.000    24.000
+  JUL-08-2008 13:00:00      0.027     0.000     0.000    24.000
+  JUL-08-2008 13:15:00      0.027     0.000     0.000    24.000
+  JUL-08-2008 13:30:00      0.027     0.000     0.000    24.000
+  JUL-08-2008 13:45:00      0.026     0.000     0.000    24.000
+  JUL-08-2008 14:00:00      0.026     0.000     0.000    24.000
+  JUL-08-2008 14:15:00      0.025     0.000     0.000    24.000
+  JUL-08-2008 14:30:00      0.024     0.000     0.000    24.000
+  JUL-08-2008 14:45:00      0.024     0.000     0.000    24.000
+  JUL-08-2008 15:00:00      0.023     0.000     0.000    24.000
+  JUL-08-2008 15:15:00      0.023     0.000     0.000    24.000
+  JUL-08-2008 15:30:00      0.022     0.000     0.000    24.000
+  JUL-08-2008 15:45:00      0.021     0.000     0.000    24.000
+  JUL-08-2008 16:00:00      0.021     0.000     0.000    24.000
+  JUL-08-2008 16:15:00      0.020     0.000     0.000    24.000
+  JUL-08-2008 16:30:00      0.020     0.000     0.000    24.000
+  JUL-08-2008 16:45:00      0.019     0.000     0.000    24.000
+  JUL-08-2008 17:00:00      0.018     0.000     0.000    24.000
+  JUL-08-2008 17:15:00      0.018     0.000     0.000    24.000
+  JUL-08-2008 17:30:00      0.017     0.000     0.000    24.000
+  JUL-08-2008 17:45:00      0.017     0.000     0.000    24.000
+  JUL-08-2008 18:00:00      0.016     0.000     0.000    24.000
+  JUL-08-2008 18:15:00      0.016     0.000     0.000    24.000
+  JUL-08-2008 18:30:00      0.015     0.000     0.000    24.000
+  JUL-08-2008 18:45:00      0.015     0.000     0.000    24.000
+  JUL-08-2008 19:00:00      0.014     0.000     0.000    24.000
+  JUL-08-2008 19:15:00      0.014     0.000     0.000    24.000
+  JUL-08-2008 19:30:00      0.014     0.000     0.000    24.000
+  JUL-08-2008 19:45:00      0.013     0.000     0.000    24.000
+  JUL-08-2008 20:00:00      0.013     0.000     0.000    24.000
+  JUL-08-2008 20:15:00      0.012     0.000     0.000    24.000
+  JUL-08-2008 20:30:00      0.012     0.000     0.000    24.000
+  JUL-08-2008 20:45:00      0.012     0.000     0.000    24.000
+  JUL-08-2008 21:00:00      0.011     0.000     0.000    24.000
+  JUL-08-2008 21:15:00      0.011     0.000     0.000    24.000
+  JUL-08-2008 21:30:00      0.011     0.000     0.000    24.000
+  JUL-08-2008 21:45:00      0.010     0.000     0.000    24.000
+  JUL-08-2008 22:00:00      0.010     0.000     0.000    24.000
+  JUL-08-2008 22:15:00      0.010     0.000     0.000    24.000
+  JUL-08-2008 22:30:00      0.009     0.000     0.000    24.000
+  JUL-08-2008 22:45:00      0.009     0.000     0.000    24.000
+  JUL-08-2008 23:00:00      0.009     0.000     0.000    24.000
+  JUL-08-2008 23:15:00      0.009     0.000     0.000    24.000
+  JUL-08-2008 23:30:00      0.008     0.000     0.000    24.000
+  JUL-08-2008 23:45:00      0.008     0.000     0.000    24.000
+  JUL-09-2008 00:00:00      0.008     0.000     0.000    24.000
+  JUL-09-2008 00:15:00      0.008     0.000     0.000    24.000
+  JUL-09-2008 00:30:00      0.007     0.000     0.000    24.000
+  JUL-09-2008 00:45:00      0.007     0.000     0.000    24.000
+  JUL-09-2008 01:00:00      0.007     0.000     0.000    24.000
+  JUL-09-2008 01:15:00      0.007     0.000     0.000    24.000
+  JUL-09-2008 01:30:00      0.007     0.000     0.000    24.000
+  JUL-09-2008 01:45:00      0.006     0.000     0.000    24.000
+  JUL-09-2008 02:00:00      0.006     0.000     0.000    24.000
+  JUL-09-2008 02:15:00      0.006     0.000     0.000    24.000
+  JUL-09-2008 02:30:00      0.006     0.000     0.000    24.000
+  JUL-09-2008 02:45:00      0.006     0.000     0.000    24.000
+  JUL-09-2008 03:00:00      0.006     0.000     0.000    24.000
+  JUL-09-2008 03:15:00      0.005     0.000     0.000    24.000
+  JUL-09-2008 03:30:00      0.005     0.000     0.000    24.000
+  JUL-09-2008 03:45:00      0.005     0.000     0.000    24.000
+  JUL-09-2008 04:00:00      0.005     0.000     0.000    24.000
+  JUL-09-2008 04:15:00      0.005     0.000     0.000    24.000
+  JUL-09-2008 04:30:00      0.005     0.000     0.000    24.000
+  JUL-09-2008 04:45:00      0.005     0.000     0.000    24.000
+  JUL-09-2008 05:00:00      0.005     0.000     0.000    24.000
+  JUL-09-2008 05:15:00      0.004     0.000     0.000    24.000
+  JUL-09-2008 05:30:00      0.004     0.000     0.000    24.000
+  JUL-09-2008 05:45:00      0.004     0.000     0.000    24.000
+  JUL-09-2008 06:00:00      0.004     0.000     0.000    24.000
+  JUL-09-2008 06:15:00      0.004     0.000     0.000    24.000
+  JUL-09-2008 06:30:00      0.004     0.000     0.000    24.000
+  JUL-09-2008 06:45:00      0.004     0.000     0.000    24.000
+  JUL-09-2008 07:00:00      0.004     0.000     0.000    24.000
+  JUL-09-2008 07:15:00      0.004     0.000     0.000    24.000
+  JUL-09-2008 07:30:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 07:45:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 08:00:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 08:15:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 08:30:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 08:45:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 09:00:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 09:15:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 09:30:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 09:45:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 10:00:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 10:15:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 10:30:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 10:45:00      0.003     0.000     0.000    24.000
+  JUL-09-2008 11:00:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 11:15:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 11:30:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 11:45:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 12:00:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 12:15:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 12:30:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 12:45:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 13:00:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 13:15:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 13:30:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 13:45:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 14:00:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 14:15:00      0.002     0.000     0.000    24.000
+  JUL-09-2008 14:30:00      0.005     0.000     0.000    24.000
+  JUL-09-2008 14:45:00      0.011     0.000     0.000    24.000
+  JUL-09-2008 15:00:00      0.022     0.000     0.000    24.000
+  JUL-09-2008 15:15:00      0.130     0.000     0.001    24.001
+  JUL-09-2008 15:30:00      0.460     0.000     0.004    24.004
+  JUL-09-2008 15:45:00      1.620     0.000     0.013    24.013
+  JUL-09-2008 16:00:00      4.612     0.000     0.037    24.037
+  JUL-09-2008 16:15:00      9.002     0.000     0.072    24.072
+  JUL-09-2008 16:30:00     14.501     0.000     0.116    24.116
+  JUL-09-2008 16:45:00     25.598     0.000     0.205    24.205
+  JUL-09-2008 17:00:00     43.464     0.000     0.348    24.348
+  JUL-09-2008 17:15:00     62.202     0.000     0.498    24.498
+  JUL-09-2008 17:30:00    104.148     0.000     0.806    24.806
+  JUL-09-2008 17:45:00    204.867     0.000     1.226    25.226
+  JUL-09-2008 18:00:00    459.582     0.000     2.039    26.039
+  JUL-09-2008 18:15:00    536.417     0.000     2.250    26.250
+  JUL-09-2008 18:30:00    446.087     0.000     2.000    26.000
+  JUL-09-2008 18:45:00    323.654     0.000     1.633    25.633
+  JUL-09-2008 19:00:00    228.655     0.000     1.313    25.313
+  JUL-09-2008 19:15:00    169.298     0.000     1.089    25.089
+  JUL-09-2008 19:30:00    129.776     0.000     0.924    24.924
+  JUL-09-2008 19:45:00    100.797     0.000     0.790    24.790
+  JUL-09-2008 20:00:00     77.578     0.000     0.622    24.622
+  JUL-09-2008 20:15:00     58.617     0.000     0.470    24.470
+  JUL-09-2008 20:30:00     44.021     0.000     0.353    24.353
+  JUL-09-2008 20:45:00     33.225     0.000     0.266    24.266
+  JUL-09-2008 21:00:00     25.423     0.000     0.204    24.204
+  JUL-09-2008 21:15:00     19.762     0.000     0.158    24.158
+  JUL-09-2008 21:30:00     15.612     0.000     0.125    24.125
+  JUL-09-2008 21:45:00     12.502     0.000     0.100    24.100
+  JUL-09-2008 22:00:00     10.153     0.000     0.081    24.081
+  JUL-09-2008 22:15:00      8.339     0.000     0.067    24.067
+  JUL-09-2008 22:30:00      6.914     0.000     0.055    24.055
+  JUL-09-2008 22:45:00      5.787     0.000     0.046    24.046
+  JUL-09-2008 23:00:00      4.884     0.000     0.039    24.039
+  JUL-09-2008 23:15:00      4.157     0.000     0.033    24.033
+  JUL-09-2008 23:30:00      3.568     0.000     0.029    24.029
+  JUL-09-2008 23:45:00      3.083     0.000     0.025    24.025
+  JUL-10-2008 00:00:00      2.678     0.000     0.021    24.021
+  
+
+  Analysis begun on:  Sun Oct 30 22:51:24 2016
+  Analysis ended on:  Sun Oct 30 22:51:28 2016
+  Total elapsed time: 00:00:04
