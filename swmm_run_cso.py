@@ -31,7 +31,7 @@ def runswmm(runParamList,swmmInitialInpFileStr,runsCollection):
     # Run the new model file
     startTime = datetime.now()   # obtain the starting time of the run
     startTimeStr = str(startTime)
-    call(["swmm5","SWMM_modified.inp", "SWMM_modified.txt", "out.out"])
+    call(["swmm5","SWMM_modified.inp", "SWMM_modified.txt"])   # , "out.out"
     endTime = datetime.now()   # obtain the ending time of the run
     elapsedTime = endTime - startTime
     minAndSec = divmod(elapsedTime.total_seconds(), 60)
@@ -44,5 +44,5 @@ def runswmm(runParamList,swmmInitialInpFileStr,runsCollection):
     "infiltration": infiltration, "precipitation": precipitation, "lidDict": lid_dict, "swmmInputFileStr": swmmInputFileStr, \
     "runParamList": runParamList, "swmmStartTime": startTimeStr,"swmmRunTime": elapsedTimeStr}
     doc_id = runsCollection.insert_one(run).inserted_id
-    print "volume = %s" % volume
+    print "peak = %s, volume = %s, cso_volume = %s, runoff = %s" % (peak,volume,cso_volume,runoff)
     return (doc_id)
