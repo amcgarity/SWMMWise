@@ -1,5 +1,5 @@
 from swmm_objects import *
-from swmm_read_cso_loop import *
+from swmm_read_cso_time_series import *
 from pymongo import MongoClient
 from datetime import datetime
 import yaml
@@ -31,7 +31,7 @@ def runswmm(runParamList,swmmInitialInpFileStr,runsCollection):
     # Run the new model file
     startTime = datetime.now()   # obtain the starting time of the run
     startTimeStr = str(startTime)
-    call(["swmm5.exe","SWMM_modified.inp", "SWMM_modified.rpt"])
+    call(["swmm5.exe", "SWMM_modified.inp", "SWMM_modified.rpt"])
     endTime = datetime.now()   # obtain the ending time of the run
     elapsedTime = endTime - startTime
     minAndSec = divmod(elapsedTime.total_seconds(), 60)
@@ -39,13 +39,13 @@ def runswmm(runParamList,swmmInitialInpFileStr,runsCollection):
     print elapsedTimeStr
 
     # collect the new results:
-    ratio_list = [0.001,0.002,0.003,0.004,0.005,0.006,0.007,0.008,0.009]
+    #ratio_list = [0.001,0.002,0.003,0.004,0.005,0.006,0.007,0.008,0.009]
     #{"peak":peak,"volume":volume,"cso_list":cso_volume_list,"runoff":runoff,"evap":evaporation,"infil":infiltration, "precip":precipitation,"lid_dict":lid_dict} = read_report("SWMM_modified.rpt", ratio_list)
-    x = read_report("SWMM_modified.rpt", ratio_list)
-    print x
-    run = {"peak": x["peak"], "volume": x["volume"], "ratios":ratio_list, "cso_volume": x["cso_list"], "runoff": x["runoff"], "evaporation": x["evap"], \
-    "infiltration": x["infil"], "precipitation": x["precip"], "lidDict": x["lid_dict"], "swmmInputFileStr": swmmInputFileStr, \
-    "runParamList": runParamList, "swmmStartTime": startTimeStr,"swmmRunTime": elapsedTimeStr}
+    x = read_report("SWMM_modified.rpt") # to make list for run dictionary 
+    #print x
+    run = {"peak": x["peak"], "volume": x["volume"], "runoff": x["runoff"], "evaporation": x["evap"], \
+    "infiltration": x["infil"], "precipitation": x["precip"], "lidDict": x["lid_dict"], "outflow_series": x["outflow_series"],\
+    "swmmInputFileStr": swmmInputFileStr, "runParamList": runParamList, "swmmStartTime": startTimeStr,"swmmRunTime": elapsedTimeStr}
     doc_id = runsCollection.insert_one(run).inserted_id
     print "volume = %s" % x['volume']
     return (doc_id)

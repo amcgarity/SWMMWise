@@ -83,7 +83,7 @@ def read_outflow_series(fname):
         if len(time) == 11:  #so that only node results section will be recorded
           hours.append(time)
           out = line_list[2] #get outflow from list
-          outflows.append(out)
+          outflows.append(float(out))
   return (outflows)
 
 def read_runoff(fname):
@@ -96,7 +96,7 @@ def read_runoff(fname):
   output_list = output_line.split()
   #print(output_list)
   runoff = output_list[3]
-  return (runoff)
+  return float(runoff)
 
 def read_evaporation(fname):
   infile = open(fname,'r')
@@ -108,7 +108,7 @@ def read_evaporation(fname):
   output_list = output_line.split()
   #print(output_list)
   evaporation = output_list[3]
-  return (evaporation)
+  return float(evaporation)
 
 def read_infiltration(fname):
   infile = open(fname,'r')
@@ -120,7 +120,7 @@ def read_infiltration(fname):
   output_list = output_line.split()
   #print(output_list)
   infiltration = output_list[3]
-  return (infiltration)
+  return float(infiltration)
 
 def read_precipitation(fname):
   infile = open(fname,'r')
@@ -132,9 +132,9 @@ def read_precipitation(fname):
   output_list = output_line.split()
  # print(output_list)
   precipitation = output_list[3]
-  return (precipitation)
+  return float(precipitation)
 
-def read_report(fname, ratio):
+def read_report(fname):
   infile = open(fname,'r')
   data = infile.read()
   # find and parse the External Outflow line
@@ -215,8 +215,8 @@ def read_report(fname, ratio):
     #cso_volume = cso_flow*900*7.48052 #for seconds in 15 minutes
     #equiv_rat = cso_volume/tot_volume  #equivalency ratio
     #treated_volume = tot_volume - cso_volume
-    cso_volume_list.append(cso_volume)
-  return {"peak":peak,"volume":volume,"cso_list":cso_volume_list,"runoff":runoff,"evap":evaporation,/
-  "infil":infiltration, "precip":precipitation,"lid_dict":lid_dict, "outflow":}
+  #cso_volume_list.append(cso_volume)
+  return {"peak":peak,"volume":volume,"runoff":runoff,"evap":evaporation,\
+  "infil":infiltration, "precip":precipitation,"lid_dict":lid_dict, "outflow_series":outflow_series}
   # peak and volume are strings.  lid_dict is a dictionary of dicts
 
