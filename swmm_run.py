@@ -31,7 +31,7 @@ def runswmm(runParamList,swmmInitialInpFileStr,runsCollection):
     # Run the new model file
     startTime = datetime.now()   # obtain the starting time of the run
     startTimeStr = str(startTime)
-    call(["swmm5","SWMM_modified.inp", "SWMM_modified.txt", "out.out"])
+    call(["swmm5.exe","SWMM_modified.inp", "SWMM_modified.txt", "out.out"])
     endTime = datetime.now()   # obtain the ending time of the run
     elapsedTime = endTime - startTime
     minAndSec = divmod(elapsedTime.total_seconds(), 60)

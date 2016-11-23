@@ -554,19 +554,19 @@ Anna_TT_infil	SURFACE 3 0.15 0.05 1.0 5
 Anna_TT_infil	STORAGE 48 0.75 1.5 0 
 Anna_TT_infil	DRAIN 0 0.5 6 6 
 [LID_USAGE]
-TT14_574_shed	wakefield_BR_RG	0 741 0 0 0.000 0   
+TT14_574_shed	wakefield_BR_RG	9 741 0 0 4.076 0   
 TT14_574_shed	Anna_TT_infil	0 760 5 0 0 0   
-T14_K3_shed	wakefield_BR_RG	0 741 0 0 0.000 0   
+T14_K3_shed	wakefield_BR_RG	9 741 0 0 1.577 0   
 T14_K3_shed	Anna_TT_infil	0 760 5 0 0 0   
-T14_B_shed	wakefield_BR_RG	0 741 0 0 0.000 0   
+T14_B_shed	wakefield_BR_RG	9 741 0 0 1.421 0   
 T14_B_shed	Anna_TT_infil	0 760 5 0 0 0   
-TT14_720_shed	wakefield_BR_RG	0 741 0 0 0.000 0   
+TT14_720_shed	wakefield_BR_RG	9 741 0 0 4.013 0   
 TT14_720_shed	Anna_TT_infil	0 760 5 0 0 0   
-TT14_646A_shed	wakefield_BR_RG	0 741 0 0 0.000 0   
+TT14_646A_shed	wakefield_BR_RG	9 741 0 0 7.941 0   
 TT14_646A_shed	Anna_TT_infil	0 760 5 0 0 0   
-TT14_552B_shed	wakefield_BR_RG	0 741 0 0 0.000 0   
+TT14_552B_shed	wakefield_BR_RG	9 741 0 0 5.166 0   
 TT14_552B_shed	Anna_TT_infil	0 760 5 0 0 0   
-T14_R6_shed	wakefield_BR_RG	0 741 0 0 0.000 0   
+T14_R6_shed	wakefield_BR_RG	9 741 0 0 10.168 0   
 T14_R6_shed	Anna_TT_infil	0 760 5 0 0 0   
 [JUNCTIONS]
 TT14-006	27.51 87.39 0 0 0 
@@ -804,6 +804,6 @@ outflow	MODBASKETHANDLE 21 24 12 0 1
 [REPORT]
 INPUT	YES 
 CONTROLS	NO 
-SUBCATCHMENTS	NONE 
-NODES	outfall 
-LINKS	NONE 
+SUBCATCHMENTS	ALL 
+NODES	ALL 
+LINKS	ALL 
