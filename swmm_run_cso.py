@@ -6,7 +6,7 @@ import yaml
 from subprocess import call
 import sys
 
-def runswmm(runParamList,swmmInitialInpFileStr,runsCollection):
+def runswmm(runParamList,swmmInitialInpFileStr,runsCollection,tot_area_treated):
 
     (section_names,sections) = read_inp(swmmInitialInpFileStr)
     # Create an instance of a swmm_model object using the SWMM inp data:
@@ -45,7 +45,7 @@ def runswmm(runParamList,swmmInitialInpFileStr,runsCollection):
     #print x
     run = {"peak": x["peak"], "volume": x["volume"], "runoff": x["runoff"], "evaporation": x["evap"], \
     "infiltration": x["infil"], "precipitation": x["precip"], "lidDict": x["lid_dict"], "outflow_series": x["outflow_series"],\
-    "swmmInputFileStr": swmmInputFileStr, "runParamList": runParamList, "swmmStartTime": startTimeStr,"swmmRunTime": elapsedTimeStr}
+    "swmmInputFileStr": swmmInputFileStr, "runParamList": runParamList, "swmmStartTime": startTimeStr,"swmmRunTime": elapsedTimeStr, "totalAreaTreated":tot_area_treated }
     doc_id = runsCollection.insert_one(run).inserted_id
     print "volume = %s" % x['volume']
     return (doc_id)
