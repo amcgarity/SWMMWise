@@ -21,11 +21,14 @@ def read_inp(swmmInpStr):
 
 #    fname = "Example4_bare_PHL.inp"
     data = swmmInpStr
+    #print data
     section_names = []   # we will build this list from section names found in the SWMM .inp file
 # remove comment lines and blank lines and identify all section names used in the file
     data1 = []
     for line in data:
+        #print line
         line_ns = line.strip()  # remove whitespace
+        #print line_ns
         if line_ns.startswith('['):
             section_names.append(line_ns)
         elif line_ns.startswith(';;'):  # do not include comment ines

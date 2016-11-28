@@ -417,6 +417,8 @@ class swmm_model:
 		# But the new PctImperv parameter must be CALCULATED first!!
 		acre = 43560.0
 		newnumber_str = str(newnumber)
+		#print self.catdict
+		#print self.section_names
 		lid_usage_class = self.moddict[lid_usage]
 		lid_area_str = lid_usage_class.get((subcatchment,lidname),'Area')  # LID area in SQUARE FEET
 		lid_area = float(lid_area_str)
