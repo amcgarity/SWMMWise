@@ -21,11 +21,11 @@ LINK_OFFSETS	DEPTH
 MIN_SLOPE	0	
 ALLOW_PONDING	NO	
 SKIP_STEADY_STATE	NO	
-START_DATE	07/01/2008	
+START_DATE	01/01/2008	
 START_TIME	00:00:00	
-REPORT_START_DATE	07/01/2008	
+REPORT_START_DATE	01/01/2008	
 REPORT_START_TIME	00:00:00	
-END_DATE	07/30/2008	
+END_DATE	01/01/2009	
 END_TIME	00:00:00	
 SWEEP_START	01/01	
 SWEEP_END	12/31	
@@ -561,20 +561,20 @@ Anna_TT_infil	SURFACE     3          0.15       0.05       1.0          5
 Anna_TT_infil	STORAGE    48          0.75       1.5        0 
 Anna_TT_infil	DRAIN       0          0.5        6          6 
 [LID_USAGE]
-TT14_574_shed    wakefield_BR_RG    0       741        0          0          0          0         
-TT14_574_shed	 Anna_TT_infil	    0       760        5          0          0          0
-T14_K3_shed      wakefield_BR_RG    0       741        0          0          0          0         
-T14_K3_shed	     Anna_TT_infil	    0       760        5          0          0          0
-T14_B_shed       wakefield_BR_RG    0       741        0          0          0          0
-T14_B_shed	     Anna_TT_infil	    0       760        5          0          0          0         
-TT14_720_shed    wakefield_BR_RG    0       741        0          0          0          0         
-TT14_720_shed	 Anna_TT_infil	    0       760        5          0          0          0
-TT14_646A_shed   wakefield_BR_RG    0       741        0          0          0          0
-TT14_646A_shed	 Anna_TT_infil	    0       760        5          0          0          0         
-TT14_552B_shed   wakefield_BR_RG    0       741        0          0          0          0         
-TT14_552B_shed	 Anna_TT_infil	    0       760        5          0          0          0
-T14_R6_shed      wakefield_BR_RG    0       741        0          0          0          0         
-T14_R6_shed	     Anna_TT_infil	    0       760        5          0          0          0
+TT14_574_shed    wakefield_BR_RG    0       741        0          0          25          0         
+TT14_574_shed	 Anna_TT_infil	    0       760        5          0          25          0
+T14_K3_shed      wakefield_BR_RG    0       741        0          0          25          0         
+T14_K3_shed	     Anna_TT_infil	    0       760        5          0          25          0
+T14_B_shed       wakefield_BR_RG    0       741        0          0          25          0
+T14_B_shed	     Anna_TT_infil	    0       760        5          0          25          0         
+TT14_720_shed    wakefield_BR_RG    0       741        0          0          25          0         
+TT14_720_shed	 Anna_TT_infil	    0       760        5          0          25          0
+TT14_646A_shed   wakefield_BR_RG    0       741        0          0          25          0
+TT14_646A_shed	 Anna_TT_infil	    0       760        5          0          25          0         
+TT14_552B_shed   wakefield_BR_RG    0       741        0          0          25          0         
+TT14_552B_shed	 Anna_TT_infil	    0       760        5          0          25          0
+T14_R6_shed      wakefield_BR_RG    0       741        0          0          25          0         
+T14_R6_shed	     Anna_TT_infil	    0       760        5          0          25          0
 [JUNCTIONS]
 TT14-006	27.51	87.39	0	0	0	
 TT14-044	42.379	78.420795	0	0	0	
