@@ -45,11 +45,11 @@ def volume_reduction_and_runoff_volume_vs_lid_number(collectionName,numSubs, db)
                 subcat = lidUsage['Subcat']
                 lidNumber = lidUsage['Number']
                 lidArea = lidUsage['Area']  # in square feet
-                lidKey = subcat+' '+lid
-                surfaceOutflowInches = lidDict[lidKey]['Surface Outflow']
-                surfaceOutflow = surfaceOutflowInches*lidNumber*lidArea/12.0  # cubic feet
-                totalSurfaceOutflow += surfaceOutflow/mGal  # convert to million Gal/year
-            totalSurfaceOutflowList.append(totalSurfaceOutflow)
+                #lidKey = subcat+' '+lid
+                #surfaceOutflowInches = lidDict[lidKey]['Surface Outflow']
+                #surfaceOutflow = surfaceOutflowInches*lidNumber*lidArea/12.0  # cubic feet
+                #totalSurfaceOutflow += surfaceOutflow/mGal  # convert to million Gal/year
+            #totalSurfaceOutflowList.append(totalSurfaceOutflow)
     numSims = len(volReductionList)
     return{"numLists": numLists, "outflow_series": outflow_series_list, "volReductionList": volReductionList, \
            "surface_outflow":totalSurfaceOutflowList,"numSims": numSims}
