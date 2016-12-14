@@ -8,7 +8,8 @@ def volume_reduction_and_runoff_volume_vs_lid_number(collectionName,numSubs, db)
     import matplotlib.pyplot as plt
     mGal = 133680.5  # 1 Million gallon in cubic feet
     runs = db[collectionName]
-    cursor = runs.find()
+    cursor = runs.find() 
+    print cursor
     numLists = []
     for n in range(0,numSubs):
         numLists.append([])
