@@ -1,0 +1,224 @@
+This file give the multivariate regression results obtained by the
+multivariate_regression.ipynb notebook. Yearly results are given from 2008 to 2013
+Each regression is in the form os cso reduction vs # of wakefield rain gardens. 
+For each year (other than 2009), 250 SWMM Simulations were run, each containing a different permutation of 
+subcatchments amount the 7 subcatchments in the Wingohocking PWD_file.  
+during the 2009 simulations, the mongo server timed out, so that dataset contains only 117 simulation results. 
+The 7 subcatchments were :
+TT14_574_shed
+T14_K3_shed
+T14_B_shed
+TT14_646A_shed
+TT14_552B_shed
+T14_R6_shed
+The maximum amount of LIDs in each subcatchment for any given simulation was 100 (this was programmed in manually 
+to the code) 
+the results were generated using the Wingo_PWD_Simulations notebook. 
+in the results, x values represent number of rain gardens in a subcatchments. y values represent total CSO outflow. 
+To see regressions for y values of total cso volume or total outflow volume, see the last two cells in the
+multivariate_regression.ipynb notebook.
+
+The five collections used to generate these results are: 
+random_multivariate250 ------------- for year 2008
+random_multivariate250_2009 -------- for year 2009
+multivariate_random_250_2010 ------- for year 2010
+multivariate_random_250_2011 ------- for year 2011
+multivariate_random_250_2012 ------- for year 2012
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Regression results:
+
+Collection: random_multivariate250, year: 2008
+OLS Regression Results 
+Exact R-squared: 0.999796997145
+==============================================================================
+Dep. Variable:                      y   R-squared:                       1.000
+Model:                            OLS   Adj. R-squared:                  1.000
+Method:                 Least Squares   F-statistic:                 1.710e+05
+Date:                Wed, 14 Dec 2016   Prob (F-statistic):               0.00
+Time:                        16:49:23   Log-Likelihood:                -3316.9
+No. Observations:                 251   AIC:                             6650.
+Df Residuals:                     243   BIC:                             6678.
+Df Model:                           7                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+x1          1.184e+05    308.583    383.670      0.000      1.18e+05  1.19e+05
+x2           1.23e+05    297.400    413.448      0.000      1.22e+05  1.24e+05
+x3          1.197e+05    294.283    406.627      0.000      1.19e+05   1.2e+05
+x4          1.209e+05    306.606    394.264      0.000       1.2e+05  1.21e+05
+x5          1.103e+05    303.634    363.399      0.000       1.1e+05  1.11e+05
+x6          1.216e+05    297.575    408.693      0.000      1.21e+05  1.22e+05
+x7          1.232e+05    302.368    407.355      0.000      1.23e+05  1.24e+05
+const       4.952e+05   3.89e+04     12.739      0.000      4.19e+05  5.72e+05
+==============================================================================
+Omnibus:                      179.708   Durbin-Watson:                   2.063
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1498.053
+Skew:                          -2.932   Prob(JB):                         0.00
+Kurtosis:                      13.434   Cond. No.                         608.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Collection: random_multivariate250_2009         year: 2009
+
+Exact R-squared: 0.999740351858
+ OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       1.000
+Model:                            OLS   Adj. R-squared:                  1.000
+Method:                 Least Squares   F-statistic:                 5.996e+04
+Date:                Wed, 14 Dec 2016   Prob (F-statistic):          2.74e-192
+Time:                        17:07:14   Log-Likelihood:                -1629.3
+No. Observations:                 117   AIC:                             3275.
+Df Residuals:                     109   BIC:                             3297.
+Df Model:                           7                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+x1          2.082e+05    965.962    215.518      0.000      2.06e+05   2.1e+05
+x2          2.166e+05    920.686    235.312      0.000      2.15e+05  2.18e+05
+x3          2.112e+05    852.150    247.834      0.000       2.1e+05  2.13e+05
+x4          2.134e+05    910.425    234.429      0.000      2.12e+05  2.15e+05
+x5          2.045e+05    901.309    226.927      0.000      2.03e+05  2.06e+05
+x6          2.173e+05    994.344    218.559      0.000      2.15e+05  2.19e+05
+x7          2.162e+05    908.328    238.068      0.000      2.14e+05  2.18e+05
+const       1.058e+06   1.24e+05      8.556      0.000      8.13e+05   1.3e+06
+==============================================================================
+Omnibus:                       62.029   Durbin-Watson:                   1.880
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              186.597
+Skew:                          -2.043   Prob(JB):                     3.03e-41
+Kurtosis:                       7.645   Cond. No.                         672.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Collection: multivariate_random_250_2010            year: 2010
+
+
+Exact r-squared:
+0.999856095295
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       1.000
+Model:                            OLS   Adj. R-squared:                  1.000
+Method:                 Least Squares   F-statistic:                 2.412e+05
+Date:                Wed, 14 Dec 2016   Prob (F-statistic):               0.00
+Time:                        17:25:55   Log-Likelihood:                -3335.2
+No. Observations:                 251   AIC:                             6686.
+Df Residuals:                     243   BIC:                             6715.
+Df Model:                           7                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+x1          1.558e+05    332.511    468.406      0.000      1.55e+05  1.56e+05
+x2          1.619e+05    324.931    498.156      0.000      1.61e+05  1.63e+05
+x3          1.564e+05    304.844    512.960      0.000      1.56e+05  1.57e+05
+x4          1.588e+05    310.856    511.001      0.000      1.58e+05  1.59e+05
+x5          1.491e+05    317.932    468.958      0.000      1.48e+05   1.5e+05
+x6           1.59e+05    325.877    487.848      0.000      1.58e+05   1.6e+05
+x7          1.619e+05    338.585    478.246      0.000      1.61e+05  1.63e+05
+const       5.629e+05   4.42e+04     12.728      0.000      4.76e+05   6.5e+05
+==============================================================================
+Omnibus:                      169.058   Durbin-Watson:                   2.083
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1181.707
+Skew:                          -2.785   Prob(JB):                    2.49e-257
+Kurtosis:                      12.054   Cond. No.                         651.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Collection: multivariate_random_250_2011            year: 2011
+
+Exact r-squared:
+0.999842490075
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       1.000
+Model:                            OLS   Adj. R-squared:                  1.000
+Method:                 Least Squares   F-statistic:                 2.204e+05
+Date:                Wed, 14 Dec 2016   Prob (F-statistic):               0.00
+Time:                        17:27:07   Log-Likelihood:                -3357.5
+No. Observations:                 251   AIC:                             6731.
+Df Residuals:                     243   BIC:                             6759.
+Df Model:                           7                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+x1          1.622e+05    364.960    444.354      0.000      1.61e+05  1.63e+05
+x2          1.662e+05    383.797    433.134      0.000      1.65e+05  1.67e+05
+x3          1.637e+05    341.382    479.530      0.000      1.63e+05  1.64e+05
+x4          1.647e+05    347.024    474.523      0.000      1.64e+05  1.65e+05
+x5          1.515e+05    347.476    435.939      0.000      1.51e+05  1.52e+05
+x6          1.639e+05    362.854    451.563      0.000      1.63e+05  1.65e+05
+x7          1.664e+05    359.293    463.117      0.000      1.66e+05  1.67e+05
+const       4.704e+05   4.73e+04      9.952      0.000      3.77e+05  5.64e+05
+==============================================================================
+Omnibus:                      154.513   Durbin-Watson:                   1.776
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1029.809
+Skew:                          -2.484   Prob(JB):                    2.40e-224
+Kurtosis:                      11.590   Cond. No.                         636.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Collection: multivariate_random_250_2012            year: 2012
+
+Exact r-squared:
+0.999892652198
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       1.000
+Model:                            OLS   Adj. R-squared:                  1.000
+Method:                 Least Squares   F-statistic:                 3.233e+05
+Date:                Wed, 14 Dec 2016   Prob (F-statistic):               0.00
+Time:                        17:28:35   Log-Likelihood:                -3215.0
+No. Observations:                 251   AIC:                             6446.
+Df Residuals:                     243   BIC:                             6474.
+Df Model:                           7                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+x1          1.139e+05    195.234    583.352      0.000      1.14e+05  1.14e+05
+x2          1.164e+05    205.419    566.407      0.000      1.16e+05  1.17e+05
+x3          1.151e+05    209.495    549.490      0.000      1.15e+05  1.16e+05
+x4          1.158e+05    208.526    555.323      0.000      1.15e+05  1.16e+05
+x5          1.061e+05    199.098    533.143      0.000      1.06e+05  1.07e+05
+x6           1.16e+05    191.809    604.903      0.000      1.16e+05  1.16e+05
+x7          1.163e+05    202.265    574.956      0.000      1.16e+05  1.17e+05
+const       2.897e+05   2.66e+04     10.875      0.000      2.37e+05  3.42e+05
+==============================================================================
+Omnibus:                      138.929   Durbin-Watson:                   1.662
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              716.081
+Skew:                          -2.286   Prob(JB):                    3.20e-156
+Kurtosis:                       9.897   Cond. No.                         621.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
