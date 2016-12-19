@@ -1,3 +1,4 @@
 *.pyc
 out.out
 swmm5.exe
+.ipynb_checkpoints/*.*
