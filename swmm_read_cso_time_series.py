@@ -87,6 +87,7 @@ def read_outflow_series(fname):
   return (outflows)
 
 def read_runoff(fname):
+  # Returns runoff in ACRE-FEET
   infile = open(fname,'r')
   data = infile.read()
   outfall_start_index = data.find('Runoff Quantity Continuity')
@@ -142,7 +143,7 @@ def read_report(fname):
   if external_flow_index >= 0:  # The External Outflow line is found
     lineList = data[external_flow_index:].split('\n',1)
     wordlist = lineList[0].split()
-    volume = float(wordlist[4])
+    volume = float(wordlist[4])   # Outflow Volume in 10^6 Gal
   else:
    volume = None
   # find and parse the LID Performance Summary
@@ -184,8 +185,8 @@ def read_report(fname):
   split = data[output_start_index:].split('\n',1)
   output_line = split[0]
   output_list = output_line.split()
-  peak = float(output_list[3])
-  volume = float(output_list[4])
+  peak = float(output_list[3])    # Outfall peak flow in cfs
+  volume = float(output_list[4])  # Outfall volume in 10^6 Gal
  # peak = None
   runoff = read_runoff(fname)
   evaporation = read_evaporation(fname)

@@ -2,16 +2,16 @@
 # ONLY for loop tests for which all subcats have the same number of a single LID:
 from pymongo import MongoClient
 from process_collection import *
-def volume_reduction_and_runoff_volume_vs_lid_number(collectionName,numSubs, db):
+def volume_reduction_and_runoff_volume_vs_lid_number(collectionName,numVars, db):
     from pymongo import MongoClient
     from datetime import datetime
     import matplotlib.pyplot as plt
-    mGal = 133680.5  # 1 Million gallon in cubic feet
+    mGal = 133680.5  # number of cubic feet in 1 Million gallons 
     runs = db[collectionName]
     cursor = runs.find() 
-    print cursor
+    #print cursor
     numLists = []
-    for n in range(0,numSubs):
+    for n in range(0,numVars):
         numLists.append([])
 
     volReductionList = []
@@ -21,12 +21,12 @@ def volume_reduction_and_runoff_volume_vs_lid_number(collectionName,numSubs, db)
     noLidVolume = noLidRun['volume']
     outflow_series_list = []
     for run in cursor:
-        for i in range(0,numSubs):
-            runParamsZero = run['runParamList'][i] 
-            numInitial = runParamsZero['Number']
-            numLists[i].append(numInitial)
+        for i in range(0,numVars):
+            runParams = run['runParamList'][i] 
+            numLID = runParams['Number']
+            numLists[i].append(numLID)
         volume = run['volume']
-        volReduction = noLidVolume-volume
+        volReduction = (noLidVolume-volume) * 1e6   # volume reduction in GALLONS
         volReductionList.append(volReduction)
         outflow_series=run['outflow_series']
         #outflow_series_list.append

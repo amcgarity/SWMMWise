@@ -36,5 +36,5 @@ def cso_reduction(collectionName, ratio, numSubs, results):
         original_cso_volume = cso_list[0]  #cso from run with no lids
         cso_reduction = original_cso_volume - cso_list[i]  
         cso_reduction_list.append(cso_reduction)
-    print cso_reduction_list
+    #print cso_reduction_list
     return {"csoReduction": cso_reduction_list, "cso": cso_list, "totalVol": tot_vol_list}
