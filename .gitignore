@@ -2,3 +2,5 @@
 out.out
 swmm5.exe
 .ipynb_checkpoints/*.*
+SWMM_modified.inp
+SWMM_modified.rpt
