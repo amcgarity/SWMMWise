@@ -181,43 +181,24 @@ def read_report(fname):
     lid_report = None
   # find and parse the Outfall Loading Summary    
   outfall_start_index = data.find('Outfall Loading Summary')
-  output_start_index = data.find('System',outfall_start_index)
-  split = data[output_start_index:].split('\n',1)
-  output_line = split[0]
-  output_list = output_line.split()
-  peak = float(output_list[3])    # Outfall peak flow in cfs
-  volume = float(output_list[4])  # Outfall volume in 10^6 Gal
- # peak = None
-  runoff = read_runoff(fname)
-  evaporation = read_evaporation(fname)
-  infiltration = read_infiltration(fname)
-  precipitation = read_precipitation(fname)
-  outflow_series = read_outflow_series(fname)
+  #print "outfall_start_index = %s" % outfall_start_index
+  if outfall_start_index >= 0:   # The Outfall Loading Summary section is in the output file
+    output_start_index = data.find('System',outfall_start_index)
+    split = data[output_start_index:].split('\n',1)
+    output_line = split[0]
+    output_list = output_line.split()
+    peak = float(output_list[3])    # Outfall peak flow in cfs
+    volume = float(output_list[4])  # Outfall volume in 10^6 Gal
+    runoff = read_runoff(fname)
+    evaporation = read_evaporation(fname)
+    infiltration = read_infiltration(fname)
+    precipitation = read_precipitation(fname)
+    outflow_series = read_outflow_series(fname)
+    return {"peak":peak,"volume":volume,"runoff":runoff,"evap":evaporation,\
+    "infil":infiltration, "precip":precipitation,"lid_dict":lid_dict, "outflow_series":outflow_series}
+    # peak and volume are strings.  lid_dict is a dictionary of dicts
+  else:
+    return "failed"
 
-  #calculating cso volume
-  #cso_volume_list = []
-  #for r in  ratio: 
-  #outflow_values = []
-  #out = read_outflow_series(fname)
-  #outflow_values.append(out)
-    #cso_flow = 0
-    #hours = 0
-    #tot_flow = 0
-    #max_treatment = 3122*r #max cfs allowed to treatment
-    #for i in outflow_values: #out_variables is list within list (though outer list is just one element) (cfs/impervious acres)
-    # tot = len(i)
-    #3  for j in i: 
-    #    if float(j) > max_treatment:  #ratio method--- 
-    #      tot_flow += float(j)
-    #      cso = float(j) - max_treatment # subtracting treated from total outflow
-    #      cso_flow += cso 
-    #      hours += 1
-    #tot_volume = tot_flow*900*7.48052 #convert to gallons, 900 seconds in 15 minutes
-    #cso_volume = cso_flow*900*7.48052 #for seconds in 15 minutes
-    #equiv_rat = cso_volume/tot_volume  #equivalency ratio
-    #treated_volume = tot_volume - cso_volume
-  #cso_volume_list.append(cso_volume)
-  return {"peak":peak,"volume":volume,"runoff":runoff,"evap":evaporation,\
-  "infil":infiltration, "precip":precipitation,"lid_dict":lid_dict, "outflow_series":outflow_series}
-  # peak and volume are strings.  lid_dict is a dictionary of dicts
+  
 
