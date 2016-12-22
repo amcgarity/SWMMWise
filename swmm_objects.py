@@ -349,7 +349,34 @@ class swmm_model:
 				#print cat.heading+'\n'
 				#print outstr
 		return swmmInputFileStr
-				
+
+	def getSubcatchmentArea(self,subcatName):
+		subcatchmentsClass = self.moddict[subcatchments]
+		subcatAreaStr = subcatchmentsClass.get(subcatName,'Area')
+		subcatArea = float(subcatAreaStr)  # Subcatchment area in acre
+		return subcatArea
+
+	def getSubcatchmentPctImperv(self,subcatName):
+		subcatchmentsClass = self.moddict[subcatchments]
+		subcatPctImpervStr = subcatchmentsClass.get(subcatName,'PctImperv')
+		subcatPctImperv = float(subcatPctImpervStr)  # Subcatchment area in acre
+		return subcatPctImperv	
+
+	def getLidArea(self,subcatName,lidName):
+		lidUsageClass = self.moddict[lid_usage]
+		lidArea = lidUsageClass.get((subcatName,lidName),'Area')  # LID area in SQUARE FEET
+		return lidArea
+
+	def getLidNumber(self,subcatName,lidName):
+		lidUsageClass = self.moddict[lid_usage]
+		lidNumber = lidUsageClass.get((subcatName,lidName),'Number')  # LID area in SQUARE FEET
+		return lidNumber
+
+	def getLidFromImp(self,subcatName,lidName):
+		lidUsageClass = self.moddict[lid_usage]
+		lidFromImp = lidUsageClass.get((subcatName,lidName),'FromImp')  # LID area in SQUARE FEET
+		return lidFromImp
+
 	def change(self,catheading,objname,pname,pvalue):
 		catclass = self.catdict[catheading]
 		self.moddict[catclass].change(objname,pname,pvalue)
