@@ -516,16 +516,6 @@ waterviewSWP SURFACE 4 0.6 0.1 1.0 5
 waterviewSWP SOIL 2 0.5 0.2 0.1 0.5 10.0 3.5	
 waterviewSWP STORAGE 2 0.75 0.5 0	
 waterviewSWP DRAIN 0 0.5 1 6	
-waterviewPP PP	
-waterviewPP SURFACE 2 0.0 0.1 1.0 5	
-waterviewPP PAVEMENT 1 0.15 0 100 0	
-waterviewPP SOIL 1 0.5 0.2 0.1 0.5 10.0 3.5	
-waterviewPP STORAGE 2 0.75 0.5 0	
-waterviewPP DRAIN 0 0.5 0 6	
-MorrisTT IT	
-MorrisTT SURFACE 4 0.7 0.1 1.0 5	
-MorrisTT STORAGE 20 0.75 0.7 0	
-MorrisTT DRAIN 0 0.5 6 6	
 PleasantTT IT	
 PleasantTT SURFACE 3 0.7 0.1 1.0 5	
 PleasantTT STORAGE 5 0.75 0.5 0	
@@ -551,30 +541,47 @@ rocklandIT IT
 rocklandIT SURFACE 1 0.5 0.1 1.0 5	
 rocklandIT STORAGE 6 0.75 0.5 0	
 rocklandIT DRAIN 1 0.5 6 6	
+Anna_TT_infil	IT
+Anna_TT_infil	SURFACE     3          0.15       0.05       1.0          5 
+Anna_TT_infil	STORAGE    48          0.75       1.5        0 
+Anna_TT_infil	DRAIN       0          0.5        6          6 
 wakefield_BR_RG  BC
 wakefield_BR_RG  SURFACE    36         0.7        0.1        1.0        5.0       
 wakefield_BR_RG  SOIL       3          0.5        0.2        0.1        1.0        10.0       3.5       
 wakefield_BR_RG  STORAGE    0.1        0.75       0.5        0         
 wakefield_BR_RG  DRAIN      0          0.5        0          6 
-Anna_TT_infil	IT
-Anna_TT_infil	SURFACE     3          0.15       0.05       1.0          5 
-Anna_TT_infil	STORAGE    48          0.75       1.5        0 
-Anna_TT_infil	DRAIN       0          0.5        6          6 
+MorrisTT    IT
+MorrisTT    SURFACE 3 0.15 0 0 0 
+MorrisTT    STORAGE 20 0.5 0.7 0 
+MorrisTT    DRAIN 0 0.5 6 6 
+waterviewPP PP  
+waterviewPP SURFACE 6 0.0 0.1 1.0 0 
+waterviewPP PAVEMENT 2 0.15 0 100 0 
+waterviewPP SOIL 1 0.5 0.2 0.1 0.5 10.0 3.5 
+waterviewPP STORAGE 2 0.75 0.5 0    
+waterviewPP DRAIN 0 0.5 0 6 
 [LID_USAGE]
-TT14_574_shed    wakefield_BR_RG    0       741        0          0          25          0         
-TT14_574_shed	 Anna_TT_infil	    0       760        5          0          25          0
-T14_K3_shed      wakefield_BR_RG    0       741        0          0          25          0         
-T14_K3_shed	     Anna_TT_infil	    0       760        5          0          25          0
-T14_B_shed       wakefield_BR_RG    0       741        0          0          25          0
-T14_B_shed	     Anna_TT_infil	    0       760        5          0          25          0         
-TT14_720_shed    wakefield_BR_RG    0       741        0          0          25          0         
-TT14_720_shed	 Anna_TT_infil	    0       760        5          0          25          0
-TT14_646A_shed   wakefield_BR_RG    0       741        0          0          25          0
-TT14_646A_shed	 Anna_TT_infil	    0       760        5          0          25          0         
-TT14_552B_shed   wakefield_BR_RG    0       741        0          0          25          0         
-TT14_552B_shed	 Anna_TT_infil	    0       760        5          0          25          0
-T14_R6_shed      wakefield_BR_RG    0       741        0          0          25          0         
-T14_R6_shed	     Anna_TT_infil	    0       760        5          0          25          0
+TT14_574_shed    wakefield_BR_RG    0       3315        0          0          0          0         
+TT14_574_shed	 MorrisTT   	    0       2275        5          0          0          0
+TT14_574_shed    waterviewPP        0       2628        5          0          0          0
+T14_K3_shed      wakefield_BR_RG    0       3315        0          0          0          0         
+T14_K3_shed	     MorrisTT           0       2275        5          0          0          0
+T14_K3_shed      waterviewPP        0       2628        5          0          0          0
+T14_B_shed       wakefield_BR_RG    0       3315        0          0          0          0
+T14_B_shed	     MorrisTT           0       2275        5          0          0          0 
+T14_B_shed       waterviewPP        0       2628        5          0          0          0
+TT14_720_shed    wakefield_BR_RG    0       3315        0          0          0          0         
+TT14_720_shed	 MorrisTT           0       2275        5          0          0          0
+TT14_720_shed    waterviewPP        0       2628        5          0          0          0
+TT14_646A_shed   wakefield_BR_RG    0       3315        0          0          0          0
+TT14_646A_shed	 MorrisTT           0       2275        5          0          0          0 
+TT14_646A_shed   waterviewPP        0       2628        5          0          0          0
+TT14_552B_shed   wakefield_BR_RG    0       3315        0          0          0          0         
+TT14_552B_shed	 MorrisTT           0       2275        5          0          0          0
+TT14_552B_shed   waterviewPP        0       2628        5          0          0          0
+T14_R6_shed      wakefield_BR_RG    0       3315        0          0          0          0         
+T14_R6_shed	     MorrisTT           0       2275        5          0          0          0
+T14_R6_shed      waterviewPP        0       2628        5          0          0          0
 [JUNCTIONS]
 TT14-006	27.51	87.39	0	0	0	
 TT14-044	42.379	78.420795	0	0	0	
