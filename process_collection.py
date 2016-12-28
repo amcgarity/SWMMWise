@@ -45,7 +45,7 @@ def volume_reduction_and_runoff_volume_vs_lid_number(collectionName,numVars, db)
                 lid = lidUsage['LID']
                 subcat = lidUsage['Subcat']
                 lidNumber = lidUsage['Number']
-                lidArea = lidUsage['Area']  # in square feet
+                #lidArea = lidUsage['Area']  # in square feet
                 #lidKey = subcat+' '+lid
                 #surfaceOutflowInches = lidDict[lidKey]['Surface Outflow']
                 #surfaceOutflow = surfaceOutflowInches*lidNumber*lidArea/12.0  # cubic feet

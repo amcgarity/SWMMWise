@@ -364,9 +364,14 @@ class swmm_model:
 
 	def getLidArea(self,subcatName,lidName):
 		lidUsageClass = self.moddict[lid_usage]
-		lidArea = lidUsageClass.get((subcatName,lidName),'Area')  # LID area in SQUARE FEET
-		return lidArea
-
+		lidAreaStr = lidUsageClass.get((subcatName,lidName),'Area')  
+		lidArea = float(lidAreaStr)
+		return lidArea   # LID area in SQUARE FEET
+#	def lidGetArea(self,subcatchment,lidname):
+#		lid_usage_class = self.moddict[lid_usage]
+#		lid_area_str = lid_usage_class.get((subcatchment,lidname),'Area')  # LID area in SQUARE FEET
+#		lid_area = float(lid_area_str)	
+#		return lid_area		
 	def getLidNumber(self,subcatName,lidName):
 		lidUsageClass = self.moddict[lid_usage]
 		lidNumber = lidUsageClass.get((subcatName,lidName),'Number')  # LID area in SQUARE FEET
@@ -381,7 +386,7 @@ class swmm_model:
 		catclass = self.catdict[catheading]
 		self.moddict[catclass].change(objname,pname,pvalue)
 
-	def lidChangeArea(self,subcatchment,lidname,newarea,capRatioPct):
+	def lidChangeArea(self,subcatchment,lidname,newarea,contribImpervAreaAcre):
 		# This is a change in the category [LID_USAGE]
 		# AND to the PctImperv parameter of the subcatchment where the lids are placed
 		# But the new PctImperv parameter must be CALCULATED first!!
@@ -428,8 +433,9 @@ class swmm_model:
 		lid_usage_class.change((subcatchment,lidname),'Area',newarea_str)  # change the number
 		# adjust the FromImp parameter - the % of subcat area treated by each LID:
 		#print "imperv_area = %s" % imperv_area
-		capRatio = capRatioPct/100.0
-		imperv_area_treated = lid_number*new_lid_acre/capRatio
+		#capRatio = capRatioPct/100.0
+		#imperv_area_treated = lid_number*new_lid_acre/capRatio
+		imperv_area_treated = lid_number*contribImpervAreaAcre
 		if imperv_area <= 0.0:
 			lidFromImp = 0.0;
 		else:
@@ -492,8 +498,3 @@ class swmm_model:
 		newnumber_str = "%0.3f" % newnumber
 		lid_usage_class = self.moddict[lid_usage]
 		lid_usage_class.change((subcatchment,lidname),'Width',newnumber_str)  # change the number
-	def lidGetArea(self,subcatchment,lidname):
-		lid_usage_class = self.moddict[lid_usage]
-		lid_area_str = lid_usage_class.get((subcatchment,lidname),'Area')  # LID area in SQUARE FEET
-		lid_area = float(lid_area_str)	
-		return lid_area		

@@ -15,14 +15,16 @@ def runswmm(runParamList,swmmInitialInpFileStr,runsCollection,perm):
     model1 = swmm_model('Model1',section_names,sections)
     #print sections['[INFILTRATION]']
     for item in runParamList:
-        subCat = item['Subcat']
+        subcat = item['Subcat']
         lid = item['LID']
         newNumber = item['Number']
-        newArea = item['Area']
-        newWidth = item['Width']
-        CapRatioPct = item['CapRatioPct']
-        model1.lidChangeNumber(subCat,lid,newNumber)
-        model1.lidChangeArea(subCat,lid,newArea,CapRatioPct)
+        area = model1.getLidArea(subcat,lid)
+        ContribImpervArea = item['ContribImpervArea']   # square feet
+        contribImpervAreaAcre = ContribImpervArea/43560.0
+        #newWidth = item['Width']
+        #CapRatioPct = item['CapRatioPct']
+        model1.lidChangeNumber(subcat,lid,newNumber)
+        model1.lidChangeArea(subcat,lid,area,contribImpervAreaAcre)  # must call to properly set FromImp parameter !!
         ###model1.lidChangeWidth(subCat,lid,newWidth)
         ###model1.lidChangeFromImp(subCat,lid,newFromImp)
     # Write out the model to a new file because SWMM must have a file
