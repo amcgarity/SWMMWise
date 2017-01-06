@@ -362,6 +362,18 @@ class swmm_model:
 		subcatPctImperv = float(subcatPctImpervStr)  # Subcatchment area in acre
 		return subcatPctImperv	
 
+	def getSubcatchmentWidth(self,subcatName):
+		subcatchmentsClass = self.moddict[subcatchments]
+		subcatWidthStr = subcatchmentsClass.get(subcatName,'Width')
+		subcatWidth = float(subcatWidthStr)  # Subcatchment area in acre
+		return subcatWidth	
+
+	def getSubcatchmentSlope(self,subcatName):
+		subcatchmentsClass = self.moddict[subcatchments]
+		subcatSlopeStr = subcatchmentsClass.get(subcatName,'Slope')
+		subcatSlope = float(subcatSlopeStr)  # Subcatchment area in acre
+		return subcatSlope	
+
 	def getLidArea(self,subcatName,lidName):
 		lidUsageClass = self.moddict[lid_usage]
 		lidAreaStr = lidUsageClass.get((subcatName,lidName),'Area')  
