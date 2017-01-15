@@ -1,11 +1,8 @@
-# IMPORTANT:  RUN THIS BLOCK FIRST
-# ONLY for loop tests for which all subcats have the same number of a single LID:
 from pymongo import MongoClient
 from process_collection import *
 def volume_reduction_and_runoff_volume_vs_lid_number(collectionName,numVars, db):
     from pymongo import MongoClient
     from datetime import datetime
-    import matplotlib.pyplot as plt
     mGal = 133680.5  # number of cubic feet in 1 Million gallons 
     runs = db[collectionName]
     cursor = runs.find() 
@@ -54,3 +51,13 @@ def volume_reduction_and_runoff_volume_vs_lid_number(collectionName,numVars, db)
     numSims = len(volReductionList)
     return{"numLists": numLists, "outflow_series": outflow_series_list, "volReductionList": volReductionList, \
            "surface_outflow":totalSurfaceOutflowList,"numSims": numSims}
+
+def get_all_doc_ids(collectionName, db):
+    runs = db[collectionName]
+    cursor = runs.find() 
+    allDocIds = []
+    for run in cursor:
+        allDocIds.append(run['_id'])
+    return allDocIds
+
+
