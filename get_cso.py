@@ -3,6 +3,7 @@ def calculate_cso(outflow_values, ratio):
     cso_flow = 0
     hours = 0
     tot_flow = 0
+    # NOTE: the PWD SWMM model's total impervious area (before LID) is confirmed to be 3122 acres (AEM)
     max_treatment = 3122*ratio #max cfs allowed to treatment  ALERT: WINGOHOCKING ONLY FOR NOW !!!
     #print max_treatment
     tot = len(outflow_values)

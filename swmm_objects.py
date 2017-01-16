@@ -128,7 +128,8 @@ class category2d:
 	def get(self,objname,pname):
 		(valnamelist,valdict) = self.pardict[objname]
 		return valdict[pname]
-
+	def getNameList(self):
+		return self.namelist
 class subcatchments(category2d):
 	heading = '[SUBCATCHMENTS]'
 	def __init__(self,linelist):
@@ -349,6 +350,10 @@ class swmm_model:
 				#print cat.heading+'\n'
 				#print outstr
 		return swmmInputFileStr
+
+	def getSubcatchmentNameList(self):
+		subcatchmentsClass = self.moddict[subcatchments]
+		return subcatchmentsClass.getNameList()
 
 	def getSubcatchmentArea(self,subcatName):
 		subcatchmentsClass = self.moddict[subcatchments]
